@@ -1,0 +1,90 @@
+
+
+(defsrc
+	q	w	e	r	t		y	u	i	o	p
+	a	s	d	f	g		h	j	k	l	;
+	z	x	c	v	b		n	m	,	.	/
+			lmet	lalt				spc	ralt
+)
+
+(defvar
+	trt 180
+)
+
+
+(defalias
+	ma (tap-hold 0 $trt a lmet)
+	ms (tap-hold 0 $trt s lalt)
+	mx (tap-hold 0 $trt x ralt)
+	md (tap-hold 0 $trt d lsft)
+	mf (tap-hold 0 $trt f lctl)
+
+	m; (tap-hold 0 $trt ; rmet)
+	ml (tap-hold 0 $trt l lalt)
+	m. (tap-hold 0 $trt . ralt)
+	mk (tap-hold 0 $trt k rsft)
+	mj (tap-hold 0 $trt j rctl)
+
+	mtlm (tap-hold-press 0 500 ret (layer-while-held navigation))
+	mtli (tap-hold-press 0 500 esc (layer-while-held symbol))
+
+	mtrm (tap-hold-press 0 500 spc (layer-while-held number))
+	mtri (tap-hold-press 0 500 tab (layer-while-held function))
+
+	cw (caps-word-custom 2000
+		(a b c d e f g h i j k l m n o q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ;)
+		(kp0 kp1 kp2 kp3 kp4 kp5 kp6 kp7 kp8 kp9 bspc del up down left rght)
+	)
+
+	dsb (layer-switch disable)
+	enb (layer-switch main)
+)
+
+(deflayer main
+	q	w	e	r	t		y	u	i	o	p
+	@ma	@ms	@md	@mf	g		h	@mj	@mk	@ml	@m;
+	z	@mx	c	v	b		n	m	,	@m.	'
+			@mtli	@mtlm				@mtrm	@mtri
+)
+
+(deflayer disable
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+			@enb	_				_	_
+)
+
+(deflayer none
+	q	w	e	r	t		y	u	i	o	p
+	a	s	d	f	g		h	j	k	l	m
+	z	x	c	v	b		n	m	,	. 	'
+			esc	ret				spc	tab
+)
+
+(deflayer navigation
+	_	_	_	_	_		_	home	up	end	pgup
+	lmet	lalt	lsft	lctl	_		_	left	down	rght	pgdn
+	_	ralt	_	_	_		_	@cw	caps	f13	f14
+			_	_				bspc	del
+)
+
+(deflayer number
+	`	9	8	7	[		_	_	_	_	_
+	0	6	5	4	]		_	rctl	rsft	lalt	rmet
+	/	3	2	1	\		_	_	_	ralt	_
+			=	-				_ 	_
+)
+
+(deflayer function
+	f10	f9	f8	f7	_		_	_	_	_	_
+	f11	f6	f5	f4	_		_	rctl	rsft	lalt	rmet
+	f12	f3	f2	f1	_		_	_	_	ralt	_
+			_	_				_	_
+)
+
+(deflayer symbol
+	S-3	S-2	S-[	S-]	_		_	S-5	S-8	S-7	S-\
+	S-,	S-.	S-9	S-0	@dsb		_	S-=	=	/	\
+	S-6	S-4	[	]	_		_	S-`	S-1	S-/	`
+			_	_				-	S--
+)
