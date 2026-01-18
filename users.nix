@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
 {
-  imports =
-    let
-      home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
-    in
-    [ (import "${home-manager}/nixos") ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
+  imports = [ inputs.home-manager.nixosModules.default ];
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
@@ -33,6 +34,7 @@
   };
 
   programs.niri.enable = true;
+  xdg.portal.wlr.enable = true;
 
   home-manager.users.asdfer =
     {

@@ -4,9 +4,10 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
   };
   outputs =
-    { self, nixpkgs, ... }:
+    { self, nixpkgs, ... }@inputs:
     {
       nixosConfigurations.asdfhost = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [ ./configuration.nix ];
       };
     };
