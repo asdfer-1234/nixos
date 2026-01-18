@@ -62,7 +62,6 @@
         };
       };
       home.sessionVariables = {
-        ZED_ALLOW_EMULATED_GPU = 1;
         EDITOR = "zeditor";
       };
 
