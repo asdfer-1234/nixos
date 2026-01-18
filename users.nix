@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -19,6 +18,7 @@
       "wheel"
     ];
     packages = [
+      pkgs.kdePackages.xdg-desktop-portal-kde
       pkgs.neovim
       pkgs.nixd
       pkgs.nil
@@ -40,8 +40,6 @@
 
   home-manager.users.asdfer =
     {
-      pkgs,
-      lib,
       config,
       ...
     }:
