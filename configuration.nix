@@ -14,7 +14,7 @@
 
   imports = [
     # Include the results of the hardware scan.
-    ./hardware/hardware-configuration.nix
+    ./hardware/hardware.nix
     ./firefox.nix
     ./users/users.nix
     ./nvidia.nix
