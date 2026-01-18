@@ -100,6 +100,7 @@
     pkgs.vim
     pkgs.neovim
     pkgs.pciutils
+    pkgs.kdePackages.xdg-desktop-portal-kde
   ];
   system.stateVersion = "25.11";
 }

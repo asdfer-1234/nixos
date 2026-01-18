@@ -18,7 +18,6 @@
       "wheel"
     ];
     packages = [
-      pkgs.kdePackages.xdg-desktop-portal-kde
       pkgs.neovim
       pkgs.nixd
       pkgs.nil
@@ -34,7 +33,7 @@
   };
 
   programs.niri.enable = true;
-  xdg.portal.config = {
+  xdg.portal.xdg.portal.config = {
     common = {
       default = [ "kde" ];
     };
