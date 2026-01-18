@@ -86,6 +86,8 @@
     pkgs.neovim
     pkgs.pciutils
     pkgs.kdePackages.xdg-desktop-portal-kde
+    pkgs.htop
+    pkgs.nvtop
   ];
   system.stateVersion = "25.11";
 }
