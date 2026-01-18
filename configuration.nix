@@ -87,7 +87,8 @@
     pkgs.pciutils
     pkgs.kdePackages.xdg-desktop-portal-kde
     pkgs.htop
-    pkgs.nvtop
+    pkgs.nvtopPackages.intel
+    pkgs.nvtopPackages.nvidia
   ];
   system.stateVersion = "25.11";
 }
