@@ -13,7 +13,7 @@
     }@inputs:
     {
       nixosConfigurations.asdfhost = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs home-manager; };
         modules = [
           ./configuration.nix
           ./home-manager.nix
