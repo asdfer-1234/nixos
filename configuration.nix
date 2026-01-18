@@ -13,7 +13,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./firefox.nix
-    ./users.nix
+    ./users/users.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
