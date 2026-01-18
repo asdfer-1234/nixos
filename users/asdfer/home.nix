@@ -38,7 +38,7 @@
 
   xdg.configFile = {
     "niri/config.kdl" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./config.kdl;
+      source = config.lib.file.mkOutOfStoreSymlink ./niri/config.kdl;
     };
     "zed/settings.json" = {
       force = true;
