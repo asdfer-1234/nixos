@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports =
     let
@@ -18,7 +18,6 @@
       "wheel"
     ];
     packages = [
-      pkgs.kdePackages.kate
       pkgs.neovim
       pkgs.nixd
       pkgs.nil
@@ -28,10 +27,20 @@
       pkgs.rustup
       pkgs.vulkan-tools
       pkgs.clang
+      pkgs.alacritty
+      pkgs.fuzzel
     ];
   };
+
+  programs.niri.enable = true;
+
   home-manager.users.asdfer =
-    { pkgs, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     {
       programs.bash.enable = true;
       programs.zed-editor = {
@@ -39,8 +48,9 @@
         extensions = [
           "toml"
           "nix"
+          "kdl"
         ];
-        mutableUserSettings = true;
+        mutableUserSettings = false;
         userSettings = {
           vim_mode = true;
           theme = "Ayu Light";
@@ -54,11 +64,14 @@
         EDITOR = "zeditor";
       };
 
-      #       xdg.configFile = {
-      #         "asdf/ew" = {
-      #           text = "hello";
-      #         };
-      #       };
+      xdg.configFile = {
+        "niri/config.kdl" = {
+          source = config.lib.file.mkOutOfStoreSymlink ./config.kdl;
+        };
+        "zed/settings.json" = {
+          force = true;
+        };
+      };
 
       home.stateVersion = "25.11";
     };

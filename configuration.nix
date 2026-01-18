@@ -18,6 +18,22 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # NVIDIA
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
+  hardware.nvidia.open = true;
+
+  # Intel: 0000:00:02:0
+  # NVIDIA: 0000:01:00:0
+  hardware.nvidia.prime = {
+    intelBusId = "PCI:0@0:2:0";
+    nvidiaBusId = "PCI:1@0:0:0";
+    offload.enable = true;
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -44,8 +60,8 @@
   };
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.desktopManager.plasma6.enable = false;
 
   services.kanata = {
     enable = false;
@@ -81,6 +97,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    pkgs.vim
+    pkgs.neovim
+    pkgs.pciutils
   ];
   system.stateVersion = "25.11";
 }
