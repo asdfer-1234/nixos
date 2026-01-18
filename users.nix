@@ -35,8 +35,8 @@
 
   programs.niri.enable = true;
   xdg.portal.config.niri = {
-    "org.freedesktop.impl.portal.FileChooser" = [ "kde" ]
-  }
+    "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+  };
 
   home-manager.users.asdfer =
     {
