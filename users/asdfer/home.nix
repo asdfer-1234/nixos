@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, pkgs, ... }:
 {
   programs.bash.enable = true;
   programs.zed-editor = {
@@ -20,6 +17,19 @@
       };
     };
   };
+  packages = [
+    pkgs.neovim
+    pkgs.nixd
+    pkgs.nil
+    pkgs.thunderbird
+    pkgs.git
+    pkgs.vim
+    pkgs.rustup
+    pkgs.vulkan-tools
+    pkgs.clang
+    pkgs.alacritty
+    pkgs.fuzzel
+  ];
   home.sessionVariables = {
     EDITOR = "zeditor";
   };

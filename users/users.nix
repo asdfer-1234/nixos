@@ -17,19 +17,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = [
-      pkgs.neovim
-      pkgs.nixd
-      pkgs.nil
-      pkgs.thunderbird
-      pkgs.git
-      pkgs.vim
-      pkgs.rustup
-      pkgs.vulkan-tools
-      pkgs.clang
-      pkgs.alacritty
-      pkgs.fuzzel
-    ];
   };
 
   programs.niri.enable = true;
