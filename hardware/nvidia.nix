@@ -19,19 +19,19 @@
           offload.enable = true;
         };
       }
-      (
-        lib.mkIf (config.specialisation != { }) {
-          system.nixos.tags = [ "dGPU only" ];
-          boot.kernelParams = [ "module_blacklist=i915" ];
-        }
-      );
-
-  specialisation = {
-    offload.configuration = {
-      system.nixos.tags = [ "iGPU with offload" ];
-      hardware.nvidia.prime = {
-        offload.enable = lib.mkForce true;
+      (lib.mkIf (config.specialisation != { }) {
+        system.nixos.tags = [ "dGPU only" ];
+        boot.kernelParams = [ "module_blacklist=i915" ];
+      })
+      {
+        specialisation = {
+          offload.configuration = {
+            system.nixos.tags = [ "iGPU with offload" ];
+            hardware.nvidia.prime = {
+              offload.enable = lib.mkForce true;
+            };
+          };
+        };
       };
-    };
-  };
+
 }
