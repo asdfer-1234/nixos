@@ -2,7 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -11,28 +14,13 @@
 
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware/hardware-configuration.nix
     ./firefox.nix
     ./users/users.nix
+    ./nvidia.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  # NVIDIA
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [
-    "modesetting"
-    "nvidia"
-  ];
-  hardware.nvidia.open = true;
-
-  # Intel: 0000:00:02:0
-  # NVIDIA: 0000:01:00:0
-  hardware.nvidia.prime = {
-    intelBusId = "PCI:0@0:2:0";
-    nvidiaBusId = "PCI:1@0:0:0";
-    offload.enable = true;
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -91,8 +79,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
-  programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
