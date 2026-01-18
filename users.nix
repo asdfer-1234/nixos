@@ -35,7 +35,7 @@
   programs.niri.enable = true;
   xdg.portal.config = {
     common = {
-      default = [ "kde" ];
+      default = [ "kdeewew" ];
     };
   };
 
