@@ -36,7 +36,7 @@
   xdg.portal.enable = true;
   xdg.portal.config = {
     common = {
-      default = [ "kdeewew" ];
+      default = [ "kde" ];
     };
   };
 
