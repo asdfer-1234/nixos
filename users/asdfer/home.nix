@@ -36,6 +36,10 @@
     EDITOR = "zeditor";
   };
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   xdg.configFile = {
     "niri/config.kdl" = {
       source = config.lib.file.mkOutOfStoreSymlink ./niri/config.kdl;

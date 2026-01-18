@@ -4,10 +4,6 @@
   ...
 }:
 {
-  imports = [ inputs.home-manager.nixosModules.default ];
-
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
 
   users.users.asdfer = {
     isNormalUser = true;
