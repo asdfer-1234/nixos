@@ -17,7 +17,7 @@
       };
     };
   };
-  packages = [
+  home.packages = [
     pkgs.neovim
     pkgs.nixd
     pkgs.nil
