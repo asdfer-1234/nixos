@@ -23,6 +23,8 @@
     };
   };
 
+  programs.steam.enable = true;
+
   users.users.zxcver = {
     isNormalUser = true;
     description = "other user without sudo";

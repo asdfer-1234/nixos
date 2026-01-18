@@ -9,6 +9,7 @@
       "toml"
       "nix"
       "kdl"
+      "qml"
     ];
     mutableUserSettings = false;
     userSettings = {
@@ -31,6 +32,9 @@
     pkgs.clang
     pkgs.alacritty
     pkgs.fuzzel
+    pkgs.xwayland-satellite
+    pkgs.kdePackages.qtdeclarative
+    pkgs.quickshell
   ];
   home.sessionVariables = {
     EDITOR = "zeditor";
