@@ -33,7 +33,7 @@
   };
 
   programs.niri.enable = true;
-  xdg.portal.xdg.portal.config = {
+  xdg.portal.config = {
     common = {
       default = [ "kde" ];
     };
