@@ -17,7 +17,6 @@
     ./hardware/hardware.nix
     ./firefox.nix
     ./users/users.nix
-    ./nvidia.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
