@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   programs.bash.enable = true;
-  programs.steam.enable = true;
+  programs.lutris.enable = true;
   programs.firefox.enable = true;
   programs.zed-editor = {
     enable = true;
