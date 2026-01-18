@@ -1,6 +1,5 @@
 { home-manager, ... }:
-
-home-manager.nixosModules.home-manager {
+{
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.asdfer = ./users/asdfer/home.nix;
