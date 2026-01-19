@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  configDirectory,
+  ...
+}:
 {
   programs.bash.enable = true;
   programs.lutris.enable = true;
@@ -46,7 +51,7 @@
 
   xdg.configFile = {
     "niri/config.kdl" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./niri/config.kdl;
+      source = config.lib.file.mkOutOfStoreSymlink "${configDirectory}/users/asdfer/niri/config.kdl";
     };
     "zed/settings.json" = {
       force = true;

@@ -13,7 +13,10 @@
     }@inputs:
     {
       nixosConfigurations.asdfhost = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          configDirectory = "/etc/nixos";
+        };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
