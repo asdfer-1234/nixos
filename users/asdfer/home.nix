@@ -57,6 +57,10 @@ in
       source = link "users/asdfer/niri";
       force = true;
     };
+    "quickshell/" = {
+      source = link "users/asdfer/quickshell";
+      force = true;
+    };
     "zed/settings.json" = {
       force = true;
     };
