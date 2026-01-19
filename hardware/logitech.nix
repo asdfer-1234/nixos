@@ -4,7 +4,7 @@
   environment.systemPackages = [
     pkgs.logiops
   ];
-  systemd.service.logid = {
+  systemd.services.logid = {
     enable = true;
     description = "enables logid from logiops package";
     after = [ "multi-user.target" ];
