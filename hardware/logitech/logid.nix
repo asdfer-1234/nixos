@@ -6,16 +6,18 @@
   ];
   systemd.services.logid = {
     enable = true;
+    startLimitIntervalSec = 0;
     description = "enables logid from logiops package";
     after = [ "multi-user.target" ];
     wants = [ "multi-user.target" ];
-    wnatedBy = [ "graphical.target" ];
+    wantedBy = [ "graphical.target" ];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.logiops}/bin/logid";
       User = "root";
     };
   };
+  environment.etc."logid.cfg".source = "logid.cfg";
 }
 
 /*
