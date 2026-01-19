@@ -15,7 +15,6 @@
       nixosConfigurations.asdfhost = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
-          configDirectory = "/etc/nixos";
         };
         modules = [
           ./configuration.nix
