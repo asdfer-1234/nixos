@@ -1,11 +1,15 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
 
   environment.systemPackages = [
     pkgs.logiops
   ];
   systemd.services.logid = {
-    restartIfChanged = true;
+    restartTriggers = [
+      # config.environment.etc."logid.cfg".source
+      # THAT DOES NOT RESTART IT AUTOMATICALLY
+      # LISTENING TO FILE CONTENT CHANGES WHEN
+    ];
     enable = true;
     startLimitIntervalSec = 0;
     description = "enables logid from logiops package";

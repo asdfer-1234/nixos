@@ -8,7 +8,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./nvidia.nix
-    ./logitech/logid.nix
+    # ./logitech/logid.nix # TIMES OUT TRYING TO GET DEVICE NAME
   ];
 
   boot.initrd.availableKernelModules = [

@@ -43,6 +43,7 @@ in
     pkgs.xwayland-satellite
     pkgs.kdePackages.qtdeclarative
     pkgs.quickshell
+    pkgs.swaybg
   ];
   home.sessionVariables = {
     EDITOR = "zeditor";
