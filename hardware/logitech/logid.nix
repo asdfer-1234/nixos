@@ -5,6 +5,7 @@
     pkgs.logiops
   ];
   systemd.services.logid = {
+    restartIfChanged = true;
     enable = true;
     startLimitIntervalSec = 0;
     description = "enables logid from logiops package";
@@ -17,7 +18,9 @@
       User = "root";
     };
   };
-  environment.etc."logid.cfg".source = "logid.cfg";
+  environment.etc."logid.cfg" = {
+    source = ./logid.cfg;
+  };
 }
 
 /*
