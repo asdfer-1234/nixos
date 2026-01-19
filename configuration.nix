@@ -88,7 +88,6 @@
     pkgs.kdePackages.xdg-desktop-portal-kde
     pkgs.htop
     pkgs.nvtopPackages.full
-    pkgs.logiops
   ];
   system.stateVersion = "25.11";
 }

@@ -8,6 +8,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./nvidia.nix
+    ./logitech.nix
   ];
 
   boot.initrd.availableKernelModules = [
