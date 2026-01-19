@@ -3,7 +3,7 @@
 }:
 {
   home-manager.extraSpecialArgs = {
-    configDirectory = "/etc/nixos";
+    configDirectory = "/etc/nixos/";
   };
   home-manager.useUserPackages = true;
   home-manager.users.asdfer = ./users/asdfer/home.nix;
