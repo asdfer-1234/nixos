@@ -17,7 +17,8 @@
   xdg.portal.enable = true;
   xdg.portal.config = {
     common = {
-      default = [ "kde" ];
+      default = [ "gnome" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
   };
 

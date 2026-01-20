@@ -85,6 +85,7 @@
     pkgs.neovim
     pkgs.pciutils
     pkgs.kdePackages.xdg-desktop-portal-kde
+    pkgs.xdg-desktop-portal-gnome
     pkgs.wlr-protocols
     pkgs.htop
     pkgs.nvtopPackages.full
