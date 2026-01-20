@@ -1,0 +1,92 @@
+[
+  {
+    "id": 5,
+    "title": "asdfer@asdfhost: /run/user/1000",
+    "app_id": "Alacritty",
+    "pid": 24703,
+    "workspace_id": 1,
+    "is_focused": false,
+    "is_floating": false,
+    "is_urgent": false,
+    "layout": {
+      "pos_in_scrolling_layout": [2, 1],
+      "tile_size": [1198, 1356],
+      "window_size": [1194, 1352],
+      "tile_pos_in_workspace_view": null,
+      "window_offset_in_tile": [2, 2]
+    },
+    "focus_timestamp": { "secs": 12510, "nanos": 201026029 }
+  },
+  {
+    "id": 3,
+    "title": "Array: length - JavaScript | MDN — Mozilla Firefox",
+    "app_id": "firefox",
+    "pid": 22140,
+    "workspace_id": 2,
+    "is_focused": false,
+    "is_floating": false,
+    "is_urgent": false,
+    "layout": {
+      "pos_in_scrolling_layout": [3, 1],
+      "tile_size": [1768, 996],
+      "window_size": [1764, 992],
+      "tile_pos_in_workspace_view": null,
+      "window_offset_in_tile": [2, 2]
+    },
+    "focus_timestamp": { "secs": 16186, "nanos": 711984042 }
+  },
+  {
+    "id": 2,
+    "title": "nixos — Niri.qml",
+    "app_id": "dev.zed.Zed",
+    "pid": 21634,
+    "workspace_id": 2,
+    "is_focused": true,
+    "is_floating": false,
+    "is_urgent": false,
+    "layout": {
+      "pos_in_scrolling_layout": [1, 1],
+      "tile_size": [878, 996],
+      "window_size": [874, 992],
+      "tile_pos_in_workspace_view": null,
+      "window_offset_in_tile": [2, 2]
+    },
+    "focus_timestamp": { "secs": 16222, "nanos": 959724775 }
+  },
+  {
+    "id": 4,
+    "title": "asdfer@asdfhost: ~",
+    "app_id": "Alacritty",
+    "pid": 24491,
+    "workspace_id": 1,
+    "is_focused": false,
+    "is_floating": false,
+    "is_urgent": false,
+    "layout": {
+      "pos_in_scrolling_layout": [1, 1],
+      "tile_size": [1198, 1356],
+      "window_size": [1194, 1352],
+      "tile_pos_in_workspace_view": null,
+      "window_offset_in_tile": [2, 2]
+    },
+    "focus_timestamp": { "secs": 12509, "nanos": 472562328 }
+  },
+  {
+    "id": 8,
+    "title": "asdfer@asdfhost: ~",
+    "app_id": "Alacritty",
+    "pid": 27082,
+    "workspace_id": 2,
+    "is_focused": false,
+    "is_floating": false,
+    "is_urgent": false,
+    "layout": {
+      "pos_in_scrolling_layout": [2, 1],
+      "tile_size": [878, 996],
+      "window_size": [874, 992],
+      "tile_pos_in_workspace_view": null,
+      "window_offset_in_tile": [2, 2]
+    },
+    "focus_timestamp": { "secs": 16174, "nanos": 472057023 }
+  }
+]

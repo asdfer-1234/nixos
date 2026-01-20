@@ -46,12 +46,10 @@
     LC_TIME = "ko_KR.UTF-8";
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = false;
-  services.desktopManager.plasma6.enable = false;
+  services.upower.enable = true;
 
   services.kanata = {
-    enable = false;
+    enable = true;
     package = pkgs.kanata-with-cmd;
     keyboards = {
       all = {

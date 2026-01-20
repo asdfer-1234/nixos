@@ -1,17 +1,10 @@
 import Quickshell
+import Quickshell.Io
 import QtQuick
 
-PanelWindow {
-    anchors {
-        top: true
-        left: true
-        right: true
-    }
+Scope {
+    id: root
 
-    implicitHeight: 30
-
-    Text {
-        anchors.centerIn: parent
-        text: "hello world"
-    }
+    property string asdf: "asdf"
+    Bar {}
 }
