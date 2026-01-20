@@ -48,7 +48,7 @@ Scope {
                     RowLayout {
                         Text {
                             text: {
-                                [...Niri.windows].sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ")
+                                [...Niri.windows].filter(w => w.layout.pos_in_scrolling_layout).sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ");
                             }
                         }
                     }

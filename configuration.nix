@@ -48,6 +48,7 @@
 
   services.upower.enable = true;
 
+  hardware.uinput.enable = true;
   services.kanata = {
     enable = true;
     package = pkgs.kanata-with-cmd;
@@ -84,6 +85,7 @@
     pkgs.neovim
     pkgs.pciutils
     pkgs.kdePackages.xdg-desktop-portal-kde
+    pkgs.wlr-protocols
     pkgs.htop
     pkgs.nvtopPackages.full
   ];

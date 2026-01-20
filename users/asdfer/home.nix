@@ -28,6 +28,7 @@ in
       };
     };
   };
+  programs.obs-studio.enable = true;
   home.packages = [
     pkgs.neovim
     pkgs.nixd
