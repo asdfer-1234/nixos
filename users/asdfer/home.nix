@@ -24,6 +24,9 @@
     pkgs.alacritty
     pkgs.fuzzel
     pkgs.swaybg
+    # zsa keyboards
+    pkgs.keymapp
+    pkgs.wally-cli
   ];
 
   nixpkgs.config = {

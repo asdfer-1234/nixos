@@ -56,6 +56,7 @@
   services.udev.extraRules = ''
     KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
   '';
+  hardware.keyboard.zsa.enable = true;
 
   services.printing.enable = true;
   services.pulseaudio.enable = false;
