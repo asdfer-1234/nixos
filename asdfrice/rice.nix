@@ -27,5 +27,9 @@ in
       enable = true;
       config = lib.readFile ./niri.kdl;
     };
+    myModules.quickshell = {
+      enable = true;
+      configDirectory = ./quickshell;
+    };
   };
 }
