@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.rice.niri;
+  cfg = config.rice.asdfrice;
 in
 {
 
