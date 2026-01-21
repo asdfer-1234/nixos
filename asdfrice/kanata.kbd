@@ -49,11 +49,12 @@
 	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
 	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
 	se	(t! charmod e (layer-while-held programs))
+	sw	(t! charmod w (multi lmet (layer-while-held niri)))
 )
 
 
 (deflayer start
-	q	w	@se	r	t		y	u	i	o	p
+	q	@sw	@se	r	t		y	u	i	o	p
 	@sa	@ss	@sd	@sf	g		h	@sj	@sk	@sl	@s;
 	z	@sx	c	v	b		n	m	,	@s.	'
 			@sesc	@sret				@sspc	@stab
@@ -90,7 +91,7 @@
 	`	9	8	7	[		_	_	_	_	_
 	0	6	5	4	]		_	rctl	rsft	lalt	rmet
 	/	3	2	1	\		_	_	_	ralt	_
-			=	-				_ 	_
+			-	=				_ 	_
 )
 
 (deflayer function
@@ -107,19 +108,40 @@
 			_	_				-	S--
 )
 
-
-
 (deflayermap programs
-	j	(cmd zeditor)
-	k	(cmd firefox)
-	l	(cmd alacritty)
-	m	(cmd niri msg action close-window)
+	j	(cmd niri msg action spawn -- zeditor)
+	k	(cmd niri msg action spawn -- firefox)
+	l	(cmd niri msg action spawn -- alacritty)
+	;	(cmd niri msg action spawn -- fuzzel)
 	_	XX
 )
 
-(deflayer niri
-	_	_	_	_	_		_	_	_	_	_
-	_	_	_	_	_		_	_	_	_	_
-	_	_	_	_	_		_	_	_	_	_
-			@enb	_				_	_
+
+(deflayermap niri
+	e	(layer-while-held nirimove)
+	h	(cmd niri msg action focus-column-left)
+	j	(cmd niri msg action focus-window-down)
+	k	(cmd niri msg action focus-window-up)
+	l	(cmd niri msg action focus-column-right)
+	u	(cmd niri msg action focus-workspace-down)
+	i	(cmd niri msg action focus-workspace-up)
+	m	(cmd niri msg action close-window)
+	,	(cmd niri msg action toggle-window-floating)
+	.	(cmd niri msg action switch-preset-window-width)
+	/	(cmd niri msg action maximize-column)
+	;	(cmd niri msg action toggle-overview)
+)
+
+(deflayermap nirimove
+	h	(cmd niri msg action move-column-left)
+	j	(cmd niri msg action move-window-down)
+	k	(cmd niri msg action move-window-up)
+	l	(cmd niri msg action move-column-right)
+	u	(cmd niri msg action move-column-to-workspace-up)
+	i	(cmd niri msg action move-column-to-workspace-down)
+)
+
+(deflayermap nirimonitor
+	h	(cmd niri msg action)
+	j	(cmd niri msg action)
 )
