@@ -24,19 +24,11 @@
     pkgs.alacritty
     pkgs.fuzzel
     pkgs.xwayland-satellite
-    pkgs.quickshell
     pkgs.swaybg
   ];
 
   nixpkgs.config = {
     allowUnfree = true;
-  };
-
-  xdg.configFile = {
-    "quickshell/" = {
-      source = ./quickshell;
-      force = true;
-    };
   };
 
   home.stateVersion = "25.11";

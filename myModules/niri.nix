@@ -22,7 +22,6 @@ in
     };
     home.packages = [
       pkgs.niri
-      pkgs.quickshell
     ];
   };
 }
