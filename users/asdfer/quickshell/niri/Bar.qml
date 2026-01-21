@@ -53,12 +53,10 @@ Scope {
                         }
                     }
                 }
-                WrapperRectangle {
-                    margin: 10
-                    radius: 1000
-                    border {
-                        color: "black"
-                        width: 2
+                }
+                RowLayout {
+                    Text {
+                        text: System.batteryPercentage
                     }
                     RowLayout {
                         Text {
