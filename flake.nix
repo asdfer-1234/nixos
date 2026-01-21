@@ -11,7 +11,6 @@
       self,
       nixpkgs,
       home-manager,
-      niri,
       ...
     }@inputs:
     {
