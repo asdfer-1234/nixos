@@ -43,21 +43,6 @@
 
   services.upower.enable = true;
   hardware.uinput.enable = true;
-  services.kanata = {
-    enable = true;
-    package = pkgs.kanata-with-cmd;
-    keyboards = {
-      all = {
-        extraDefCfg = ''
-          danger-enable-cmd yes
-          linux-continue-if-no-devs-found yes
-          process-unmapped-keys yes
-        '';
-        extraArgs = [ "--nodelay" ];
-        configFile = ./kanata.kbd;
-      };
-    };
-  };
 
   services.printing.enable = true;
   services.pulseaudio.enable = false;
