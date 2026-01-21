@@ -9,7 +9,7 @@ let
 in
 {
   options.myModules.niri = {
-    enable = lib.mkEnableOption;
+    enable = lib.mkEnableOption "niri!";
     config = lib.mkOption { type = lib.types.str; };
   };
 
