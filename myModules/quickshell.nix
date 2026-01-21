@@ -18,7 +18,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [
-      pkgs.kanata
+      pkgs.quickshell
     ];
     xdg.configFile = {
       "quickshell" = {
