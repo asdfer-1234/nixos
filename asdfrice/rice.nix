@@ -9,7 +9,7 @@ let
 in
 {
 
-  imports = [ ../myModules/kanata/kanata.nix ];
+  imports = [ ../myModules/kanata.nix ];
   options.rice.asdfrice = {
     enable = lib.mkEnableOption "yay";
   };
