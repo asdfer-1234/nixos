@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.programs.niri;
+  cfg = config.rice.niri;
 in
 {
   options.rice.niri = {
