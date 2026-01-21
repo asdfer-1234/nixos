@@ -22,7 +22,7 @@ in
     ];
     xdg.configFile = {
       "quickshell" = {
-        target = cfg.configDirectory;
+        source = cfg.configDirectory;
         force = true;
       };
     };
