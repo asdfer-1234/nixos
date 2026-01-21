@@ -1,12 +1,7 @@
 {
-  config,
   pkgs,
-  configDirectory,
   ...
 }:
-let
-  link = path: config.lib.file.mkOutOfStoreSymlink "${configDirectory}${path}";
-in
 {
 
   imports = [
@@ -63,7 +58,7 @@ in
 
   xdg.configFile = {
     "quickshell/" = {
-      source = link "users/asdfer/quickshell";
+      source = ./quickshell;
       force = true;
     };
     "zed/settings.json" = {

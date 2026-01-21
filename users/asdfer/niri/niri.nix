@@ -1,8 +1,8 @@
-{ link }:
+{ ... }:
 {
   xdg.configFile = {
     "niri/" = {
-      source = link "users/asdfer/niri";
+      source = ./dotfile;
       force = true;
     };
   };

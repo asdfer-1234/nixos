@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   pkgs,
   ...
@@ -13,7 +9,6 @@
   ];
 
   imports = [
-    # Include the results of the hardware scan.
     ./hardware/hardware.nix
     ./firefox.nix
     ./users/users.nix
@@ -47,7 +42,6 @@
   };
 
   services.upower.enable = true;
-
   hardware.uinput.enable = true;
   services.kanata = {
     enable = true;
@@ -65,10 +59,7 @@
     };
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -92,4 +83,10 @@
     pkgs.nvtopPackages.full
   ];
   system.stateVersion = "25.11";
+
+  home-manager = {
+    useUserPackages = true;
+    users.asdfer = ./users/asdfer/home.nix;
+    users.zxcver = ./users/zxcver/home.nix;
+  };
 }
