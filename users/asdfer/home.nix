@@ -9,6 +9,7 @@
     ./niri/niri.nix
   ];
 
+  programs.niri.enable = true;
   programs.bash.enable = true;
   programs.lutris.enable = true;
   programs.firefox.enable = true;
@@ -47,6 +48,7 @@
     pkgs.kdePackages.qtdeclarative
     pkgs.quickshell
     pkgs.swaybg
+    pkgs.niri
   ];
   home.sessionVariables = {
     EDITOR = "zeditor";
