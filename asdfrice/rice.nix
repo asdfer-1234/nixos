@@ -20,6 +20,7 @@ in
   config = lib.mkIf cfg.enable {
     myModules.kanata = {
       enable = true;
+      cmd = true;
       config = lib.readFile ./kanata.kbd;
     };
     myModules.niri = {

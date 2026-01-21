@@ -13,12 +13,10 @@
 
 
 (defalias
-
 	cw (caps-word-custom 2000
 		(a b c d e f g h i j k l m n o q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ;)
 		(kp0 kp1 kp2 kp3 kp4 kp5 kp6 kp7 kp8 kp9 bspc del up down left rght)
 	)
-
 	dsb (layer-switch disable)
 	enb (layer-switch start)
 )
@@ -26,7 +24,7 @@
 (deftemplate charmod (char mod)
 	(switch
 		((key-timing 3 less-than 200)) $char break
-		() (tap-hold-release 0 200 $char $mod) break
+		() (tap-hold 0 200 $char $mod) break
 	)
 )
 
@@ -46,11 +44,12 @@
 	sesc	(tap-hold-press 0 $trt esc (layer-while-held symbol))
 	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
 	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
+	se	(t! charmod . (layer-while-held programs))
 )
 
 
 (deflayer start
-	q	w	e	r	t		y	u	i	o	p
+	q	w	@se	r	t		y	u	i	o	p
 	@sa	@ss	@sd	@sf	g		h	@sj	@sk	@sl	@s;
 	z	@sx	c	v	b		n	m	,	@s.	'
 			@sesc	@sret				@sspc	@stab
@@ -71,13 +70,15 @@
 )
 
 (defalias
-	n;	(one-shot 2000 lsft)
+	nu	(macro down down down down down)
+	ni	(macro up up up up up)
+	n,	(one-shot 2000 lsft)
 )
 
 (deflayer nav
-	f13	f14	@cw	_	_		home	pgdn	pgup	end	_
-	lmet	lalt	lsft	lctl	_		left	down	up	rght	@n;
-	_	ralt	caps	_	_		_	ret	-	S--	/
+	f13	f14	@cw	_	_		home	@nu	@ni	end	pgup
+	lmet	lalt	lsft	lctl	_		left	down	up	rght	pgdn
+	_	ralt	caps	_	_		_	ret	@n,	S--	/
 			_	_				bspc	del
 )
 
@@ -104,9 +105,16 @@
 
 
 
-(deflayer spawn
+(deflayermap programs
+	j	(cmd zeditor)
+	k	(cmd firefox)
+	l	(cmd alacritty)
+	_	noop
+)
+
+(deflayer niri
 	_	_	_	_	_		_	_	_	_	_
 	_	_	_	_	_		_	_	_	_	_
 	_	_	_	_	_		_	_	_	_	_
-			_	_				_	_
+			@enb	_				_	_
 )

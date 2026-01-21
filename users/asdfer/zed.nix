@@ -15,7 +15,6 @@
     ];
     mutableUserSettings = false;
     userSettings = {
-      vim_mode = true;
       theme = "Ayu Light";
       title_bar = {
         show_sign_in = false;
