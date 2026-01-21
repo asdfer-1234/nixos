@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.configFile = {
-      "niri/" = {
+      "niri/config.kdl" = {
         text = cfg.config;
         force = true;
       };
