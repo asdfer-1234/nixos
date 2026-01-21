@@ -23,7 +23,6 @@
     pkgs.vulkan-tools
     pkgs.alacritty
     pkgs.fuzzel
-    pkgs.xwayland-satellite
     pkgs.swaybg
   ];
 

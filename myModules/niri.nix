@@ -22,6 +22,7 @@ in
     };
     home.packages = [
       pkgs.niri
+      pkgs.xwayland-satellite
     ];
   };
 }
