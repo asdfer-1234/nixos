@@ -54,8 +54,8 @@
   # services.udev.extraRules = ''
   #   SUBSYSTEM=="misc", KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
   # '';
-  services.udev.extraRules = lib.mkOrder 9999 ''
-    KERNEL=="uinput", MODE="0666", GROUP="uinput", OPTIONS+="static_node=uinput,link_priority=1000"
+  services.udev.extraRules = lib.mkOrder 0 ''
+    KERNEL=="uinput", MODE="0666", GROUP="uinput", OPTIONS+="static_node=uinput"
   '';
 
   hardware.keyboard.zsa.enable = true;
