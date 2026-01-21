@@ -3,16 +3,23 @@
   ...
 }:
 {
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   imports = [
     ./hardware/hardware.nix
     ./firefox.nix
     ./users/users.nix
   ];
+
+  nix = {
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    settings = {
+      keep-outputs = true;
+      keep-derivations = true;
+    };
+  };
 
   nixpkgs.config.allowUnfree = true;
 

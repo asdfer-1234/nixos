@@ -10,8 +10,8 @@ in
 {
 
   imports = [ ./kanata/kanata.nix ];
-  options.rice.niri = {
-    enable = lib.mkEnableOption "the best wayland compositor ever i dont take objections";
+  options.rice.asdfrice = {
+    enable = lib.mkEnableOption "yay";
   };
 
   config = lib.mkIf cfg.enable {
@@ -23,7 +23,6 @@ in
     };
     home.packages = [
       pkgs.niri
-      pkgs.kanata
       pkgs.quickshell
     ];
   };

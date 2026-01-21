@@ -5,11 +5,11 @@
 {
 
   imports = [
-    ./niri/niri.nix
+    ./asdfrice/rice.nix
     ./zed.nix
   ];
 
-  rice.niri.enable = true;
+  rice.asdfrice.enable = true;
 
   programs.bash.enable = true;
   programs.lutris.enable = true;
