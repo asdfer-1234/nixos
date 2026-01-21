@@ -25,10 +25,11 @@
 
 (deftemplate charmod (char mod)
 	(switch
-		((key-timing 3 less-than 250)) $char break
-		() (tap-hold-release-timeout 200 500 $char $mod $char) break
+		((key-timing 3 less-than 200)) $char break
+		() (tap-hold-release 0 200 $char $mod) break
 	)
 )
+
 
 (defalias
 	sa	(t! charmod a lmet)
@@ -46,6 +47,7 @@
 	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
 	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
 )
+
 
 (deflayer start
 	q	w	e	r	t		y	u	i	o	p
@@ -74,7 +76,7 @@
 
 (deflayer nav
 	f13	f14	@cw	_	_		home	pgdn	pgup	end	_
-	lmet	lalt	lsft	lctl	_		left	down	up	rght	_
+	lmet	lalt	lsft	lctl	_		left	down	up	rght	@n;
 	_	ralt	caps	_	_		_	ret	-	S--	/
 			_	_				bspc	del
 )
@@ -100,18 +102,11 @@
 			_	_				-	S--
 )
 
-;; navigation with right hand
-;; spacebar with right thumb
-;; symbols everywhere
-;; numbers with left hand
-;; fn keys with left hand
-
-;; fn + mod
-;; number + mod
-;; symbol
-;; navigation + mod
-
-;; navigation with inner left thumb??
 
 
-;; common symbols that should be easy to type: - _ / ; ' " , .
+(deflayer spawn
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+			_	_				_	_
+)
