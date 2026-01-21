@@ -5,7 +5,7 @@
 {
 
   imports = [
-    ./asdfrice/rice.nix
+    /asdfrice/rice.nix
     ./zed.nix
   ];
 
