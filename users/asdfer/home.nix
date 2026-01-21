@@ -24,7 +24,7 @@
     pkgs.alacritty
     pkgs.fuzzel
     pkgs.swaybg
-    pkgs.deadbeef
+    # pkgs.deadbeef build fails
     # zsa keyboards
     pkgs.keymapp
     pkgs.wally-cli
