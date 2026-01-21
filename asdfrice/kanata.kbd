@@ -1,4 +1,8 @@
 
+(defcfg
+	process-unmapped-keys no
+	danger-enable-cmd yes
+)
 
 (defsrc
 	q	w	e	r	t		y	u	i	o	p
@@ -44,7 +48,7 @@
 	sesc	(tap-hold-press 0 $trt esc (layer-while-held symbol))
 	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
 	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
-	se	(t! charmod . (layer-while-held programs))
+	se	(t! charmod e (layer-while-held programs))
 )
 
 
@@ -109,7 +113,8 @@
 	j	(cmd zeditor)
 	k	(cmd firefox)
 	l	(cmd alacritty)
-	_	noop
+	m	(cmd niri msg action close-window)
+	_	XX
 )
 
 (deflayer niri
