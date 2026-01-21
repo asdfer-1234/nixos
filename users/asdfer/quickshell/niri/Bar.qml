@@ -2,6 +2,8 @@ import Quickshell
 import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
+import "components"
+import "system"
 
 Scope {
     id: root
@@ -9,7 +11,6 @@ Scope {
         model: Quickshell.screens
         PanelWindow {
             required property var modelData
-            // color: "transparent"
 
             screen: modelData
             anchors {
@@ -17,56 +18,57 @@ Scope {
                 left: true
                 right: true
             }
-            margins {
-                top: 10
-                left: 10
-                right: 10
-            }
 
-            implicitHeight: 50
+            implicitHeight: 40
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
-            RowLayout {
-                anchors.centerIn: parent
-                WrapperRectangle {
-                    margin: 10
-                    radius: 1000
-                    border {
-                        color: "black"
-                        width: 2
-                    }
-                    Text {
-                        text: System.time
-                    }
+                Rectangle {
+                    Layout.fillWidth: true
+                    implicitHeight: 10
+                    color: '#bbbbbb'
                 }
+
+                ColumnSeparator {}
+
                 WrapperRectangle {
-                    margin: 10
-                    radius: 1000
-                    border {
-                        color: "black"
-                        width: 2
-                    }
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+
+                    color: "#aaaaaa"
+
                     RowLayout {
-                        Text {
+                        spacing: 0
+                        anchors.fill: parent
+
+                        RowSeparator {}
+                        StatusText {
+                            text: System.time
+                        }
+                        RowSeparator {}
+
+                        StatusText {
+                            Layout.fillWidth: true
                             text: {
                                 [...Niri.windows].filter(w => w.layout.pos_in_scrolling_layout).sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ");
                             }
                         }
-                    }
-                }
-                }
-                RowLayout {
-                    Text {
-                        text: System.batteryPercentage
-                    }
-                    RowLayout {
-                        Text {
-                            text: System.batteryPercentage
+
+                        RowSeparator {}
+                        RowLayout {
+                            StatusText {
+                                text: System.batteryPercentage
+                            }
+                            StatusText {
+                                text: System.charging
+                            }
                         }
-                        Text {
-                            text: System.charging
-                        }
+                        RowSeparator {}
                     }
                 }
+
+                ColumnSeparator {}
             }
         }
     }

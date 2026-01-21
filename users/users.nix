@@ -10,6 +10,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "uinput"
     ];
   };
 
@@ -21,6 +22,7 @@
       "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
   };
+  programs.nix-ld.enable = true;
 
   programs.steam.enable = true;
 

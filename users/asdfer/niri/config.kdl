@@ -17,7 +17,7 @@ input {
 }
 
 output "eDP-1" {
-    variable-refresh-rate // until this becomes a problem why not turn it on?
+    // variable-refresh-rate // until this becomes a problem why not turn it on? // it becamse a problem
     // check modes via `niri msg outputs`
     mode "2560x1440@165.003"
     scale 1
@@ -136,7 +136,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        on
+        // on
 
         draw-behind-window false
 
@@ -169,7 +169,9 @@ layout {
 }
 
 // placeholder bg
-spawn-sh-at-startup "swaybg -i ~/.config/niri/\"KDE Cascade 3840x2160.png\""
+// spawn-sh-at-startup "swaybg -i ~/.config/niri/\"KDE Cascade 3840x2160.png\""
+spawn-sh-at-startup "swaybg -c bbbbbb"
+spawn-at-startup "kanata"
 
 hotkey-overlay {
     skip-at-startup

@@ -57,6 +57,7 @@
         extraDefCfg = ''
           danger-enable-cmd yes
           linux-continue-if-no-devs-found yes
+          process-unmapped-keys yes
         '';
         extraArgs = [ "--nodelay" ];
         configFile = ./kanata.kbd;

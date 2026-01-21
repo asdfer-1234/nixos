@@ -20,8 +20,6 @@ Scope {
         parser: SplitParser {
             onRead: msg => {
                 root.message = msg;
-                console.log("--------------------------NEW MESSAGE--------------------------");
-                console.log(msg);
                 const json = JSON.parse(msg);
                 let e;
                 if (json.Ok == "Handled") {
@@ -88,20 +86,26 @@ Scope {
                 } else if ((e = json.ScreenshotCaptured)) {
                     root.screenshotPath = e.path;
                 } else if ((e = json.CastsChanged)) {
+                    console.warn("casts changed?? this has never happened before");
                     root.casts = e.casts;
                 } else if ((e = json.CastStartedOrChanged)) {
+                    console.warn("casts dddf");
                     const index = root.casts.findIndex(c => c.stream_id == e.cast.stream_id);
                     if (index == -1) {
                         root.casts.push(e.cast);
                     }
                 } else if ((e = json.CastStopped)) {
+                    console.warn("casts dddfeee");
                     root.casts.splice(root.casts.findIndex(c => c.stream_id == e.stream_id), 1);
                 } else {
                     console.error("Niri Event not handled");
+
+                    console.log(msg);
                 }
-                console.log("WINDOWS:", JSON.stringify(root.windows));
-                console.log("WORKSPACES:", JSON.stringify(root.workspaces));
-                console.log("KEYBOARDS:", JSON.stringify(root.keyboardLayouts));
+            // console.log("WINDOWS:", JSON.stringify(root.windows));
+            // console.log("WORKSPACES:", JSON.stringify(root.workspaces));
+            // console.log("KEYBOARDS:", JSON.stringify(root.keyboardLayouts));
+            // console.log("CASTS", JSON.stringify(root.casts));
             }
         }
         onError: err => {

@@ -8,6 +8,12 @@ let
   link = path: config.lib.file.mkOutOfStoreSymlink "${configDirectory}${path}";
 in
 {
+
+  imports = [
+    ./kanata/kanata.nix
+    ./niri/niri.nix
+  ];
+
   programs.bash.enable = true;
   programs.lutris.enable = true;
   programs.firefox.enable = true;
@@ -26,6 +32,7 @@ in
       title_bar = {
         show_sign_in = false;
       };
+      lsp.rust-analyzer.binary.path_lookup = true;
     };
   };
   programs.obs-studio.enable = true;
@@ -55,10 +62,6 @@ in
   };
 
   xdg.configFile = {
-    "niri/" = {
-      source = link "users/asdfer/niri";
-      force = true;
-    };
     "quickshell/" = {
       source = link "users/asdfer/quickshell";
       force = true;

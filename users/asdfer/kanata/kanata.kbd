@@ -1,0 +1,117 @@
+
+
+(defsrc
+	q	w	e	r	t		y	u	i	o	p
+	a	s	d	f	g		h	j	k	l	;
+	z	x	c	v	b		n	m	,	.	/
+			lmet	lalt				spc	ralt
+)
+
+(defvar
+	trt 500
+)
+
+
+(defalias
+
+	cw (caps-word-custom 2000
+		(a b c d e f g h i j k l m n o q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 ;)
+		(kp0 kp1 kp2 kp3 kp4 kp5 kp6 kp7 kp8 kp9 bspc del up down left rght)
+	)
+
+	dsb (layer-switch disable)
+	enb (layer-switch start)
+)
+
+(deftemplate charmod (char mod)
+	(switch
+		((key-timing 3 less-than 250)) $char break
+		() (tap-hold-release-timeout 200 500 $char $mod $char) break
+	)
+)
+
+(defalias
+	sa	(t! charmod a lmet)
+	ss	(t! charmod s lalt)
+	sd	(t! charmod d lsft)
+	sf	(t! charmod f lctl)
+	sj	(t! charmod j rctl)
+	sk	(t! charmod k rsft)
+	sl	(t! charmod l lalt)
+	s;	(t! charmod ; rmet)
+	sx	(t! charmod x ralt)
+	s.	(t! charmod . ralt)
+	sret	(tap-hold-press 0 $trt ret (layer-while-held nav))
+	sesc	(tap-hold-press 0 $trt esc (layer-while-held symbol))
+	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
+	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
+)
+
+(deflayer start
+	q	w	e	r	t		y	u	i	o	p
+	@sa	@ss	@sd	@sf	g		h	@sj	@sk	@sl	@s;
+	z	@sx	c	v	b		n	m	,	@s.	'
+			@sesc	@sret				@sspc	@stab
+)
+
+(deflayer none
+	q	w	e	r	t		y	u	i	o	p
+	a	s	d	f	g		h	j	k	l	m
+	z	x	c	v	b		n	m	,	. 	'
+			esc	ret				spc	tab
+)
+
+(deflayer disable
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+	_	_	_	_	_		_	_	_	_	_
+			@enb	_				_	_
+)
+
+(defalias
+	n;	(one-shot 2000 lsft)
+)
+
+(deflayer nav
+	f13	f14	@cw	_	_		home	pgdn	pgup	end	_
+	lmet	lalt	lsft	lctl	_		left	down	up	rght	_
+	_	ralt	caps	_	_		_	ret	-	S--	/
+			_	_				bspc	del
+)
+
+(deflayer number
+	`	9	8	7	[		_	_	_	_	_
+	0	6	5	4	]		_	rctl	rsft	lalt	rmet
+	/	3	2	1	\		_	_	_	ralt	_
+			=	-				_ 	_
+)
+
+(deflayer function
+	f10	f9	f8	f7	_		_	_	_	_	_
+	f11	f6	f5	f4	_		_	rctl	rsft	lalt	rmet
+	f12	f3	f2	f1	_		_	_	_	ralt	_
+			_	_				_	_
+)
+
+(deflayer symbol
+	S-3	S-2	S-[	S-]	_		_	S-5	S-8	S-7	S-\
+	S-,	S-.	S-9	S-0	@dsb		_	S-=	=	/	\
+	S-6	S-4	[	]	_		_	S-`	S-1	S-/	`
+			_	_				-	S--
+)
+
+;; navigation with right hand
+;; spacebar with right thumb
+;; symbols everywhere
+;; numbers with left hand
+;; fn keys with left hand
+
+;; fn + mod
+;; number + mod
+;; symbol
+;; navigation + mod
+
+;; navigation with inner left thumb??
+
+
+;; common symbols that should be easy to type: - _ / ; ' " , .
