@@ -51,6 +51,12 @@ Scope {
                                 [...Niri.windows].filter(w => w.layout.pos_in_scrolling_layout).sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ");
                             }
                         }
+                        Image {
+                            source: "stripes.svg"
+                            Layout.fillHeight: true
+                            Layout.fillWidth: true
+                            fillMode: Image.Tile
+                        }
                         RowLayout {
                             Layout.fillWidth: false
                             StatusText {

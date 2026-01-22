@@ -25,6 +25,8 @@
     pkgs.fuzzel
     pkgs.swaybg
     pkgs.inkscape
+    pkgs.aseprite
+    pkgs.gimp
     # pkgs.deadbeef build fails
     # zsa keyboards
     pkgs.keymapp
