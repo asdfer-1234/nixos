@@ -22,8 +22,8 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.mkMerge [
-      (lib.mkIf cfg.cmd [ pkgs.kanata ])
-      (lib.mkIf (!cfg.cmd) [ pkgs.kanata-with-cmd ])
+      (lib.mkIf (!cfg.cmd) [ pkgs.kanata ])
+      (lib.mkIf cfg.cmd [ pkgs.kanata-with-cmd ])
     ];
     xdg.configFile = {
       "kanata/kanata.kbd" = {
