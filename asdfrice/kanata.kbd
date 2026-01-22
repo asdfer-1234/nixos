@@ -119,6 +119,8 @@
 
 (deflayermap niri
 	e	(layer-while-held nirimove)
+	f	(layer-while-held nirimonitor)
+	r	(layer-while-held niriwindowmove)
 	h	(cmd niri msg action focus-column-left)
 	j	(cmd niri msg action focus-window-down)
 	k	(cmd niri msg action focus-window-up)
@@ -128,20 +130,43 @@
 	m	(cmd niri msg action close-window)
 	,	(cmd niri msg action toggle-window-floating)
 	.	(cmd niri msg action switch-preset-window-width)
-	/	(cmd niri msg action maximize-column)
+
 	;	(cmd niri msg action toggle-overview)
 )
 
 (deflayermap nirimove
+	f	(layer-while-held nirimovemonitor)
 	h	(cmd niri msg action move-column-left)
 	j	(cmd niri msg action move-window-down)
 	k	(cmd niri msg action move-window-up)
 	l	(cmd niri msg action move-column-right)
 	u	(cmd niri msg action move-column-to-workspace-up)
 	i	(cmd niri msg action move-column-to-workspace-down)
+	.	(cmd niri msg action maximize-column)
+)
+
+(deflayermap niriwindowmove
+	h	(cmd niri msg action move-window-left)
+	j	(cmd niri msg action move-window-down)
+	k	(cmd niri msg action move-window-up)
+	l	(cmd niri msg action move-window-right)
+	u	(cmd niri msg action move-window-to-workspace-up)
+	i	(cmd niri msg action move-window-to-workspace-down)
 )
 
 (deflayermap nirimonitor
-	h	(cmd niri msg action)
-	j	(cmd niri msg action)
+	e	(layer-while-held nirimovemonitor)
+	h	(cmd niri msg action focus-monitor-left)
+	j	(cmd niri msg action focus-monitor-down)
+	k	(cmd niri msg action focus-monitor-up)
+	l	(cmd niri msg action focus-monitor-right)
+	/	(cmd niri msg action quit)
+	.	(cmd niri msg action maximize-window-to-edges)
+)
+
+(deflayermap nirimovemonitor
+	h	(cmd niri msg action move-window-to-monitor-left)
+	j	(cmd niri msg action move-window-to-monitor-down)
+	k	(cmd niri msg action move-window-to-monitor-up)
+	l	(cmd niri msg action move-window-to-monitor-right)
 )

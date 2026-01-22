@@ -38,25 +38,21 @@ Scope {
 
                     color: "#aaaaaa"
 
-                    RowLayout {
+                    SeparatedRow {
                         spacing: 0
                         anchors.fill: parent
 
-                        RowSeparator {}
                         StatusText {
                             text: System.time
                         }
-                        RowSeparator {}
-
                         StatusText {
                             Layout.fillWidth: true
                             text: {
                                 [...Niri.windows].filter(w => w.layout.pos_in_scrolling_layout).sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ");
                             }
                         }
-
-                        RowSeparator {}
                         RowLayout {
+                            Layout.fillWidth: false
                             StatusText {
                                 text: System.batteryPercentage
                             }
@@ -64,7 +60,6 @@ Scope {
                                 text: System.charging
                             }
                         }
-                        RowSeparator {}
                     }
                 }
 
