@@ -4,7 +4,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 
-Scope {
+Singleton {
     id: root
     property string message
     property list<var> workspaces

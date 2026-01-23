@@ -28,7 +28,7 @@
 (deftemplate charmod (char mod)
 	(switch
 		((key-timing 3 less-than 200)) $char break
-		() (tap-hold 0 200 $char $mod) break
+		() (tap-hold 0 160 $char $mod) break
 	)
 )
 
@@ -44,10 +44,10 @@
 	s;	(t! charmod ; rmet)
 	sx	(t! charmod x ralt)
 	s.	(t! charmod . ralt)
-	sret	(tap-hold-press 0 $trt ret (layer-while-held nav))
-	sesc	(tap-hold-press 0 $trt esc (layer-while-held symbol))
-	sspc	(tap-hold-press 0 $trt spc (layer-while-held number))
-	stab	(tap-hold-press 0 $trt tab (layer-while-held function))
+	sret	(t! charmod ret (layer-while-held nav))
+	sesc	(t! charmod esc (layer-while-held symbol))
+	sspc	(t! charmod spc (layer-while-held number))
+	stab	(t! charmod tab (layer-while-held function))
 	se	(t! charmod e (layer-while-held programs))
 	sw	(t! charmod w (multi lmet (layer-while-held niri)))
 )
@@ -83,7 +83,7 @@
 (deflayer nav
 	f13	f14	@cw	_	_		home	@nu	@ni	end	pgup
 	lmet	lalt	lsft	lctl	_		left	down	up	rght	pgdn
-	_	ralt	caps	_	_		_	ret	@n,	S--	/
+	_	ralt	caps	_	_		ins	ret	@n,	S--	/
 			_	_				bspc	del
 )
 
@@ -95,8 +95,8 @@
 )
 
 (deflayer function
-	f10	f9	f8	f7	_		_	_	_	_	_
-	f11	f6	f5	f4	_		_	rctl	rsft	lalt	rmet
+	f10	f9	f8	f7	pause		_	_	_	_	_
+	f11	f6	f5	f4	prtsc		_	rctl	rsft	lalt	rmet
 	f12	f3	f2	f1	_		_	_	_	ralt	_
 			_	_				_	_
 )

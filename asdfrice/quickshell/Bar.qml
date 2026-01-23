@@ -18,54 +18,60 @@ Scope {
                 left: true
                 right: true
             }
+            margins.top: 10
 
-            implicitHeight: 40
+            implicitHeight: 34
+
             ColumnLayout {
-                anchors.fill: parent
-                spacing: 0
 
-                Rectangle {
-                    Layout.fillWidth: true
-                    implicitHeight: 10
-                    color: '#bbbbbb'
-                }
+                anchors.left: parent.left
+                anchors.right: parent.right
+                spacing: 0
 
                 ColumnSeparator {}
 
                 WrapperRectangle {
-                    Layout.fillHeight: true
                     Layout.fillWidth: true
+                    Layout.preferredHeight: 32
 
-                    color: "#aaaaaa"
+                    color: Style.background
 
-                    SeparatedRow {
+                    RowLayout {
                         spacing: 0
                         anchors.fill: parent
+                        anchors.leftMargin: 5
+                        anchors.rightMargin: 5
 
-                        StatusText {
-                            text: System.time
-                        }
-                        StatusText {
-                            Layout.fillWidth: true
-                            text: {
-                                [...Niri.windows].filter(w => w.layout.pos_in_scrolling_layout).sort((lhs, rhs) => lhs.layout.pos_in_scrolling_layout[0] - rhs.layout.pos_in_scrolling_layout[0]).map(w => w.title).join("      ");
+                        RowSeparator {}
+                        StatusBlock {
+                            StyledText {
+                                text: Clock.time
                             }
                         }
-                        Image {
-                            source: "stripes.svg"
+                        RowSeparator {}
+
+                        FocusedStatus {}
+                        RowSeparator {}
+                        ColorImage {
                             Layout.fillHeight: true
-                            Layout.fillWidth: true
+                            Layout.preferredWidth: 5
+                            source: "patterns/firmstripes.png"
                             fillMode: Image.Tile
+                            color: Style.separatorColor
                         }
-                        RowLayout {
-                            Layout.fillWidth: false
-                            StatusText {
-                                text: System.batteryPercentage
-                            }
-                            StatusText {
-                                text: System.charging
-                            }
+                        RowSeparator {}
+                        BatteryStatus {}
+                        RowSeparator {}
+                        ColorImage {
+                            Layout.fillHeight: true
+                            Layout.preferredWidth: 5
+                            source: "patterns/firmstripes.png"
+                            fillMode: Image.Tile
+                            color: Style.separatorColor
                         }
+                        RowSeparator {}
+                        VolumeStatus {}
+                        RowSeparator {}
                     }
                 }
 
