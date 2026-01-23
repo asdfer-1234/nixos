@@ -1,5 +1,14 @@
 import Quickshell
 
 ShellRoot {
-    Bar {}
+    Variants {
+        model: Quickshell.screens
+
+        Bar {}
+    }
+    Variants {
+        model: Quickshell.screens
+
+        Background {}
+    }
 }
