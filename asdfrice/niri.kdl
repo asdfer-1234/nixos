@@ -76,7 +76,7 @@ layout {
 
     focus-ring {
         off
-        }
+    }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
     border {
