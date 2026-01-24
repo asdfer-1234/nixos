@@ -20,6 +20,7 @@
     (lib.mkIf (config.specialisation != { }) {
       system.nixos.tags = [ "dGPU-only" ];
       #boot.kernelParams = [ "module_blacklist=i915" ];
+      boot.kernelParams = [ "pcie_aspm=off" ];
     })
     {
       specialisation = {
