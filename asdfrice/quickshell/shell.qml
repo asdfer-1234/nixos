@@ -1,14 +1,19 @@
 import Quickshell
+import QtQuick
 
 ShellRoot {
+
     Variants {
         model: Quickshell.screens
-
-        Bar {}
-    }
-    Variants {
-        model: Quickshell.screens
-
-        Background {}
+        delegate: Scope {
+            id: scope
+            required property ShellScreen modelData
+            Bar {
+                modelData: scope.modelData
+            }
+            Outliner {
+                modelData: scope.modelData
+            }
+        }
     }
 }

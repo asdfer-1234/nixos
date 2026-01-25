@@ -15,7 +15,7 @@ PanelWindow {
     aboveWindows: false
     Rectangle {
         anchors.fill: parent
-        color: Style.background
+        color: Style.bg
         Line {
             anchors.top: parent.top
             anchors.topMargin: 56

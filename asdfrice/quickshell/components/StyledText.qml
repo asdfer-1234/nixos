@@ -3,7 +3,7 @@ import Quickshell
 
 Text {
     id: root
-    color: Style.textColor
+    color: Style.fg
     font.pointSize: 10
     font.family: "FreeSans"
 }

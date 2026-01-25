@@ -3,7 +3,6 @@ import Quickshell
 import QtQuick
 
 Scope {
-    property color background: "#dddddd"
-    property color separatorColor: "#888888"
-    property color textColor: "#444444"
+    readonly property color bg: "lightgray"
+    readonly property color fg: "blue"
 }

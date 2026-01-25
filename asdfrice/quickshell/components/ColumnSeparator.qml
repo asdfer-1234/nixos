@@ -4,5 +4,5 @@ import QtQuick.Layouts
 Rectangle {
     Layout.fillWidth: true
     implicitHeight: 1
-    color: Style.separatorColor
+    color: Style.fg
 }

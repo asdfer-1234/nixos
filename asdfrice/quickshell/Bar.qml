@@ -6,74 +6,143 @@ import "components"
 import "system"
 
 PanelWindow {
-    required property var modelData
+    required property ShellScreen modelData
 
+    focusable: true
     screen: modelData
     anchors {
         top: true
         left: true
         right: true
     }
-    margins.top: 10
     color: "transparent"
 
-    implicitHeight: 65 + 2
+    implicitHeight: 67
+    implicitWidth: 1500
 
-    ColumnLayout {
-
+    StyledWrapper {
         anchors.left: parent.left
-        anchors.right: parent.right
-        spacing: 0
+        anchors.top: parent.top
+        Layout.fillWidth: true
 
-        ColumnSeparator {}
+        RowLayout {
+            spacing: 20
 
-        WrapperRectangle {
-            Layout.fillWidth: true
+            ProfileBlock {}
 
-            color: Style.background
+            ColumnLayout {
+                RowLayout {
+                    spacing: 20
+                    StatusBlock {
+                        BarStatus {
+                            label: "Mouse"
+                            text: "mouse"
+                        }
+                        BarStatus {
+                            label: "Keyboard"
+                            text: "keyboard"
+                        }
+                    }
+                    Arrow {}
+                    StatusBlock {
+                        BarStatus {
+                            label: "CPU"
+                            text: "cpu"
+                        }
+                        BarStatus {
+                            label: "GPU"
+                            text: "gpu"
+                        }
+                        BarStatus {
+                            label: "RAM"
+                            text: "ram"
+                        }
+                        BarStatus {
+                            label: "Swap"
+                            text: "swap"
+                        }
+                        BarStatus {
+                            label: "Disk"
+                            text: "disk"
+                        }
+                    }
+                    Arrow {}
+                    StatusBlock {
+                        BarStatus {
+                            label: "Screens"
+                            text: "connect hdmi and it will do stuff"
+                        }
+                        BarStatus {
+                            label: "Brightness"
+                            text: Util.formatPercentage(Backlight.brightnessPercentage)
+                        }
+                        WrapperMouseArea {
+                            onWheel: event => {
+                                console.log(event.inverted)
+                                Volume.sink.audio.volume = Math.min(
+                                Volume.volume + (event.angleDelta.y + event.angleDelta.x) / 120 / 100, 1)
+                            };
 
-            RowLayout {
-                spacing: 0
-                anchors.fill: parent
-                anchors.leftMargin: 5
-                anchors.rightMargin: 5
+                            BarStatus {
+                                label: "Volume"
+                                text: Util.formatPercentage(Volume.volume) + " " + (Volume.muted ? "Muted" : "Unmuted")
+                            }
+                        }
+                    }
 
-                RowSeparator {}
-                ProfileBlock {}
 
-                RowSeparator {}
-                StatusBlock {
-                    StyledText {
-                        text: Clock.time
+                    StatusBlock {
+                        BarStatus {
+                            label: "Bluetooth"
+                            text: "bluetooth"
+                        }
+                        BarStatus {
+                            label: "Wifi"
+                            text: "wifi"
+                        }
+                        BarStatus {
+                            label: "Airplane mode"
+                            text: "airplane"
+                        }
+                    }
+                    StatusBlock {
+                        BarStatus {
+                            label: "Currently playing"
+                            text: "media"
+                        }
                     }
                 }
-                RowSeparator {}
-
-                FocusedStatus {}
-                RowSeparator {}
-                ColorImage {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: 5
-                    source: "patterns/firmstripes.png"
-                    fillMode: Image.Tile
-                    color: Style.separatorColor
+                RowLayout {
+                    spacing: 20
+                    FocusedStatus {
+                        Layout.fillWidth: true
+                    }
+                    StyledText {
+                        text: "close"
+                    }
+                    StyledText {
+                        text: "floating?"
+                    }
+                    StyledText {
+                        text: "fullscreen?"
+                    }
+                    StyledText {
+                        text: "track on outliner"
+                    }
                 }
-                RowSeparator {}
-                BatteryStatus {}
-                RowSeparator {}
-                ColorImage {
-                    Layout.fillHeight: true
-                    Layout.preferredWidth: 5
-                    source: "patterns/firmstripes.png"
-                    fillMode: Image.Tile
-                    color: Style.separatorColor
-                }
-                RowSeparator {}
-                VolumeStatus {}
-                RowSeparator {}
             }
         }
+    }
+    component Arrow: StyledText {
+        text: "->"
+    }
+    component StatusBlock: StyledWrapper {
+        id: root
+        default property list<Item> children
 
-        ColumnSeparator {}
+        RowLayout {
+            spacing: 10
+            children: root.children
+        }
     }
 }
