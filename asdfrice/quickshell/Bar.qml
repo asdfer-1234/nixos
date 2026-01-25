@@ -15,8 +15,9 @@ PanelWindow {
         right: true
     }
     margins.top: 10
+    color: "transparent"
 
-    implicitHeight: 34
+    implicitHeight: 65 + 2
 
     ColumnLayout {
 
@@ -28,7 +29,6 @@ PanelWindow {
 
         WrapperRectangle {
             Layout.fillWidth: true
-            Layout.preferredHeight: 32
 
             color: Style.background
 
@@ -37,6 +37,9 @@ PanelWindow {
                 anchors.fill: parent
                 anchors.leftMargin: 5
                 anchors.rightMargin: 5
+
+                RowSeparator {}
+                ProfileBlock {}
 
                 RowSeparator {}
                 StatusBlock {

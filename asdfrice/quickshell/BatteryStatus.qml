@@ -5,40 +5,27 @@ import "system"
 import Quickshell.Widgets
 
 RowLayout {
+    Layout.fillWidth: false
     spacing: 0
-    Item {
-        implicitWidth: icon.implicitWidth
-        implicitHeight: icon.implicitHeight
-        WrapperRectangle {
-            id: square
-            anchors.fill: parent
-            color: "#ddbb00"
-        }
-        ColorImage {
-            id: icon
-            source: "icons/charging.svg"
-            color: "black"
-        }
 
-        StyledText {
-            anchors.right: parent.right
-            anchors.baseline: parent.bottom
-            text: Math.round(Battery.batteryPercentage * 100)
-            color: "#eeeeee"
-            font.bold: true
-            font.pointSize: 14
-            style: Text.Outline
-            styleColor: "#444444"
-        }
+    ColorImage {
+        id: icon
+        source: "icons/charging.svg"
+        color: Style.textColor
     }
 
     RowSeparator {}
-    StatusBlock {
 
-        Layout.fillWidth: false
+    ColumnLayout {
+        spacing: 0
 
         StyledText {
             text: "Battery"
+            Layout.fillHeight: true
+        }
+        ColumnSeparator {}
+        StatusBar {
+            fill: Battery.batteryPercentage
         }
     }
 }
