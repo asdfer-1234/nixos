@@ -30,10 +30,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModprobeConfig = ''
-    options iwlwifi 11n_disable=8
-
-  '';
+  boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
 
   networking.hostName = "asdfhost"; # Define your hostname.
   networking.networkmanager.enable = true;
