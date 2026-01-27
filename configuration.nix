@@ -28,7 +28,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
+  # dont use latest kernel
   boot.kernelPackages = pkgs.linuxPackages;
   boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
 

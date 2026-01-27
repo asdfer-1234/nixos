@@ -4,7 +4,6 @@ import QtQuick
 import QtQuick.Layouts
 import "components"
 import "system"
-import QtApplicationManager
 
 PanelWindow {
     required property ShellScreen modelData
