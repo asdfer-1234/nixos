@@ -27,6 +27,7 @@
     pkgs.inkscape
     pkgs.aseprite
     pkgs.gimp
+    pkgs.rustup
     # pkgs.deadbeef build fails
     # zsa keyboards
     pkgs.keymapp

@@ -4,11 +4,10 @@ import QtQuick
 import QtQuick.Layouts
 import "components"
 import "system"
+import QtApplicationManager
 
 PanelWindow {
     required property ShellScreen modelData
-
-    focusable: true
     screen: modelData
     anchors {
         top: true
@@ -69,19 +68,17 @@ PanelWindow {
                     Arrow {}
                     StatusBlock {
                         BarStatus {
-                            label: "Screens"
-                            text: "connect hdmi and it will do stuff"
-                        }
-                        BarStatus {
                             label: "Brightness"
                             text: Util.formatPercentage(Backlight.brightnessPercentage)
                         }
                         WrapperMouseArea {
                             onWheel: event => {
-                                console.log(event.inverted)
-                                Volume.sink.audio.volume = Math.min(
-                                Volume.volume + (event.angleDelta.y + event.angleDelta.x) / 120 / 100, 1)
-                            };
+                                Volume.sink.audio.volume = Math.min(Volume.volume + (event.angleDelta.y) / 120 / 100, 1);
+                            }
+
+                            onPressed: event => {
+                                Volume.sink.audio.muted = !Volume.muted;
+                            }
 
                             BarStatus {
                                 label: "Volume"
@@ -89,7 +86,6 @@ PanelWindow {
                             }
                         }
                     }
-
 
                     StatusBlock {
                         BarStatus {
