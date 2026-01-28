@@ -29,7 +29,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.qtgreet}/bin/wlgreet --cmd niri-session";
+        command = "${pkgs.wlgreet}/bin/wlgreet --cmd niri-session";
       };
     };
   };
