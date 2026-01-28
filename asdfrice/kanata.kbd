@@ -140,8 +140,8 @@
 	j	(cmd niri msg action move-window-down)
 	k	(cmd niri msg action move-window-up)
 	l	(cmd niri msg action move-column-right)
-	u	(cmd niri msg action move-column-to-workspace-up)
-	i	(cmd niri msg action move-column-to-workspace-down)
+	u	(cmd niri msg action move-column-to-workspace-down)
+	i	(cmd niri msg action move-column-to-workspace-up)
 	.	(cmd niri msg action maximize-column)
 )
 
@@ -150,8 +150,8 @@
 	j	(cmd niri msg action move-window-down)
 	k	(cmd niri msg action move-window-up)
 	l	(cmd niri msg action move-window-right)
-	u	(cmd niri msg action move-window-to-workspace-up)
-	i	(cmd niri msg action move-window-to-workspace-down)
+	u	(cmd niri msg action move-window-to-workspace-down)
+	i	(cmd niri msg action move-window-to-workspace-up)
 )
 
 (deflayermap nirimonitor
