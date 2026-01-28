@@ -24,7 +24,6 @@
     extraPackages = [
       pkgs.nixd
       pkgs.nil
-      pkgs.rustup
       pkgs.clang
       pkgs.kdePackages.qtdeclarative
     ];
