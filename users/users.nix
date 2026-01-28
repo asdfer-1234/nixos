@@ -16,6 +16,7 @@
     ];
   };
 
+  services.displayManager.sddm.enable = true;
   programs.niri.enable = true;
   xdg.portal.enable = true;
   xdg.portal.config = {
@@ -24,9 +25,6 @@
       "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
   };
-
-  services.displayManager.sddm.enable = true
-
 
   programs.nix-ld.enable = true;
   programs.steam = {
