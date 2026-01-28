@@ -29,10 +29,12 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd}/bin/agreety --cmd niri";
+        command = "${pkgs.qtgreet}/bin/qtgreet --cmd niri-session";
       };
     };
   };
+
+  environment.systemPackages = [ pkgs.qtgreet ];
 
   programs.nix-ld.enable = true;
   programs.steam = {
