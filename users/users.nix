@@ -15,9 +15,7 @@
       "input"
     ];
   };
-
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.cosmic-greeter.enable = true;
   programs.niri.enable = true;
   xdg.portal.enable = true;
   xdg.portal.config = {
