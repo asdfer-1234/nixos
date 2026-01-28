@@ -25,16 +25,8 @@
     };
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.wlgreet}/bin/wlgreet --command niri-session";
-      };
-    };
-  };
+  services.displayManager.sddm.enable = true
 
-  environment.systemPackages = [ pkgs.wlgreet ];
 
   programs.nix-ld.enable = true;
   programs.steam = {
