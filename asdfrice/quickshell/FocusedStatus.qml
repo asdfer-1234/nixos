@@ -5,6 +5,8 @@ import "system"
 import "components"
 
 RowLayout {
+    id: root
+    spacing: 40
     property var focusedWindow: {
         Niri.windows.find(x => x.is_focused);
     }
@@ -42,5 +44,19 @@ RowLayout {
         Layout.fillWidth: true
         text: parent.title()
         font.italic: true
+    }
+    StyledText {
+        text: "close"
+    }
+    StyledText {
+        text: root.focusedWindow.is_floating ? "Floating" : "Not floating"
+    }
+    StyledText {
+        text: {
+            "fullscreen?";
+        }
+    }
+    StyledText {
+        text: "track on outliner"
     }
 }

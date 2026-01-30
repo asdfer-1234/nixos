@@ -17,7 +17,7 @@ StyledWrapper {
             }
             BarStatus {
                 label: "Battery"
-                text: Math.round(Battery.batteryPercentage * 100) + "%"
+                text: `${Util.formatKj(Battery.energy)} / ${Util.formatKj(Battery.energyCapacity)} kJ`
             }
         }
 

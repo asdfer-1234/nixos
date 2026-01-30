@@ -9,17 +9,14 @@ RowLayout {
     property string label: "label"
     property string text: "text"
 
-    StyledWrapper {
-
-        RowLayout {
-            StyledText {
-                text: root.label
-                font.bold: true
-            }
-            StyledText {
-                text: root.text
-                font.italic: true
-            }
+    RowLayout {
+        StyledText {
+            text: root.label
+            font.bold: true
+        }
+        StyledText {
+            text: root.text
+            font.italic: true
         }
     }
 }

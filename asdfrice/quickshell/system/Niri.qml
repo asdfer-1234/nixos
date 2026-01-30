@@ -10,6 +10,7 @@ Singleton {
     property list<var> workspaces
     property list<var> windows
     property list<var> keyboardLayouts
+    property list<var> outputs
     property bool overviewing
     property var casts
     property string screenshotPath

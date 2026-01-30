@@ -15,7 +15,7 @@ PanelWindow {
     }
     color: "transparent"
 
-    implicitHeight: 67
+    implicitHeight: 80
     implicitWidth: 1500
 
     StyledWrapper {
@@ -24,13 +24,13 @@ PanelWindow {
         Layout.fillWidth: true
 
         RowLayout {
-            spacing: 20
+            spacing: 10
 
             ProfileBlock {}
 
             ColumnLayout {
                 RowLayout {
-                    spacing: 20
+                    spacing: 15
                     StatusBlock {
                         BarStatus {
                             label: "Mouse"
@@ -45,7 +45,22 @@ PanelWindow {
                     StatusBlock {
                         BarStatus {
                             label: "CPU"
-                            text: "cpu"
+                            text: {
+                                let length = Qsrs.cpu.length;
+                                let low = 0;
+                                let mid = 0;
+                                let high = 0;
+                                Qsrs.cpu.forEach(cpu => {
+                                    if (cpu.usage < 10) {
+                                        low++;
+                                    } else if (cpu.usage < 90) {
+                                        mid++;
+                                    } else {
+                                        high++;
+                                    }
+                                });
+                                `${low}/${mid}/${high} (${length})`;
+                            }
                         }
                         BarStatus {
                             label: "GPU"
@@ -53,15 +68,11 @@ PanelWindow {
                         }
                         BarStatus {
                             label: "RAM"
-                            text: "ram"
+                            text: `${Util.formatGib(Qsrs.ram.used)} / ${Util.formatGib(Qsrs.ram.total)} GiB`
                         }
                         BarStatus {
                             label: "Swap"
-                            text: "swap"
-                        }
-                        BarStatus {
-                            label: "Disk"
-                            text: "disk"
+                            text: `${Util.formatGib(Qsrs.swap.used)} / ${Util.formatGib(Qsrs.swap.total)} GiB`
                         }
                     }
                     Arrow {}
@@ -100,29 +111,20 @@ PanelWindow {
                             text: "airplane"
                         }
                     }
-                    StatusBlock {
-                        BarStatus {
-                            label: "Currently playing"
-                            text: "media"
-                        }
-                    }
                 }
                 RowLayout {
                     spacing: 20
                     FocusedStatus {
                         Layout.fillWidth: true
                     }
-                    StyledText {
-                        text: "close"
+
+                    BarStatus {
+                        label: "Currently playing"
+                        text: "mpris"
                     }
-                    StyledText {
-                        text: "floating?"
-                    }
-                    StyledText {
-                        text: "fullscreen?"
-                    }
-                    StyledText {
-                        text: "track on outliner"
+                    BarStatus {
+                        label: "Disk"
+                        text: "disk"
                     }
                 }
             }
