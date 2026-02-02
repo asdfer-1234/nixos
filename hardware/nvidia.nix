@@ -16,19 +16,25 @@
         intelBusId = "PCI:0@0:2:0";
         nvidiaBusId = "PCI:1@0:0:0";
       };
+
     }
     (lib.mkIf (config.specialisation != { }) {
-      system.nixos.tags = [ "dGPU-only" ];
       #boot.kernelParams = [ "module_blacklist=i915" ];
       boot.kernelParams = [ "pcie_aspm=off" ];
     })
     {
       specialisation = {
         offload.configuration = {
-          system.nixos.tags = [ "iGPU-with-offload" ];
-          hardware.nvidia.prime = {
-            offload.enable = lib.mkForce true;
-          };
+          system.nixos.tags = [ "nouveau" ];
+
+          # Disable nvidia but not nouveau
+          boot.blacklistedKernelModules = [
+            "nvidia"
+            "nvidiafb"
+            "nvidia-drm"
+            "nvidia-uvm"
+            "nvidia-modeset"
+          ];
         };
       };
     }
