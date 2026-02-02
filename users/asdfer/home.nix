@@ -27,7 +27,7 @@
     pkgs.inkscape
     pkgs.aseprite
     pkgs.gimp
-    # pkgs.deadbeef build fails
+    # pkgs.deadbeef # BUILD FAILS
     # zsa keyboards
     pkgs.keymapp
     pkgs.wally-cli
