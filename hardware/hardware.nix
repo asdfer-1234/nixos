@@ -8,6 +8,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./nvidia.nix
+    ./b550-suspend-fix.nix
     # ./logitech/logid.nix # TIMES OUT TRYING TO GET DEVICE NAME
   ];
 
