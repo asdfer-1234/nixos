@@ -2,8 +2,9 @@
 {
 
   config = lib.mkMerge [
-    {
-      hardware.graphics.enable = true;
+    (lib.mkIf (config.specialisation != { }) {
+      #boot.kernelParams = [ "module_blacklist=i915" ];
+      boot.kernelParams = [ "pcie_aspm=off" ];
       services.xserver.videoDrivers = [
         "modesetting"
         "nvidia"
@@ -16,11 +17,6 @@
         intelBusId = "PCI:0@0:2:0";
         nvidiaBusId = "PCI:1@0:0:0";
       };
-
-    }
-    (lib.mkIf (config.specialisation != { }) {
-      #boot.kernelParams = [ "module_blacklist=i915" ];
-      boot.kernelParams = [ "pcie_aspm=off" ];
     })
     {
       specialisation = {
