@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  inputs
   ...
 }:
 let
@@ -30,6 +31,7 @@ in
     myModules.quickshell = {
       enable = true;
       configDirectory = ./quickshell;
+      extraPackages = [inputs.qsrs];
     };
   };
 }

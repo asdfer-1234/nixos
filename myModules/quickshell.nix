@@ -14,7 +14,11 @@ in
     configDirectory = lib.mkOption {
       type = lib.types.pathInStore;
     };
-    extraPackages = lib.mkPackageOption { };
+
+    extraPackages = lib.mkOption {
+      type = lib.listOf lib.types.package;
+      default = [ ];
+    };
   };
 
   config = lib.mkIf cfg.enable {
