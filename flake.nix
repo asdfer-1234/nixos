@@ -5,6 +5,9 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    qsrs = {
+      url = /home/asdfer/newp/qsrs;
+    };
   };
   outputs =
     {
