@@ -19,8 +19,11 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.mkMerge [
-      pkgs.quickshell
-    ] cfg.extraPackages;
+      [
+        pkgs.quickshell
+      ]
+      cfg.extraPackages
+    ];
     xdg.configFile = {
       "quickshell" = {
         source = cfg.configDirectory;
