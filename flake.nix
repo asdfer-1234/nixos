@@ -14,7 +14,7 @@
       ...
     }@inputs:
     {
-      nixosConfigurations.asdfhost = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.pathofruin = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
         };
