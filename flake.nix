@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     qsrs = {
-      url = /home/asdfer/newp/qsrs;
+      url = "file:///home/asdfer/newp/qsrs";
     };
   };
   outputs =
