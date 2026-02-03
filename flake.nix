@@ -20,7 +20,7 @@
     {
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
+          inherit inputs qsrs;
         };
         modules = [
           ./configuration.nix
