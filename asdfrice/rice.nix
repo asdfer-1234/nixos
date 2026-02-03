@@ -2,7 +2,7 @@
   config,
   lib,
   qsrs,
-  a,
+  pkgs,
   ...
 }:
 let
@@ -33,7 +33,7 @@ in
       enable = true;
       configDirectory = ./quickshell;
       extraPackages = [
-        qsrs
+        qsrs.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
     };
   };
