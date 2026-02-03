@@ -14,12 +14,13 @@ in
     configDirectory = lib.mkOption {
       type = lib.types.pathInStore;
     };
+    extraPackages = lib.mkPackageOption { };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
+    home.packages = lib.mkMerge [
       pkgs.quickshell
-    ];
+    ] cfg.extraPackages;
     xdg.configFile = {
       "quickshell" = {
         source = cfg.configDirectory;
