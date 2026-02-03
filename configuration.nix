@@ -35,7 +35,7 @@
   boot.kernelPackages = pkgs.linuxPackages;
   boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
 
-  networking.hostName = "asdfhost"; # Define your hostname.
+  networking.hostName = "nixosthepathofruin"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # Locale
