@@ -33,7 +33,6 @@ in
       enable = true;
       configDirectory = ./quickshell;
       extraPackages = [
-        a
         qsrs
       ];
     };
