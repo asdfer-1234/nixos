@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  qsrs
+  qsrs,
   ...
 }:
 let
