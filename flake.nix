@@ -14,7 +14,7 @@
       ...
     }@inputs:
     {
-      nixosConfigurations.pathofruin = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.ruinland = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
         };
