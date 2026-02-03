@@ -2,6 +2,7 @@
   config,
   lib,
   qsrs,
+  a,
   ...
 }:
 let
@@ -31,7 +32,10 @@ in
     myModules.quickshell = {
       enable = true;
       configDirectory = ./quickshell;
-      extraPackages = [ qsrs ];
+      extraPackages = [
+        a
+        qsrs
+      ];
     };
   };
 }
