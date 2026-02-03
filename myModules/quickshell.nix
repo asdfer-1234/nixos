@@ -16,7 +16,7 @@ in
     };
 
     extraPackages = lib.mkOption {
-      type = lib.listOf lib.types.package;
+      type = lib.types.listOf lib.types.package;
       default = [ ];
     };
   };
