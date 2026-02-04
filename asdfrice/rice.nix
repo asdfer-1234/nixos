@@ -36,6 +36,6 @@ in
         qsrs.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
     };
-    xdg.autostart = true;
+    xdg.autostart.enable = true;
   };
 }
