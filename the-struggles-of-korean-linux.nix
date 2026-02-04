@@ -1,13 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 {
   # Locale
   time.timeZone = "Asia/Seoul";
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    inputMethod = {
+    i18n.inputMethod = {
       enable = true;
-      type = "kime";
-      kime.iconColor = "White";
+      type = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-gtk
+        fcitx5-hangul
+      ];
     };
     extraLocaleSettings = {
       LC_ADDRESS = "ko_KR.UTF-8";

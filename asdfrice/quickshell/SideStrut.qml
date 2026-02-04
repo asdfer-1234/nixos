@@ -8,6 +8,8 @@ import "system"
 
 PanelWindow {
     id: root
+    required property ShellScreen modelData
+    screen: modelData
     property bool isRight
 
     anchors.top: true
@@ -16,7 +18,7 @@ PanelWindow {
     anchors.right: isRight
     color: "transparent"
 
-    implicitWidth: 80
+    implicitWidth: 40
 
     WrapperRectangle {
         anchors.fill: parent

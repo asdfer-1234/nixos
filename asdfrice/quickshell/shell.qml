@@ -11,9 +11,9 @@ ShellRoot {
             Bar {
                 modelData: scope.modelData
             }
-            Outliner {
-                modelData: scope.modelData
-            }
+            // Outliner {
+            //     modelData: scope.modelData
+            // }
             SideStrut {
                 modelData: scope.modelData
                 isRight: false
