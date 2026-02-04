@@ -49,7 +49,7 @@ RowLayout {
         text: "close"
     }
     StyledText {
-        text: root.focusedWindow.is_floating ? "Floating" : "Not floating"
+        text: root.focusedWindow?.is_floating ? "Floating" : "Not floating"
     }
     StyledText {
         text: {

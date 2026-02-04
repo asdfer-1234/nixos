@@ -10,9 +10,10 @@ Singleton {
     property list<var> cpu
     property var ram
     property var swap
+    property var nvidia_gpu
     Process {
         running: true
-        command: ["/home/asdfer/newp/qsrs/target/debug/qsrs"]
+        command: ["qsrs"]
         stdout: SplitParser {
             onRead: json => {
                 const reply = JSON.parse(json);
@@ -22,7 +23,9 @@ Singleton {
                     root.cpu = e.cpu;
                     root.ram = e.ram;
                     root.swap = e.swap;
+                    root.nvidia_gpu = e.nvidia_gpu;
                 }
+                console.log(JSON.stringify(root.nvidia_gpu));
             }
         }
     }
