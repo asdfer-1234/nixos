@@ -15,14 +15,10 @@ ShellRoot {
                 modelData: scope.modelData
             }
             SideStrut {
-                anchors.left: true
-                text: "<-"
-                command: ["niri", "msg", "action", "focus-column-left"]
+                isRight: false
             }
             SideStrut {
-                anchors.right: true
-                text: "->"
-                command: ["niri", "msg", "action", "focus-column-right"]
+                isRight: true
             }
         }
     }

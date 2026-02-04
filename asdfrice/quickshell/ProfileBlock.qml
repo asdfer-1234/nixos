@@ -10,8 +10,13 @@ StyledWrapper {
         Layout.fillWidth: false
         Layout.fillHeight: true
         spacing: 0
-        StyledText {
-            text: Profile.user + "@" + Profile.hostname
+        RowLayout {
+            StyledText {
+                text: Profile.user + "@" + Profile.hostname
+            }
+            StyledText {
+                text: "Stop overthinking!"
+            }
         }
         RowLayout {
             StyledText {

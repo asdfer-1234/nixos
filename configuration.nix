@@ -94,4 +94,5 @@
     users.zxcver = ./users/zxcver/home.nix;
     extraSpecialArgs = { inherit inputs qsrs; };
   };
+
 }

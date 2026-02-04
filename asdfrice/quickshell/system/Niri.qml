@@ -11,9 +11,45 @@ Singleton {
     property list<var> windows
     property list<var> keyboardLayouts
     property list<var> outputs
+    readonly property var focusedWindow: {
+        Niri.windows.find(x => x.is_focused);
+    }
+    function offsetColumn(offset) {
+        if (!focusedWindow) {
+            return [];
+        }
+        const unsorted = Niri.windows.filter(x => x.layout.pos_in_scrolling_layout?.[0] == focusedWindow?.layout.pos_in_scrolling_layout?.[0] + offset);
+        return unsorted.sort((a, b) => a.layout.pos_in_scrolling_layout?.[1] - b.layout.pos_in_scrolling_layout?.[1]);
+    }
+    readonly property var leftColumn: offsetColumn(-1)
+    readonly property var rightColumn: offsetColumn(1)
     property bool overviewing
     property var casts
     property string screenshotPath
+    function appId(window) {
+        if (!window) {
+            return "";
+        }
+        const appid = window.app_id;
+        if (appid == "dev.zed.Zed") {
+            return "Zed";
+        } else if (appid == "firefox") {
+            return "Firefox";
+        } else {
+            return appid.trim();
+        }
+    }
+    function title(window) {
+        if (!window) {
+            return "";
+        }
+        const appid = window.app_id;
+        const title = window.title;
+        if (appid == "firefox") {
+            return title.slice(0, -18);
+        }
+        return title;
+    }
     Socket {
         id: niriSocket
         connected: true
