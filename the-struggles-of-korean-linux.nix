@@ -24,4 +24,5 @@
       LC_TIME = "ko_KR.UTF-8";
     };
   };
+  xdg.autostart = true;
 }
