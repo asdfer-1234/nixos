@@ -37,6 +37,6 @@ in
       ];
     };
     xdg.autostart.enable = true;
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    environment.variables.NIXOS_OZONE_WL = "1";
   };
 }
