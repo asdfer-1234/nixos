@@ -113,6 +113,7 @@ layout {
 spawn-sh-at-startup "swaybg -c bbbbbb"
 spawn-at-startup "kanata" "--nodelay"
 spawn-at-startup "quickshell"
+spawn-at-startup "fcitx5"
 
 hotkey-overlay {
     skip-at-startup
