@@ -10,7 +10,7 @@
     ./hardware/hardware.nix
     ./firefox.nix
     ./users/users.nix
-    ./the-struggles-of-korean-linux
+    ./the-struggles-of-korean-linux.nix
   ];
 
   nix = {
