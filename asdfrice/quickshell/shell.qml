@@ -14,6 +14,16 @@ ShellRoot {
             Outliner {
                 modelData: scope.modelData
             }
+            SideStrut {
+                anchors.left: true
+                text: "<-"
+                command: ["niri", "msg", "action", "focus-column-left"]
+            }
+            SideStrut {
+                anchors.right: true
+                text: "->"
+                command: ["niri", "msg", "action", "focus-column-right"]
+            }
         }
     }
 }

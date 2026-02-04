@@ -2,7 +2,7 @@ pragma Singleton
 import Quickshell
 import QtQuick
 
-Scope {
-    readonly property color bg: "lightgray"
-    readonly property color fg: "blue"
+Singleton {
+    readonly property color fg: "#399ee6"
+    readonly property color bg: "#fafafa"
 }

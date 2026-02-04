@@ -10,19 +10,17 @@ StyledWrapper {
         Layout.fillWidth: false
         Layout.fillHeight: true
         spacing: 0
+        StyledText {
+            text: Profile.user + "@" + Profile.hostname
+        }
         RowLayout {
-            spacing: 0
             StyledText {
-                text: Profile.user + "@" + Profile.hostname
+                text: Clock.time
             }
             BarStatus {
                 label: "Battery"
                 text: `${Util.formatKj(Battery.energy)} / ${Util.formatKj(Battery.energyCapacity)} kJ`
             }
-        }
-
-        StyledText {
-            text: Clock.time
         }
     }
 }

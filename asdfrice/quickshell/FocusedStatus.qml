@@ -4,9 +4,8 @@ import QtQuick.Layouts
 import "system"
 import "components"
 
-RowLayout {
+StackLayout {
     id: root
-    spacing: 40
     property var focusedWindow: {
         Niri.windows.find(x => x.is_focused);
     }
@@ -35,28 +34,39 @@ RowLayout {
         }
         return title;
     }
-    StyledText {
-        text: parent.appId()
+    currentIndex: focusedWindow ? 1 : 0
 
+    StyledText {
+        text: "Niri"
         font.bold: true
     }
-    StyledText {
-        Layout.fillWidth: true
-        text: parent.title()
-        font.italic: true
-    }
-    StyledText {
-        text: "close"
-    }
-    StyledText {
-        text: root.focusedWindow?.is_floating ? "Floating" : "Not floating"
-    }
-    StyledText {
-        text: {
-            "fullscreen?";
+    RowLayout {
+
+        spacing: 40
+
+        StyledText {
+            text: root.appId()
+
+            font.bold: true
         }
-    }
-    StyledText {
-        text: "track on outliner"
+        StyledText {
+            Layout.fillWidth: true
+            text: root.title()
+            font.italic: true
+        }
+        StyledText {
+            text: "close"
+        }
+        StyledText {
+            text: root.focusedWindow?.is_floating ? "Floating" : "Not floating"
+        }
+        StyledText {
+            text: {
+                "fullscreen?";
+            }
+        }
+        StyledText {
+            text: "track on outliner"
+        }
     }
 }

@@ -25,7 +25,6 @@ Singleton {
                     root.swap = e.swap;
                     root.nvidia_gpu = e.nvidia_gpu;
                 }
-                console.log(JSON.stringify(root.nvidia_gpu));
             }
         }
     }
