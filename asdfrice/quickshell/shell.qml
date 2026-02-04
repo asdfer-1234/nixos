@@ -15,9 +15,11 @@ ShellRoot {
                 modelData: scope.modelData
             }
             SideStrut {
+                modelData: scope.modelData
                 isRight: false
             }
             SideStrut {
+                modelData: scope.modelData
                 isRight: true
             }
         }
