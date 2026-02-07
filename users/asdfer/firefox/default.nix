@@ -152,13 +152,16 @@ with lib;
         {
           "*".installation_mode = "allowed";
 
+          # uBlock Origin
           "uBlock0@raymondhill.net" = {
             install_url = moz "ublock-origin";
             installation_mode = "force_installed";
             updates_disabled = true;
           };
-          "bitwarden-password-manager" = {
-            install_url = moz "bitwarden-password-manager";
+
+          # Bitwarden Password Manager
+          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+            install_url = moz "{446900e4-71c2-419f-a6a7-df9c091e268b}";
             installation_mode = "force_installed";
             updates_disabled = true;
           };
