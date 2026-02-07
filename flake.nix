@@ -15,13 +15,15 @@
       nixpkgs,
       home-manager,
       qsrs,
+      lib,
       ...
     }@inputs:
+    with lib;
     {
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs qsrs;
-          a = 10;
+          importGen = imports: forEach imports (p: mkIf (pathIsDirectory p) p (path.append p ".nix"));
         };
         modules = [
           ./configuration.nix

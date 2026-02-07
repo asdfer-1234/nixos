@@ -3,13 +3,14 @@
   lib,
   inputs,
   qsrs,
+  importGen
   ...
 }:
 {
-  imports = [
+  imports = importGen [
     ./hardware
     ./users
-    ./the-struggles-of-korean-linux.nix
+    ./the-struggles-of-korean-linux
   ];
 
   nix = {
