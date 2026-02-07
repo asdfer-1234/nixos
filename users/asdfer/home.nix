@@ -38,7 +38,6 @@ with lib;
     wally-cli
 
   ];
-  programs.chromium.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
