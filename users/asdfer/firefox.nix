@@ -13,13 +13,7 @@ with lib;
           "나무위키" = {
             urls = [
               {
-                template = "https://namu.wiki/Search";
-                params = [
-                  {
-                    name = "q";
-                    value = "{searchTerms}";
-                  }
-                ];
+                template = "https://namu.wiki/go/{searchTerms}";
               }
             ];
             definedAliases = [ "@namu" ];
