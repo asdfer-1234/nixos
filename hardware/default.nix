@@ -7,7 +7,7 @@
 }:
 {
   imports = ml.importGen [
-    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/installer/scan/not-detected")
     ./nvidia
     # ./b550-suspend-fix # DOESN'T WORK
     # ./logitech/logid # TIMES OUT TRYING TO GET DEVICE NAME

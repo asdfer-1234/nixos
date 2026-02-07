@@ -99,7 +99,7 @@
     useUserPackages = true;
     users.asdfer = ./users/asdfer/home.nix;
     users.zxcver = ./users/zxcver/home.nix;
-    extraSpecialArgs = { inherit inputs qsrs; };
+    extraSpecialArgs = { inherit inputs qsrs ml; };
   };
 
 }
