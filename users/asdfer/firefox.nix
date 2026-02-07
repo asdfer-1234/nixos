@@ -36,7 +36,7 @@ with lib;
               params = [
                 {
                   name = "channel";
-                  value = "unstable";
+                  value = "25.11";
                 }
                 {
                   name = "query";
@@ -69,9 +69,6 @@ with lib;
       "3rdparty".Extensions = {
         "uBlock0@raymondhill.net".adminSettings = {
           userSettings = rec {
-            uiTheme = "dark";
-            uiAccentCustom = true;
-            uiAccentCustom0 = "#8300ff";
             cloudStorageEnabled = mkForce false;
 
             importedLists = [
