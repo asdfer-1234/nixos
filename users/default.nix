@@ -14,6 +14,9 @@
     ];
   };
 
+  # TODO: move below config into home-manager somehow
+  programs.niri.enable = true;
+
   users.users.zxcver = {
     isNormalUser = true;
     description = "other user without sudo";
