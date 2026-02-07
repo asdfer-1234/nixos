@@ -40,12 +40,19 @@ with lib;
 
   ];
 
-  xdg.portal.enable = true;
-  xdg.portal.config = {
-    common = {
-      default = [ "gnome" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+  xdg.portal = {
+    enable = true;
+    config = {
+      common = {
+        default = [ "gnome" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      };
     };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-kde
+    ];
   };
 
   nixpkgs.config = {
