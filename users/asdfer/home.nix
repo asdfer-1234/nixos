@@ -1,14 +1,15 @@
 {
   pkgs,
   lib,
+  ml,
   ...
 }:
 with lib;
 {
 
-  imports = [
+  imports = ml.importGen [
     ../../asdfrice
-    ./zed.nix
+    ./zed
     ./firefox
   ];
 

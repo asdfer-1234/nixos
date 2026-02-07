@@ -3,6 +3,7 @@
   lib,
   qsrs,
   pkgs,
+  ml,
   ...
 }:
 let
@@ -10,10 +11,10 @@ let
 in
 {
 
-  imports = [
-    ../myModules/kanata.nix
-    ../myModules/niri.nix
-    ../myModules/quickshell.nix
+  imports = ml.importGen [
+    ../myModules/kanata
+    ../myModules/niri
+    ../myModules/quickshell
   ];
   options.rice.asdfrice = {
     enable = lib.mkEnableOption "yay!";

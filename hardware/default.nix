@@ -2,14 +2,15 @@
   config,
   lib,
   modulesPath,
+  ml,
   ...
 }:
 {
-  imports = [
+  imports = ml.importGen [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./nvidia.nix
-    # ./b550-suspend-fix.nix # DOESN'T WORK
-    # ./logitech/logid.nix # TIMES OUT TRYING TO GET DEVICE NAME
+    ./nvidia
+    # ./b550-suspend-fix # DOESN'T WORK
+    # ./logitech/logid # TIMES OUT TRYING TO GET DEVICE NAME
   ];
 
   boot.initrd.availableKernelModules = [
