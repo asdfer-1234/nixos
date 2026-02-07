@@ -40,18 +40,12 @@ with lib;
 
   ];
 
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-  };
-
   xdg.portal.enable = true;
   xdg.portal.config = {
     common = {
       default = [ "gnome" ];
       "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
     };
-
   };
 
   nixpkgs.config = {
