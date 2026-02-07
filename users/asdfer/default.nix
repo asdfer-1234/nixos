@@ -51,7 +51,7 @@ with lib;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gnome
       xdg-desktop-portal-wlr
-      xdg-desktop-portal-kde
+      kdePackages.xdg-desktop-portal-kde
     ];
   };
 
