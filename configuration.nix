@@ -7,8 +7,8 @@
 }:
 {
   imports = [
-    ./hardware/hardware.nix
-    ./users/users.nix
+    ./hardware
+    ./users
     ./the-struggles-of-korean-linux.nix
   ];
 

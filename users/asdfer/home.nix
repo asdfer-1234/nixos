@@ -7,7 +7,7 @@ with lib;
 {
 
   imports = [
-    ../../asdfrice/rice.nix
+    ../../asdfrice
     ./zed.nix
     ./firefox
   ];
