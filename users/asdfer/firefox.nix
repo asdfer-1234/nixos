@@ -16,7 +16,36 @@ with lib;
                 template = "https://namu.wiki/go/{searchTerms}";
               }
             ];
-            definedAliases = [ "@namu" ];
+            definedAliases = [
+              "@namu"
+              "@namuw"
+            ];
+          };
+          "Minecraft Wiki" = {
+            urls = [
+              {
+                template = "https://minecraft.wiki?search={searchTerms}";
+              }
+            ];
+            definedAliases = [ "@mcw" ];
+          };
+          "Terraria Wiki" = {
+            urls = [
+              {
+                template = "https://terraria.wiki.gg/wiki/Special:Search";
+                params = [
+                  {
+                    name = "search";
+                    value = "{searchTerms}";
+                  }
+                  {
+                    name = "go";
+                    value = "Go";
+                  }
+                ];
+              }
+            ];
+            definedAlias = [ "@trw" ];
           };
 
           "Nix Packages" = {
