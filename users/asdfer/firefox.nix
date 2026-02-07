@@ -14,12 +14,12 @@ with lib;
             urls = [
               {
                 template = "https://namu.wiki/Search";
-              }
-            ];
-            params = [
-              {
-                name = "q";
-                value = "{searchTerms}";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
               }
             ];
             definedAliases = [ "@namu" ];
