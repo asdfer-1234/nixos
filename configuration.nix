@@ -3,11 +3,11 @@
   lib,
   inputs,
   qsrs,
-  importGen,
+  ml,
   ...
 }:
 {
-  imports = importGen [
+  imports = ml.importGen [
     ./hardware
     ./users
     ./the-struggles-of-korean-linux
