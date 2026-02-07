@@ -141,16 +141,24 @@ with lib;
     policies = {
       DisableTelemetry = true;
       AppAutoUpdate = false;
+      DontCheckDefaultBrowser = true;
+      GenerativeAI.Enabled = false;
+      DisableFirefoxAccounts = true;
       # Extensions
       ExtensionSettings =
         let
           moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
         in
         {
-          "*".installation_mode = "blocked";
+          "*".installation_mode = "allowed";
 
           "uBlock0@raymondhill.net" = {
             install_url = moz "ublock-origin";
+            installation_mode = "force_installed";
+            updates_disabled = true;
+          };
+          "bitwarden-password-manager" = {
+            install_url = moz "bitwarden-password-manager";
             installation_mode = "force_installed";
             updates_disabled = true;
           };
