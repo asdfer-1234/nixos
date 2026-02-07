@@ -16,6 +16,7 @@ with lib;
                 template = "https://namu.wiki/w/{searchTerms}";
               }
             ];
+            definedAliases = [ "@namu" ];
           };
 
           "Nix Packages" = {
