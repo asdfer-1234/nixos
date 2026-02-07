@@ -103,6 +103,20 @@ with lib;
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = [ "@nw" ];
           };
+
+          "noogle" = {
+            urls = [
+              {
+                template = "https://noogle.dev/q";
+                params = [
+                  {
+                    name = "term";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+          };
         };
 
       };

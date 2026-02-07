@@ -14,12 +14,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile = {
-      "niri/config.kdl" = {
-        text = cfg.config;
-        force = true;
-      };
-    };
     home.packages = with pkgs; [
       niri
       xwayland-satellite
@@ -27,5 +21,27 @@ in
       xdg-desktop-portal-gnome
       wlr-protocols
     ];
+
+    xdg.configFile = {
+      "niri/config.kdl" = {
+        text = cfg.config;
+        force = true;
+      };
+    };
+
+    xdg.portal = {
+      enable = true;
+      config = {
+        common = {
+          default = [ "gnome" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+        };
+      };
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-wlr
+        kdePackages.xdg-desktop-portal-kde
+      ];
+    };
   };
 }
