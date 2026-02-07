@@ -4,10 +4,6 @@ with lib;
   programs.firefox = {
     enable = true;
     profiles.default = {
-      preferences = {
-        "nixosPreferenceCheck" = 1;
-        "browser.shell.checkDefaultBrowser" = false;
-      };
       search = {
         force = true;
         default = "ddg";
