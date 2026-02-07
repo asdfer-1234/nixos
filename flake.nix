@@ -15,10 +15,9 @@
       nixpkgs,
       home-manager,
       qsrs,
-      lib,
       ...
     }@inputs:
-    with lib;
+    with nixpkgs.lib;
     {
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {

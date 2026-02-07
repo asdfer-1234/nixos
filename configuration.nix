@@ -3,7 +3,7 @@
   lib,
   inputs,
   qsrs,
-  importGen
+  importGen,
   ...
 }:
 {
