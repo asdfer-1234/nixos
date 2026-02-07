@@ -45,7 +45,7 @@ with lib;
                 ];
               }
             ];
-            definedAlias = [ "@trw" ];
+            definedAliases = [ "@trw" ];
           };
 
           "Nix Packages" = {
