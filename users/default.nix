@@ -1,8 +1,6 @@
+{ ... }:
 {
-  pkgs,
-  ...
-}:
-{
+  services.displayManager.cosmic-greeter.enable = true;
 
   users.users.asdfer = {
     isNormalUser = true;
@@ -14,22 +12,6 @@
       "uinput"
       "input"
     ];
-  };
-  services.displayManager.cosmic-greeter.enable = true;
-  programs.niri.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.config = {
-    common = {
-      default = [ "gnome" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
-    };
-  };
-
-  programs.nix-ld.enable = true;
-  programs.steam = {
-
-    enable = true;
-    protontricks.enable = true;
   };
 
   users.users.zxcver = {
