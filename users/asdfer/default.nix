@@ -44,7 +44,7 @@ with lib;
     enable = true;
     protontricks.enable = true;
   };
-  programs.niri.enable = true;
+
   xdg.portal.enable = true;
   xdg.portal.config = {
     common = {
