@@ -97,7 +97,7 @@
 
   home-manager = {
     useUserPackages = true;
-    users.asdfer = ./users/asdfer/home.nix;
+    users.asdfer = ./users/asdfer;
     users.zxcver = ./users/zxcver/home.nix;
     extraSpecialArgs = { inherit inputs qsrs ml; };
   };
