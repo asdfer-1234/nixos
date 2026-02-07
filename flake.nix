@@ -22,7 +22,7 @@
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs qsrs;
-          importGen = imports: forEach imports (p: mkIf (pathIsDirectory p) p (path.append p ".nix"));
+          importGen = imports: forEach imports (p: (mkIf (pathIsDirectory p) p (path.append p ".nix")));
         };
         modules = [
           ./configuration.nix
