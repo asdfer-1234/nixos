@@ -111,7 +111,6 @@ with lib;
     policies = {
       DisableTelemetry = true;
       AppAutoUpdate = false;
-      BackgroundAppUpdate = false;
       # Extensions
       ExtensionSettings =
         let

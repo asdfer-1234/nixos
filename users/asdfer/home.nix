@@ -9,7 +9,7 @@ with lib;
   imports = [
     ../../asdfrice/rice.nix
     ./zed.nix
-    ./firefox.nix
+    ./firefox
   ];
 
   rice.asdfrice.enable = true;
