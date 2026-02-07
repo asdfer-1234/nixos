@@ -8,7 +8,6 @@
 {
   imports = [
     ./hardware/hardware.nix
-    ./firefox.nix
     ./users/users.nix
     ./the-struggles-of-korean-linux.nix
   ];
@@ -74,16 +73,25 @@
     proggyfonts
   ];
 
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.neovim
-    pkgs.pciutils
-    pkgs.kdePackages.xdg-desktop-portal-kde
-    pkgs.xdg-desktop-portal-gnome
-    pkgs.wlr-protocols
-    pkgs.htop
-    pkgs.nvtopPackages.full
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    pciutils
+    tldr
+    cbonsai
+    cpufetch
+    cowsay
+    fastfetch
+    neofetch
+    killall
+    ramfetch
+    sl
+    nvtopPackages.full
   ];
+  programs.git.enable = true;
+  programs.vim.enable = true;
+  programs.neovim.enable = true;
+  programs.htop.enable = true;
+  programs.nix-index.enable = true;
   system.stateVersion = "25.11";
 
   home-manager = {

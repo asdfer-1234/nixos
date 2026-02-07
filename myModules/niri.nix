@@ -20,9 +20,12 @@ in
         force = true;
       };
     };
-    home.packages = [
-      pkgs.niri
-      pkgs.xwayland-satellite
+    home.packages = with pkgs; [
+      niri
+      xwayland-satellite
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-gnome
+      wlr-protocols
     ];
   };
 }

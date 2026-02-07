@@ -1,37 +1,44 @@
 {
   pkgs,
+  lib,
   ...
 }:
+with lib;
 {
 
   imports = [
-    ../../asdfrice/rice.nix
-    ./zed.nix
+    ../../asdfrice/rice
+    ./zed
+    ./firefox
   ];
 
   rice.asdfrice.enable = true;
 
   programs.bash.enable = true;
   programs.lutris.enable = true;
-  programs.firefox.enable = true;
   programs.obs-studio.enable = true;
   programs.neovim.enable = true;
-  home.packages = [
-    pkgs.thunderbird
-    pkgs.git
-    pkgs.vim
-    pkgs.vulkan-tools
-    pkgs.alacritty
-    pkgs.fuzzel
-    pkgs.swaybg
-    pkgs.inkscape
-    pkgs.aseprite
-    pkgs.gimp
-    # pkgs.deadbeef # BUILD FAILS
+  home.packages = with pkgs; [
+    # Stuff
+    thunderbird
+    alacritty
+    fuzzel
+    # Graphical Editing
+    inkscape
+    aseprite
+    gimp
+    # deadbeef # BUILD FAILS
+    # from nix-env
+    cava
+    font-manager
+    ungoogled-chromium
+    discord
     # zsa keyboards
-    pkgs.keymapp
-    pkgs.wally-cli
+    keymapp
+    wally-cli
+
   ];
+  programs.chromium.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
