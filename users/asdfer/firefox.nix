@@ -9,6 +9,14 @@ with lib;
       privateDefault = "ddg";
 
       engines = {
+        "나무위키" = {
+          urls = [
+            {
+              template = "https://namu.wiki/w/{searchTerms}";
+            }
+          ];
+        };
+
         "Nix Packages" = {
           urls = [
             {
