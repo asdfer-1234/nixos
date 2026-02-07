@@ -116,6 +116,7 @@ with lib;
                 ];
               }
             ];
+            definedAliases = [ "@ng" ];
           };
         };
 
