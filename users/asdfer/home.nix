@@ -7,9 +7,9 @@ with lib;
 {
 
   imports = [
-    ../../asdfrice/rice
-    ./zed
-    ./firefox
+    ../../asdfrice/rice.nix
+    ./zed.nix
+    ./firefox.nix
   ];
 
   rice.asdfrice.enable = true;
