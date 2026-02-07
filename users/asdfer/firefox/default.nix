@@ -118,6 +118,21 @@ with lib;
             ];
             definedAliases = [ "@ng" ];
           };
+
+          "MyNixOS" = {
+            urls = [
+              {
+                template = "https://mynixos.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = [ "@myn" ];
+          };
         };
 
       };
