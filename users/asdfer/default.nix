@@ -47,6 +47,10 @@ with lib;
   programs.niri.enable = true;
   xdg.portal.enable = true;
   xdg.portal.config = {
+    common = {
+      default = [ "gnome" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+    };
 
   };
 
