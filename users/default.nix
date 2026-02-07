@@ -16,6 +16,10 @@
 
   # TODO: move below config into home-manager somehow
   programs.niri.enable = true;
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+  };
 
   users.users.zxcver = {
     isNormalUser = true;
