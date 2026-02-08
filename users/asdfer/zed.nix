@@ -13,7 +13,7 @@
       "kdl"
       "qml"
     ];
-    mutableUserSettings = false;
+    # mutableUserSettings = false;
     userSettings = {
       theme = "Ayu Light";
       title_bar = {
