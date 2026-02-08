@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  xdg.configFile = {
-    "zed/settings.json" = {
-      force = true;
-    };
-  };
   programs.zed-editor = {
     enable = true;
     extensions = [
