@@ -82,6 +82,11 @@ with lib;
           ];
         };
       };
+
+      Preferences = {
+        "browser.aboutConfig.showWarning" = false;
+        "general.autoscroll" = true;
+      };
     };
   };
 
