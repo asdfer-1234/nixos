@@ -127,7 +127,13 @@
   "Arch Linux Wiki" = {
     urls = [
       {
-        template = "https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={searchTerms}";
+        template = "https://wiki.archlinux.org/index.php";
+        params = [
+          {
+            name = "search";
+            value = "{searchTerms}";
+          }
+        ];
       }
     ];
     definedAliases = [ "@aw" ];
