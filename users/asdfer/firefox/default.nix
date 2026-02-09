@@ -88,12 +88,11 @@ with lib;
         "general.autoScroll" = true;
       };
       SearchEngines = {
-
         Add = [
           {
             Name = "Example1";
             URLTemplate = "https=//www.example.org/q={searchTerms}";
-            Method = "GET | POST";
+            Method = "GET";
             IconURL = "https=//www.example.org/favicon.ico";
             Alias = "example";
             Description = "Description";
