@@ -123,4 +123,13 @@
     ];
     definedAliases = [ "@myn" ];
   };
+
+  "Arch Linux Wiki" = {
+    urls = [
+      {
+        template = "https://wiki.archlinux.org/index.php?title=Special%3ASearch&search={searchTerms}";
+      }
+    ];
+    definedAliases = [ "@aw" ];
+  };
 }

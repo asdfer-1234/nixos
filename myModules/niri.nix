@@ -35,6 +35,7 @@ in
         common = {
           default = [ "gnome" ];
           "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+          "org.freedesktop.impl.portal.polkit" = [ "hyprpolkit" ];
         };
       };
       extraPortals = with pkgs; [
