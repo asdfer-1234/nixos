@@ -24,7 +24,7 @@ with lib;
     thunderbird
     alacritty
     fuzzel
-    thunar
+    xfce.thunar
     kdePackages.dolphin
     # Graphical Editing
     inkscape
