@@ -85,7 +85,7 @@ with lib;
 
       Preferences = {
         "browser.aboutConfig.showWarning" = false;
-        "general.autoscroll" = true;
+        "general.autoScroll" = true;
       };
     };
   };
