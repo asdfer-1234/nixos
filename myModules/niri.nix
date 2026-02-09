@@ -41,6 +41,7 @@ in
         xdg-desktop-portal-gnome
         xdg-desktop-portal-wlr
         kdePackages.xdg-desktop-portal-kde
+        kdePackages.polkit-kde-agent-1
       ];
     };
   };
