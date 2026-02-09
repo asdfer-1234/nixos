@@ -19,6 +19,9 @@ with lib;
   programs.lutris.enable = true;
   programs.obs-studio.enable = true;
   programs.neovim.enable = true;
+  programs.thunar = {
+    enable = true;
+  };
   home.packages = with pkgs; [
     # Stuff
     thunderbird
