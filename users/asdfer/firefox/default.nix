@@ -19,6 +19,7 @@ with lib;
       DontCheckDefaultBrowser = true;
       GenerativeAI.Enabled = false;
       DisableFirefoxAccounts = true;
+
       # Extensions
       ExtensionSettings =
         let
@@ -85,17 +86,8 @@ with lib;
 
       Preferences = {
         "browser.aboutConfig.showWarning" = false;
+        "browser.urlbar.trimURLs" = false;
         "general.autoScroll" = true;
-      };
-      SearchEngines = {
-        Add = [
-          {
-            Name = "Example1";
-            URLTemplate = "https=//www.example.org/q={searchTerms}";
-            Alias = "example";
-            Description = "Description";
-          }
-        ];
       };
     };
   };
