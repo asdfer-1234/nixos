@@ -41,6 +41,7 @@ with lib;
     wally-cli
 
   ];
+  services.hyprpolkitagent.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
