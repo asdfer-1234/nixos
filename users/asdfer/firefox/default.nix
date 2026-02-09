@@ -92,12 +92,8 @@ with lib;
           {
             Name = "Example1";
             URLTemplate = "https=//www.example.org/q={searchTerms}";
-            Method = "GET";
-            IconURL = "https=//www.example.org/favicon.ico";
             Alias = "example";
             Description = "Description";
-            PostData = "name=value&q={searchTerms}";
-            SuggestURLTemplate = "https://www.example.org/suggestions/q={searchTerms}";
           }
         ];
       };
