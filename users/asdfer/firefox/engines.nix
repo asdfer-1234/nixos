@@ -176,22 +176,6 @@
     ];
   };
 
-  "GitHub Repositories" = {
-    urls = [
-      {
-        template = "https://github.com/search";
-        params = [
-          {
-            name = "q";
-            value = "{searchTerms}";
-            type = "repositories";
-          }
-        ];
-      }
-    ];
-    definedAliases = [ "@gh" ];
-  };
-
   "GitHub Code" = {
     urls = [
       {
@@ -209,6 +193,22 @@
       }
     ];
     definedAliases = [ "@ghcode" ];
+  };
+
+  "GitHub Repositories" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+            type = "repositories";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@gh" ];
   };
 
   "GitHub Issues" = {
@@ -379,6 +379,7 @@
         ];
       }
     ];
+
     definedAliases = [ "@ghm" ];
   };
 
