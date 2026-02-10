@@ -138,4 +138,58 @@
     ];
     definedAliases = [ "@aw" ];
   };
+
+  "네이버" = {
+    urls = [
+      {
+        template = "https://search.naver.com/search.naver";
+        params = [
+          {
+            name = "query";
+            value = "{searchTerms}";
+          }
+        ];
+      }
+    ];
+    icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+    definedAliases = [
+      "@n"
+      "@naver"
+    ];
+  };
+
+  "Wikipedia" = {
+    urls = [
+      {
+        template = "https://en.wikipedia.org/wiki/";
+        params = [
+          {
+            name = "search";
+            value = "{searchTerms}";
+          }
+        ];
+      }
+    ];
+    definedAliases = [
+      "@w"
+      "@wiki"
+    ];
+  };
+
+  "GitHub Repositories" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+            type = "repositories";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@gh" ];
+  };
+
 }
