@@ -42,7 +42,7 @@ with lib;
     wally-cli
 
   ];
-  services.hyprpolkitagent.enable = true;
+  services.polkit_gnome.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
