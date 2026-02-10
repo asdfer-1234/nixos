@@ -37,7 +37,7 @@
             nvidiaBusId = "PCI:1@0:0:0";
           };
           environment.variables = {
-            NIXOS_SPECIALIZATION = "nvidia";
+            NIXOS_SPECIALISATION = "nvidia";
           };
         };
       };

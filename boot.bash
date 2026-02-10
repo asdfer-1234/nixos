@@ -5,8 +5,8 @@ cd /etc/nixos
 git add .
 git commit -m "asdf"
 
-if [ -v NIXOS_SPECIALIZATION ]; then
-    nixos-rebuild boot --sudo --specialisation=$NIXOS_SPECIALIZATION
+if [ -v NIXOS_SPECIALISATION ]; then
+    nixos-rebuild boot --sudo --specialisation=$NIXOS_SPECIALISATION
 else
     nixos-rebuild boot --sudo
 fi
