@@ -26,7 +26,7 @@ with lib;
     fuzzel
     xfce.thunar
     kdePackages.dolphin
-    atril
+    mate.atril
     # Graphical Editing
     inkscape
     aseprite
