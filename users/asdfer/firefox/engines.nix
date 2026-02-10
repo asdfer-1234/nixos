@@ -192,4 +192,194 @@
     definedAliases = [ "@gh" ];
   };
 
+  "GitHub Code" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "code";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghcode" ];
+  };
+
+  "GitHub Issues" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "issues";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghi" ];
+  };
+
+  "GitHub Pull Requests" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "pullrequests";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghpr" ];
+  };
+
+  "GitHub Discussions" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "discussions";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghd" ];
+  };
+
+  "GitHub Users" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "users";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghu" ];
+  };
+
+  "GitHub Commits" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "commits";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghc" ];
+  };
+
+  "GitHub Packages" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "registrypackages";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghp" ];
+  };
+
+  "GitHub Wikis" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "wikis";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghw" ];
+  };
+
+  "GitHub Topics" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "topics";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ght" ];
+  };
+
+  "GitHub Marketplace" = {
+    urls = [
+      {
+        template = "https://github.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+          {
+            name = "type";
+            value = "marketplace";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@ghm" ];
+  };
+
 }
