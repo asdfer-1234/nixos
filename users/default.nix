@@ -20,7 +20,6 @@
     enable = true;
     protontricks.enable = true;
   };
-  services.polkit_gnome.enable = true;
 
   users.users.zxcver = {
     isNormalUser = true;

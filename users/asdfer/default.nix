@@ -40,8 +40,9 @@ with lib;
     # zsa keyboards
     keymapp
     wally-cli
-
   ];
+
+  services.polkit-gnome.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
