@@ -42,7 +42,6 @@ with lib;
     wally-cli
 
   ];
-  services.polkit_gnome.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
