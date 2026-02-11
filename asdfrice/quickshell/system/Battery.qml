@@ -8,6 +8,6 @@ Singleton {
     readonly property real batteryPercentage: UPower.displayDevice.percentage
     // We're doing it in joules, not the chaotic Wh!
     readonly property real energy: UPower.displayDevice.energy * 60 * 60
-    readonly property real energyCapacity: UPower.displayDevice.energy * 60 * 60
+    readonly property real energyCapacity: UPower.displayDevice.energyCapacity * 60 * 60
     readonly property bool charging: !UPower.onBattery
 }

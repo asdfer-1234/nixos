@@ -1,0 +1,90 @@
+{
+  "map": {
+    "*": {
+      "<metaesc>": "switch main !important",
+      "<enter>": "switch focus",
+      "<esc>": "pop layer stack"
+    },
+    "main": {
+      "h": "select column left",
+      "l": "select column right",
+      "k": "select window up",
+      "j": "select window down",
+      "e": "map spawn",
+      "r": "map media",
+      "m": "close window",
+      "p": "popup process",
+      "q": "popup volume",
+      "w": "popup brightness",
+      "z": "popup bluetooth",
+      "x": "popup wifi",
+      "a": "popup monitors",
+      "s": "popup keyboard",
+      "d": "popup mouse",
+      "f": "popup system"
+    },
+    "process": {
+      "k": "select previous",
+      "j": "select current"
+    },
+    "system": {
+      "q": "shutdown",
+      "w": "restart",
+      "e": "sleep",
+      "r": "hibernate",
+      "a": "logout",
+      "s": "run nixos-rebuild switch",
+      "d": "run nixos-rebuild boot"
+    },
+    "focus": {
+      "<all>": "send to window"
+    },
+    "spawn": {
+      "k": "run firefox",
+      "j": "run zed",
+      "u": "map launcher",
+      "<enter>": "run terminal",
+      "<space>": "run fuzzel"
+    },
+    "volume": {
+      "j": "lower volume",
+      "k": "raise volume",
+      "l": "mute volume",
+      "0": "set volume to 0",
+      "1": "set volume to max????"
+    },
+    "brightness": {
+      "j": "lower brightness",
+      "k": "raise brightness",
+      "l": "mute brightness",
+      "0": "set brightness to 0",
+      "1": "set brightness to max"
+    },
+    "launchers": {
+      "j": "run steam",
+      "k": "run lutris"
+    },
+    "development": {
+      "j": "run unity3d",
+      "k": "run godot"
+    },
+    "search-engines": {
+      "n": {
+        "w": "searchengine NixOS Wiki",
+        "m": "searchengine MyNixOS",
+        "o": "searchengine NixOS Options",
+        "p": "searchengine NixOS Packages"
+      },
+
+      "d": "DuckDuckGo",
+      "s": {
+        "b": "searchengine Bing",
+        "v": "searchengine Naver",
+        "g": "searchengine Google"
+      },
+      "c": {
+        "l": "searchengine 경희대학교 도서관"
+      }
+    }
+  }
+}

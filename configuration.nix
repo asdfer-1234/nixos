@@ -34,6 +34,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  security.polkit.enable = true;
+
   # dont use latest kernel
   boot.kernelPackages = pkgs.linuxPackages;
   boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
