@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:numtide/nixpkgs-unfree?ref=nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,16 +18,6 @@
       ...
     }@inputs:
     with nixpkgs.lib;
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = _: true;
-        };
-      };
-    in
     {
       nixosConfigurations.nauvis = nixosSystem {
         specialArgs = {
@@ -35,7 +25,6 @@
             inputs
             qsrs
             kakaotalk
-            pkgs
             ;
           ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
         };
