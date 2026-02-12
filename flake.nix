@@ -30,6 +30,7 @@
     in
     {
       nixosConfigurations.nauvis = nixosSystem {
+        inherit system;
         specialArgs = {
           inherit
             inputs
