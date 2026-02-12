@@ -24,13 +24,19 @@
         inherit system;
         config = {
           allowUnfree = true;
+          allowUnfreePredicate = _: true;
         };
       };
     in
     {
       nixosConfigurations.nauvis = nixosSystem {
         specialArgs = {
-          inherit inputs qsrs kakaotalk;
+          inherit
+            inputs
+            qsrs
+            kakaotalk
+            pkgs
+            ;
           ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
         };
         modules = [
