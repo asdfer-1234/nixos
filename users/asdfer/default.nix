@@ -48,9 +48,19 @@ with lib;
     # zsa keyboards
     keymapp
     wally-cli
+    git-credential-manager
   ];
 
   services.polkit-gnome.enable = true;
+  programs.git = {
+    enable = true;
+    settings.user = {
+      user.email = "<>";
+      user.name = "asdfer";
+      push.autosetupremote = true;
+      credential.gitHubAccountFiltering = false;
+    };
+  };
 
   nixpkgs.config = {
     allowUnfree = true;

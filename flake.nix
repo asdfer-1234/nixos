@@ -7,7 +7,7 @@
     };
     qsrs.url = "git+file:/home/asdfer/personal/proj/qsrs";
     kakaotalk = {
-      url = "github:anaclumos/kakaotalk.nix";
+      url = "github:asdfer-1234/kakaotalk.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
