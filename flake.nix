@@ -18,10 +18,21 @@
       ...
     }@inputs:
     with nixpkgs.lib;
+    let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+    in
     {
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs qsrs kakaotalk;
+          inherit
+            inputs
+            qsrs
+            kakaotalk
+            pkgs
+            ;
           ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
         };
         modules = [
