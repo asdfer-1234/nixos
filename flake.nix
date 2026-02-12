@@ -5,7 +5,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    qsrs.url = "git+file:/home/asdfer/personal/proj/";
+    qsrs.url = "git+file:/home/asdfer/personal/proj/qsrs";
     kakaotalk.url = "github:anaclumos/kakaotalk.nix";
   };
   outputs =
