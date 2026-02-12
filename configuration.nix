@@ -89,6 +89,7 @@
     ramfetch
     sl
     nvtopPackages.full
+    trashy
   ];
   programs.git.enable = true;
   programs.vim.enable = true;
