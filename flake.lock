@@ -39,7 +39,39 @@
         "type": "github"
       }
     },
+    "kakaotalk": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1767599787,
+        "narHash": "sha256-jaLl11EMtOWK7Dg9LghmO1jAFj/mu8e/B8gu46AftrU=",
+        "owner": "anaclumos",
+        "repo": "kakaotalk.nix",
+        "rev": "77b6bbfabb1344bb00a2bcde33dafbce22346664",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anaclumos",
+        "repo": "kakaotalk.nix",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1750731501,
+        "narHash": "sha256-Ah4qq+SbwMaGkuXCibyg+Fwn00el4KmI3XFX6htfDuk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "69dfebb3d175bde602f612915c5576a41b18486b",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1770136044,
         "narHash": "sha256-tlFqNG/uzz2++aAmn4v8J0vAkV3z7XngeIIB3rM3650=",
@@ -55,7 +87,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1770056022,
         "narHash": "sha256-yvCz+Qmci1bVucXEyac3TdoSPMtjqVJmVy5wro6j/70=",
@@ -71,7 +103,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1744536153,
         "narHash": "sha256-awS2zRgF4uTwrOKwwiJcByDzDOdo3Q1rPZbiHQg/N38=",
@@ -90,7 +122,7 @@
     "qsrs": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -100,23 +132,24 @@
         "rev": "5230ba0c803c0905749931615ca00dd7541fb034",
         "revCount": 12,
         "type": "git",
-        "url": "file:/home/asdfer/newp/qsrs"
+        "url": "file:/home/asdfer/personal/proj/qsrs"
       },
       "original": {
         "type": "git",
-        "url": "file:/home/asdfer/newp/qsrs"
+        "url": "file:/home/asdfer/personal/proj/qsrs"
       }
     },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "kakaotalk": "kakaotalk",
+        "nixpkgs": "nixpkgs_2",
         "qsrs": "qsrs"
       }
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1770088046,

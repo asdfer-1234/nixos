@@ -1,4 +1,4 @@
-{ ... }:
+{ kakaotalk, ... }:
 {
   services.displayManager.cosmic-greeter.enable = true;
 
@@ -20,6 +20,10 @@
     enable = true;
     protontricks.enable = true;
   };
+
+  environment.systemPackages = [
+    kakaotalk.packages.${pkgs.system}.kakaotalk
+  ];
 
   users.users.zxcver = {
     isNormalUser = true;
