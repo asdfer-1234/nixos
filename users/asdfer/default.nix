@@ -15,7 +15,10 @@ with lib;
 
   rice.asdfrice.enable = true;
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    bashrcExtra = fileContents ./bashrcExtra.bash;
+  };
   programs.lutris.enable = true;
   programs.obs-studio.enable = true;
   programs.neovim.enable = true;

@@ -1,9 +1,15 @@
+// Can we do this with kanata?
+// What if we can automatically generate a kanata config for this?
+// send via tcp
+// cannot ever find out whether the modifier keys are pressed without focusing
+// yay, push-msg is a thing!
+
 {
   "map": {
     "*": {
       "<metaesc>": "switch main !important",
       "<enter>": "switch focus",
-      "<esc>": "pop layer stack"
+      "<esc>": "pop layer stack",
     },
     "main": {
       "h": "select column left",
@@ -21,11 +27,11 @@
       "a": "popup monitors",
       "s": "popup keyboard",
       "d": "popup mouse",
-      "f": "popup system"
+      "f": "popup system",
     },
     "process": {
       "k": "select previous",
-      "j": "select current"
+      "j": "select current",
     },
     "system": {
       "q": "shutdown",
@@ -34,57 +40,57 @@
       "r": "hibernate",
       "a": "logout",
       "s": "run nixos-rebuild switch",
-      "d": "run nixos-rebuild boot"
+      "d": "run nixos-rebuild boot",
     },
     "focus": {
-      "<all>": "send to window"
+      "<all>": "send to window",
     },
     "spawn": {
       "k": "run firefox",
       "j": "run zed",
       "u": "map launcher",
       "<enter>": "run terminal",
-      "<space>": "run fuzzel"
+      "<space>": "run fuzzel",
     },
     "volume": {
       "j": "lower volume",
       "k": "raise volume",
       "l": "mute volume",
       "0": "set volume to 0",
-      "1": "set volume to max????"
+      "1": "set volume to max????",
     },
     "brightness": {
       "j": "lower brightness",
       "k": "raise brightness",
       "l": "mute brightness",
       "0": "set brightness to 0",
-      "1": "set brightness to max"
+      "1": "set brightness to max",
     },
     "launchers": {
       "j": "run steam",
-      "k": "run lutris"
+      "k": "run lutris",
     },
     "development": {
       "j": "run unity3d",
-      "k": "run godot"
+      "k": "run godot",
     },
     "search-engines": {
       "n": {
         "w": "searchengine NixOS Wiki",
         "m": "searchengine MyNixOS",
         "o": "searchengine NixOS Options",
-        "p": "searchengine NixOS Packages"
+        "p": "searchengine NixOS Packages",
       },
 
       "d": "DuckDuckGo",
       "s": {
         "b": "searchengine Bing",
         "v": "searchengine Naver",
-        "g": "searchengine Google"
+        "g": "searchengine Google",
       },
       "c": {
-        "l": "searchengine 경희대학교 도서관"
-      }
-    }
-  }
+        "l": "searchengine 경희대학교 도서관",
+      },
+    },
+  },
 }
