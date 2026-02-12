@@ -2,6 +2,7 @@
   pkgs,
   lib,
   ml,
+  kakaotalk,
   ...
 }:
 with lib;
@@ -34,6 +35,7 @@ with lib;
     xfce.thunar
     kdePackages.dolphin
     mate.atril
+    kakaotalk.packages.${pkgs.system}.kakaotalk
     # Graphical Editing
     inkscape
     aseprite

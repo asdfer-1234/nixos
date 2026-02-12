@@ -5,9 +5,8 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    qsrs = {
-      url = "git+file:/home/asdfer/newp/qsrs";
-    };
+    qsrs.url = "git+file:/home/asdfer/personal/proj/";
+    kakaotalk.url = "github:anaclumos/kakaotalk.nix";
   };
   outputs =
     {
@@ -15,13 +14,14 @@
       nixpkgs,
       home-manager,
       qsrs,
+      kakaotalk,
       ...
     }@inputs:
     with nixpkgs.lib;
     {
       nixosConfigurations.nauvis = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs qsrs;
+          inherit inputs qsrs kakaotalk;
           ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
         };
         modules = [
