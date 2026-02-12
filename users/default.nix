@@ -1,4 +1,4 @@
-{ kakaotalk, ... }:
+{ pkgs, kakaotalk, ... }:
 {
   services.displayManager.cosmic-greeter.enable = true;
 
