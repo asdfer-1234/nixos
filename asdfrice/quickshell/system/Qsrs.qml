@@ -18,6 +18,7 @@ Singleton {
         stdinEnabled: true
         stdout: SplitParser {
             onRead: json => {
+                console.log(json);
                 const reply = JSON.parse(json);
                 root.msg = json;
                 let e;
@@ -30,12 +31,12 @@ Singleton {
             }
         }
     }
-    Timer: {
-        interval: 1000;
-        running: true;
-        repeat: true;
-        onTriggered: qsrs.write(JSON.stringify({
-            Stat: {}
-        }));
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: () => qsrs.write(JSON.stringify({
+                Stat: {}
+            }))
     }
 }
