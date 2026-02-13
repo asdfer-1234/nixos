@@ -12,8 +12,10 @@ Singleton {
     property var swap
     property var nvidia_gpu
     Process {
+        id: qsrs
         running: true
         command: ["qsrs"]
+        stdinEnabled: true
         stdout: SplitParser {
             onRead: json => {
                 const reply = JSON.parse(json);
@@ -27,5 +29,13 @@ Singleton {
                 }
             }
         }
+    }
+    Timer: {
+        interval: 1000;
+        running: true;
+        repeat: true;
+        onTriggered: qsrs.write(JSON.stringify({
+            Stat: {}
+        }));
     }
 }

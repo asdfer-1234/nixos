@@ -5,4 +5,6 @@ cd /etc/nixos
 git add .
 git commit -m "asdf"
 
-nixos-rebuild boot --sudo
+export NIXPKGS_ALLOW_UNFREE=1
+
+nixos-rebuild boot --sudo --impure
