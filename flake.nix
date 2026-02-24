@@ -40,7 +40,7 @@
           ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
         };
         modules = [
-          ./configuration.nix
+          ./src/configuration.nix
           home-manager.nixosModules.home-manager
         ];
       };
