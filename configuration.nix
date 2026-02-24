@@ -74,6 +74,7 @@
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
+    terminus_font
   ];
 
   environment.systemPackages = with pkgs; [

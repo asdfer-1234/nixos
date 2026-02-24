@@ -18,9 +18,7 @@ StyledWrapper {
                     label: "Keyboard"
                     text: "keyboard"
                 }
-            }
-            Arrow {}
-            StatusBlock {
+                Arrow {}
                 BarStatus {
                     label: "CPU"
                     text: {
@@ -52,9 +50,7 @@ StyledWrapper {
                     label: "Swap"
                     text: Qsrs.swap ? `${Util.formatGib(Qsrs.swap.used)} / ${Util.formatGib(Qsrs.swap.total)} GiB` : null
                 }
-            }
-            Arrow {}
-            StatusBlock {
+                Arrow {}
                 BarStatus {
                     label: "Brightness"
                     text: Util.formatPercentage(Backlight.brightnessPercentage)
@@ -112,6 +108,10 @@ StyledWrapper {
     component StatusBlock: StyledWrapper {
         id: root
         default property list<Item> children
+        margin: 0
+        leftMargin: 15
+        rightMargin: 15
+        color: Style.darkbg2
 
         RowLayout {
             spacing: 10

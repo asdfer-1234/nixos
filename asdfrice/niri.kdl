@@ -111,7 +111,7 @@ layout {
 // placeholder bg
 // spawn-sh-at-startup "swaybg -i ~/.config/niri/\"KDE Cascade 3840x2160.png\""
 spawn-sh-at-startup "swaybg -c bbbbbb"
-spawn-at-startup "kanata" "--nodelay"
+spawn-at-startup "kanata" "--nodelay" "--port" "127.0.0.1:29292"
 spawn-at-startup "quickshell"
 
 hotkey-overlay {

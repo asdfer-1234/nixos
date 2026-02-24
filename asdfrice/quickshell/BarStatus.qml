@@ -4,19 +4,25 @@ import QtQuick
 import QtQuick.Layouts
 import "components"
 
-RowLayout {
+StyledWrapper {
     id: root
     property string label: "label"
     property string text: "text"
-
+    color: Style.lightbg1
+    border.color: Style.lightborder1
+    margin: 0
     RowLayout {
-        StyledText {
-            text: root.label
-            font.bold: true
+        spacing: 0
+        ColorImage {
+
+            source: "icons/mouse.png"
+            color: Style.lightfg
         }
+        RowSeparator {}
         StyledText {
             text: root.text
-            font.italic: true
+            font.bold: true
+            color: Style.lightfg
         }
     }
 }

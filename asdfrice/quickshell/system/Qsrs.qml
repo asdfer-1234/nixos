@@ -18,7 +18,6 @@ Singleton {
         stdinEnabled: true
         stdout: SplitParser {
             onRead: json => {
-                console.log(json);
                 const reply = JSON.parse(json);
                 root.msg = json;
                 let e;

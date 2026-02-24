@@ -4,6 +4,15 @@
 	danger-enable-cmd yes
 )
 
+(defvirtualkeys
+	vlctldown (push-msg "vlctldown")
+	vlctlup (push-msg "vlctlup")
+)
+
+(defalias
+	lctl (multi lctl (on-press tap-vkey vlctldown) (on-release tap-vkey vlctlup))
+)
+
 (defsrc
 	q	w	e	r	t		y	u	i	o	p
 	a	s	d	f	g		h	j	k	l	;
@@ -37,7 +46,7 @@
 	sa	(t! charmod a lmet)
 	ss	(t! charmod s lalt)
 	sd	(t! charmod d lsft)
-	sf	(t! charmod f lctl)
+	sf	(t! charmod f @lctl)
 	sj	(t! charmod j rctl)
 	sk	(t! charmod k rsft)
 	sl	(t! charmod l lalt)
