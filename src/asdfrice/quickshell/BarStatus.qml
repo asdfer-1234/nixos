@@ -13,13 +13,11 @@ StyledWrapper {
     margin: 0
     RowLayout {
         spacing: 0
-        ColorImage {
-
-            source: "icons/mouse.png"
-            color: Style.lightfg
-        }
+        IconSquare {}
         RowSeparator {}
         StyledText {
+            Layout.leftMargin: 8
+            Layout.rightMargin: 8
             text: root.text
             font.bold: true
             color: Style.lightfg

@@ -6,7 +6,9 @@ import "components"
 import "system"
 
 StyledWrapper {
+    margin: 4
     ColumnLayout {
+        spacing: 8
         RowLayout {
             spacing: 15
             StatusBlock {
@@ -88,9 +90,8 @@ StyledWrapper {
         }
         RowLayout {
             spacing: 20
-            FocusedStatus {
-                Layout.fillWidth: true
-            }
+
+            FocusedStatus {}
 
             BarStatus {
                 label: "Currently playing"
@@ -102,18 +103,26 @@ StyledWrapper {
             }
         }
     }
-    component Arrow: StyledText {
-        text: "->"
+    component Arrow: ColorImage {
+        source: "icons/right_arrow.svg"
+        color: "yellow"
     }
-    component StatusBlock: StyledWrapper {
+    component StatusBlock: Item {
         id: root
         default property list<Item> children
-        margin: 0
-        leftMargin: 15
-        rightMargin: 15
-        color: Style.darkbg2
+        implicitWidth: row.width + 24
+        implicitHeight: row.height
+
+        Rectangle {
+            anchors.fill: parent
+            color: Style.darkbg2
+            border.width: 1
+            border.color: Style.darkfg
+        }
 
         RowLayout {
+            id: row
+            anchors.centerIn: parent
             spacing: 10
             children: root.children
         }

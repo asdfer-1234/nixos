@@ -20,11 +20,11 @@ PanelWindow {
 
     RowLayout {
         spacing: 0
-        ProfileBlock {
+        ProfileLine {
             Layout.alignment: Qt.AlignTop
             implicitHeight: 70
         }
-        BarBlock {
+        BarLine {
             Layout.alignment: Qt.AlignTop
         }
     }

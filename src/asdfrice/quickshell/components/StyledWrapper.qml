@@ -4,6 +4,4 @@ WrapperRectangle {
     color: Style.bg
     border.color: Style.fg
     border.width: 1
-    margin: 4
-    radius: 12
 }

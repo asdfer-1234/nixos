@@ -2,7 +2,6 @@
   pkgs,
   lib,
   ml,
-  kakaotalk,
   ...
 }:
 with lib;
@@ -12,6 +11,7 @@ with lib;
     ../../asdfrice
     ./zed
     ./firefox
+    ./graphical-editing
   ];
 
   rice.asdfrice.enable = true;
@@ -35,10 +35,6 @@ with lib;
     xfce.thunar
     kdePackages.dolphin
     mate.atril
-    # Graphical Editing
-    inkscape
-    aseprite
-    gimp
     # deadbeef # BUILD FAILS
     # from nix-env
     cava

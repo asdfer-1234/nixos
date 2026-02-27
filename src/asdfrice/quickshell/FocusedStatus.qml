@@ -13,9 +13,12 @@ StackLayout {
         text: "Niri"
         font.bold: true
     }
-    RowLayout {
 
-        spacing: 40
+    RowLayout {
+        Layout.fillHeight: false
+        Layout.alignment: Qt.AlignCenter
+
+        spacing: 10
 
         StyledText {
             text: Niri.appId(Niri.focusedWindow)
