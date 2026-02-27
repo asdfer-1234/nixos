@@ -139,6 +139,7 @@ Singleton {
 
                     console.log(msg);
                 }
+            // console.log(msg);
             // console.log("WINDOWS:", JSON.stringify(root.windows));
             // console.log("WORKSPACES:", JSON.stringify(root.workspaces));
             // console.log("KEYBOARDS:", JSON.stringify(root.keyboardLayouts));
@@ -155,5 +156,9 @@ Singleton {
 
     function focused_window() {
         root.windows.find(x => x.is_focused);
+    }
+
+    readonly property Process closeFocusedWindow: Process {
+        command: ["niri", "msg", "action", "close-window"]
     }
 }

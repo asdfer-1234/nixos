@@ -18,10 +18,13 @@ StyledWrapper {
             StyledText {
                 text: Clock.time
             }
-            Status {
-                label: "Battery"
-                icon: "power.svg"
-                text: `${Util.formatKj(Battery.energy)} / ${Util.formatKj(Battery.energyCapacity)} kJ`
+            PanelMouseArea {
+                panel: "power"
+                Status {
+                    label: "Power"
+                    icon: "power.svg"
+                    text: `${Util.formatKj(Power.energy)} / ${Util.formatKj(Power.energyCapacity)} kJ`
+                }
             }
         }
     }

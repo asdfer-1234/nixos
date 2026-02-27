@@ -1,5 +1,7 @@
 import Quickshell
 import QtQuick.Layouts
+import Quickshell.Widgets
+import "system"
 
 PanelWindow {
     required property ShellScreen modelData
@@ -17,10 +19,26 @@ PanelWindow {
                 }
                 RowLayout {
                     spacing: -1
-                    IconSquare {}
-                    IconSquare {}
-                    IconSquare {}
-                    IconSquare {}
+                    SquareButton {
+                        action: () => {
+                            Power.poweroff.running = true;
+                        }
+                    }
+                    SquareButton {
+                        action: () => {
+                            Power.restart.running = true;
+                        }
+                    }
+                    SquareButton {
+                        action: () => {
+                            Power.suspend.running = true;
+                        }
+                    }
+                    SquareButton {
+                        action: () => {
+                            Power.hibernate.running = true;
+                        }
+                    }
                 }
             }
         }
@@ -28,5 +46,17 @@ PanelWindow {
     component Title: StyledText {
         font.pointSize: 20
         font.bold: true
+    }
+
+    component SquareButton: WrapperMouseArea {
+        id: root
+        property var action
+        IconSquare {}
+        onClicked: mouse => {
+            if (mouse.button == Qt.LeftButton) {
+                console.log("aaaaa");
+                root.action();
+            }
+        }
     }
 }

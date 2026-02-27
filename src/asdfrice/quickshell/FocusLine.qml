@@ -4,7 +4,7 @@ import QtQuick
 import QtQuick.Layouts
 import "system"
 
-StyledWrapper {
+FitWrapper {
     leftMargin: Style.textMargin
     rightMargin: Style.textMargin
     StackLayout {
@@ -32,10 +32,27 @@ StyledWrapper {
             }
             RowLayout {
                 spacing: -1
-                IconSquare {
-                    icon: "close"
+                WrapperMouseArea {
+                    IconSquare {
+                        icon: "window_close"
+                    }
+                    onClicked: mouse => {
+                        if (mouse.button == Qt.LeftButton) {
+                            Niri.closeFocusedWindow.running = true;
+                        }
+                    }
                 }
-                IconSquare {}
+
+                WrapperMouseArea {
+                    IconSquare {
+                        icon: Niri.focusedWindow?.is_floating ? "floating" : "tiling"
+                    }
+                    onClicked: mouse => {
+                        if (mouse.button == Qt.LeftButton) {
+                            Niri.closeCurrentWindow.running = true;
+                        }
+                    }
+                }
                 IconSquare {}
                 IconSquare {}
             }
