@@ -19,13 +19,19 @@ PanelWindow {
     implicitWidth: 1500
 
     RowLayout {
-        spacing: 0
+        spacing: -1
         ProfileLine {
             Layout.alignment: Qt.AlignTop
             implicitHeight: 70
         }
-        BarLine {
+        ColumnLayout {
+            spacing: -1
             Layout.alignment: Qt.AlignTop
+            StatusLine {}
+            FocusLine {
+                Layout.fillWidth: false
+                implicitWidth: 600
+            }
         }
     }
 }

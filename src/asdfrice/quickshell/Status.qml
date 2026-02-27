@@ -9,6 +9,7 @@ Item {
     property string label: "label"
     property string text: "text"
     property string icon: "placeholder24.svg"
+    property bool strikeout: false
     Rectangle {
         anchors.fill: parent
         color: Style.lightbg1
@@ -27,12 +28,13 @@ Item {
         }
 
         StyledText {
-            Layout.leftMargin: 8
-            Layout.rightMargin: 8
+            Layout.leftMargin: Style.textMargin
+            Layout.rightMargin: Style.textMargin
             text: root.text
             font.bold: true
             font.pointSize: 10
             color: Style.lightfg
+            font.strikeout: root.strikeout
         }
     }
 }

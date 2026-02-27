@@ -5,10 +5,7 @@ import "components"
 import QtQuick.Layouts
 
 StyledWrapper {
-
     ColumnLayout {
-        Layout.fillWidth: false
-        Layout.fillHeight: true
         spacing: 0
         RowLayout {
             StyledText {
@@ -22,9 +19,9 @@ StyledWrapper {
             StyledText {
                 text: Clock.time
             }
-            BarStatus {
+            Status {
                 label: "Battery"
-                icon: "placeholder16.svg"
+                icon: "power.svg"
                 text: `${Util.formatKj(Battery.energy)} / ${Util.formatKj(Battery.energyCapacity)} kJ`
             }
         }

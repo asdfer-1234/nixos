@@ -3,8 +3,8 @@ import QtQuick
 
 Item {
     id: root
-    property color bg: "#ffffff"
-    property color fg: "#000000"
+    property color bg: Style.blue
+    property color fg: Style.lightfg
     property url source: "../icons/placeholder24.svg"
     implicitWidth: icon.width + 2
     implicitHeight: icon.height + 2
@@ -12,6 +12,7 @@ Item {
     Rectangle {
         anchors.fill: parent
         color: bg
+
         border.color: fg
         border.width: 1
     }

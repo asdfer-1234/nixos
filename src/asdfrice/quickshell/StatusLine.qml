@@ -6,22 +6,24 @@ import "components"
 import "system"
 
 StyledWrapper {
-    margin: 4
+    leftMargin: 12
+    rightMargin: 50
     ColumnLayout {
-        spacing: 8
+        spacing: -1
         RowLayout {
             spacing: 15
             StatusBlock {
-                BarStatus {
+                Status {
                     label: "Mouse"
                     text: "mouse"
                 }
-                BarStatus {
+                Status {
                     label: "Keyboard"
                     text: "keyboard"
                 }
                 Arrow {}
-                BarStatus {
+                Status {
+                    icon: "system.svg"
                     label: "CPU"
                     text: {
                         let length = Qsrs.cpu.length;
@@ -40,20 +42,24 @@ StyledWrapper {
                         `${low}/${mid}/${high} (${length})`;
                     }
                 }
-                BarStatus {
+                Status {
+                    icon: "system.svg"
                     label: "GPU"
                     text: Qsrs.nvidia_gpu ? `${Util.formatGib(Qsrs.nvidia_gpu[0].memory.used)} / ${Util.formatGib(Qsrs.nvidia_gpu[0].memory.reserved)} / ${Util.formatGib(Qsrs.nvidia_gpu[0].memory.total)} GiB` : "none"
                 }
-                BarStatus {
+                Status {
+                    icon: "system.svg"
                     label: "RAM"
                     text: Qsrs.ram ? `${Util.formatGib(Qsrs.ram.used)} / ${Util.formatGib(Qsrs.ram.total)} GiB` : null
                 }
-                BarStatus {
+                Status {
+                    icon: "system.svg"
                     label: "Swap"
                     text: Qsrs.swap ? `${Util.formatGib(Qsrs.swap.used)} / ${Util.formatGib(Qsrs.swap.total)} GiB` : null
                 }
                 Arrow {}
-                BarStatus {
+                Status {
+                    icon: "brightness.svg"
                     label: "Brightness"
                     text: Util.formatPercentage(Backlight.brightnessPercentage)
                 }
@@ -66,39 +72,39 @@ StyledWrapper {
                         Volume.sink.audio.muted = !Volume.muted;
                     }
 
-                    BarStatus {
+                    Status {
                         label: "Volume"
-                        text: Util.formatPercentage(Volume.volume) + " " + (Volume.muted ? "Muted" : "Unmuted")
+                        icon: Volume.muted ? "volume_mute.svg" : "volume.svg"
+                        text: Util.formatPercentage(Volume.volume)
+                        strikeout: Volume.muted
                     }
                 }
             }
 
             StatusBlock {
-                BarStatus {
+                Status {
                     label: "Bluetooth"
                     text: "bluetooth"
                 }
-                BarStatus {
+                Status {
                     label: "Wifi"
                     text: "wifi"
                 }
-                BarStatus {
+                Status {
                     label: "Airplane mode"
                     text: "airplane"
                 }
             }
 
-            BarStatus {
+            Status {
                 label: "Currently playing"
                 text: "mpris"
             }
-            BarStatus {
+            Status {
+                icon: "system.svg"
                 label: "Disk"
                 text: "disk"
             }
-        }
-        FocusedStatus {
-            Layout.fillHeight: false
         }
     }
     component Arrow: ColorImage {
@@ -116,14 +122,13 @@ StyledWrapper {
             color: "#ebdbb2"
             border.width: 1
             border.color: Style.lightfg
-        }
-
-        ColorImage {
-            anchors.fill: parent
-            anchors.margins: 1
-            source: "patterns/firmstripes.png"
-            color: "#928374"
-            fillMode: Image.Tile
+            ColorImage {
+                anchors.fill: parent
+                anchors.margins: 1
+                source: "patterns/firmstripes.png"
+                color: "#928374"
+                fillMode: Image.Tile
+            }
         }
 
         RowLayout {

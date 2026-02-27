@@ -13,4 +13,5 @@ Singleton {
     readonly property color lightborder1: "#f9f5d7"
     readonly property color lightfg: "#3c3836"
     readonly property color blue: "#83a598"
+    readonly property double textMargin: 8
 }

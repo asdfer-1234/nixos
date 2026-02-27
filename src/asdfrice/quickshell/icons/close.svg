@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="volume.svg"
+   sodipodi:docname="close.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
-     inkscape:zoom="22.627417"
-     inkscape:cx="-15.313281"
-     inkscape:cy="11.600971"
+     inkscape:zoom="11.313709"
+     inkscape:cx="-26.383922"
+     inkscape:cy="32.482718"
      inkscape:window-width="2480"
      inkscape:window-height="1360"
      inkscape:window-x="0"
@@ -329,37 +329,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       id="rect21"
-       style="fill:#ffffff;stroke:#000000;stroke-width:0"
-       d="M 8.9999992,8.015625 14,4.03125 V 20 L 8.9999992,16.015625 Z"
-       sodipodi:nodetypes="ccccc" />
-    <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-dasharray:none"
-       id="rect22"
-       width="4"
-       height="8"
-       x="4"
-       y="8" />
-    <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-dasharray:none"
        id="rect23"
-       width="1"
-       height="6"
-       x="15"
-       y="9" />
-    <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-dasharray:none"
-       id="rect23-5"
-       width="1"
-       height="9.03125"
-       x="17"
-       y="7.484375" />
-    <rect
+       d="M 4,5 V 19 H 20 V 5 Z M 5,8 H 19 V 18 H 5 Z"
+       sodipodi:nodetypes="cccccccccc" />
+    <path
+       id="rect24"
        style="fill:#ffffff;stroke:#000000;stroke-width:0;stroke-dasharray:none"
-       id="rect23-56"
-       width="1"
-       height="12"
-       x="19"
-       y="6" />
+       d="M 14.106129,10.179168 12,12.285298 9.8938714,10.179168 9.1867646,10.886275 11.292893,12.992404 9.171573,15.113725 9.8786798,15.820832 12,13.699511 l 2.12132,2.121321 0.707107,-0.707107 -2.12132,-2.121321 2.106129,-2.106129 z" />
   </g>
 </svg>
