@@ -83,6 +83,7 @@
     proggyfonts
     terminus_font
   ];
+  nixpkgs.config.input-fonts.acceptLicense = true;
 
   environment.systemPackages = with pkgs; [
     vulkan-tools
