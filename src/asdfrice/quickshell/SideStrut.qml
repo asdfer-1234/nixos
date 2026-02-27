@@ -3,7 +3,6 @@ import Quickshell.Widgets
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
-import "components"
 import "system"
 
 PanelWindow {

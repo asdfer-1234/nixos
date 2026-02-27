@@ -1,6 +1,5 @@
 import Quickshell
 import QtQuick
-import "components"
 
 PanelWindow {
     required property var modelData

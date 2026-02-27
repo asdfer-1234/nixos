@@ -2,7 +2,6 @@ import Quickshell
 import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
-import "components"
 
 Item {
     id: root
@@ -22,7 +21,7 @@ Item {
         id: layout
         spacing: 0
         IconSquare {
-            source: "../icons/" + root.icon
+            icon: root.icon
             bg: Style.blue
             fg: Style.lightfg
         }

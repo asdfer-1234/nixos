@@ -3,7 +3,6 @@ import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
 import "system"
-import "components"
 
 StyledWrapper {
     leftMargin: Style.textMargin
@@ -22,7 +21,6 @@ StyledWrapper {
         RowLayout {
             spacing: 10
             StyledText {
-
                 text: Niri.appId(Niri.focusedWindow)
                 font.bold: true
             }
@@ -35,17 +33,11 @@ StyledWrapper {
             RowLayout {
                 spacing: -1
                 IconSquare {
-                    source: "../icons/close.svg"
+                    icon: "close"
                 }
-                IconSquare {
-                    source: "../icons/placeholder24.svg"
-                }
-                IconSquare {
-                    source: "../icons/placeholder24.svg"
-                }
-                IconSquare {
-                    source: "../icons/placeholder24.svg"
-                }
+                IconSquare {}
+                IconSquare {}
+                IconSquare {}
             }
         }
     }

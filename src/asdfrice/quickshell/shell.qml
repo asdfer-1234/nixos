@@ -2,25 +2,30 @@ import Quickshell
 import QtQuick
 
 ShellRoot {
-
+    id: shellRoot
     Variants {
         model: Quickshell.screens
-        delegate: Scope {
-            id: scope
+        Scope {
+            id: screenRoot
             required property ShellScreen modelData
+            property var panel: null
             Bar {
-                modelData: scope.modelData
+                modelData: screenRoot.modelData
             }
-            // Outliner {
-            //     modelData: scope.modelData
-            // }
             SideStrut {
-                modelData: scope.modelData
+                modelData: screenRoot.modelData
                 isRight: false
             }
             SideStrut {
-                modelData: scope.modelData
+                modelData: screenRoot.modelData
                 isRight: true
+            }
+            Outliner {
+                modelData: screenRoot.modelData
+            }
+            PowerPanel {
+                modelData: screenRoot.modelData
+                visible: panel == "power"
             }
         }
     }

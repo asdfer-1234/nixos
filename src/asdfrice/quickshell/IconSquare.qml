@@ -5,7 +5,7 @@ Item {
     id: root
     property color bg: Style.blue
     property color fg: Style.lightfg
-    property url source: "../icons/placeholder24.svg"
+    property url icon: "placeholder24"
     implicitWidth: icon.width + 2
     implicitHeight: icon.height + 2
 
@@ -20,6 +20,6 @@ Item {
         id: icon
         anchors.centerIn: parent
         color: fg
-        source: root.source
+        source: "icons/" + root.icon
     }
 }

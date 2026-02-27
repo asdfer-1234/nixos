@@ -2,12 +2,12 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Widgets
-import "components"
 import "system"
 
 StyledWrapper {
     leftMargin: 12
     rightMargin: 50
+    margin: -border.width
     ColumnLayout {
         spacing: -1
         RowLayout {

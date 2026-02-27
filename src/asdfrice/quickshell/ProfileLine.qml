@@ -1,7 +1,6 @@
 import Quickshell
 import Quickshell.Widgets
 import "system"
-import "components"
 import QtQuick.Layouts
 
 StyledWrapper {
