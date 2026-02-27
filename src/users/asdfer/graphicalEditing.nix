@@ -5,8 +5,12 @@
     aseprite
     gimp
   ];
-  xdg.mimeApps.defaultApplications = {
-    "image/svg" = "inkscape.desktop";
-    "image/svg+xml" = "inkscape.desktop";
-  };
+  xdg.mimeApps.defaultApplications =
+    let
+      inkscape = "org.inkscape.Inkscape.desktop";
+    in
+    {
+      "image/svg" = inkscape;
+      "image/svg+xml" = inkscape;
+    };
 }
