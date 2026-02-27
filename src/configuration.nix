@@ -71,6 +71,13 @@
     liberation_ttf
     fira-code
     fira-code-symbols
+    maple-mono.truetype
+    fira
+    cascadia-code
+    source-code-pro
+    input-fonts
+    nanum
+    nanum-gothic-coding
     mplus-outline-fonts.githubRelease
     dina-font
     proggyfonts
