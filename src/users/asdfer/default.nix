@@ -11,7 +11,7 @@ with lib;
     ../../asdfrice
     ./zed
     ./firefox
-    ./graphical-editing
+    ./graphicalEditing
   ];
 
   rice.asdfrice.enable = true;
