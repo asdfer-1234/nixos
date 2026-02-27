@@ -24,6 +24,7 @@ StyledWrapper {
             }
             BarStatus {
                 label: "Battery"
+                icon: "placeholder16.svg"
                 text: `${Util.formatKj(Battery.energy)} / ${Util.formatKj(Battery.energyCapacity)} kJ`
             }
         }

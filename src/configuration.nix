@@ -10,7 +10,7 @@
   imports = ml.importGen [
     ./hardware
     ./users
-    ./the-struggles-of-korean-linux
+    ./theStrugglesOfKoreanLinux
   ];
 
   nix = {

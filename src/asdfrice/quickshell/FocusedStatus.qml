@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
 import "system"
@@ -10,39 +11,38 @@ StackLayout {
     currentIndex: Niri.focusedWindow ? 1 : 0
 
     StyledText {
+        Layout.fillHeight: false
         text: "Niri"
         font.bold: true
     }
 
     RowLayout {
-        Layout.fillHeight: false
-        Layout.alignment: Qt.AlignCenter
-
         spacing: 10
-
         StyledText {
-            text: Niri.appId(Niri.focusedWindow)
 
+            text: Niri.appId(Niri.focusedWindow)
             font.bold: true
         }
+
         StyledText {
             Layout.fillWidth: true
             text: Niri.title(Niri.focusedWindow)
             font.italic: true
         }
-        StyledText {
-            text: "close"
-        }
-        StyledText {
-            text: Niri.focusedWindow?.is_floating ? "Floating" : "Not floating"
-        }
-        StyledText {
-            text: {
-                "fullscreen?";
+        RowLayout {
+            spacing: -1
+            IconSquare {
+                source: "../icons/placeholder16.svg"
             }
-        }
-        StyledText {
-            text: "track on outliner"
+            IconSquare {
+                source: "../icons/placeholder16.svg"
+            }
+            IconSquare {
+                source: "../icons/placeholder16.svg"
+            }
+            IconSquare {
+                source: "../icons/placeholder16.svg"
+            }
         }
     }
 }

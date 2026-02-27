@@ -5,7 +5,7 @@ Item {
     id: root
     property color bg: "#ffffff"
     property color fg: "#000000"
-    property url source: "../icons/placeholder.svg"
+    property url source: "../icons/placeholder24.svg"
     implicitWidth: icon.width + 2
     implicitHeight: icon.height + 2
 

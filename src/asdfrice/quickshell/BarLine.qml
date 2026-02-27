@@ -87,11 +87,6 @@ StyledWrapper {
                     text: "airplane"
                 }
             }
-        }
-        RowLayout {
-            spacing: 20
-
-            FocusedStatus {}
 
             BarStatus {
                 label: "Currently playing"
@@ -102,6 +97,9 @@ StyledWrapper {
                 text: "disk"
             }
         }
+        FocusedStatus {
+            Layout.fillHeight: false
+        }
     }
     component Arrow: ColorImage {
         source: "icons/right_arrow.svg"
@@ -110,14 +108,22 @@ StyledWrapper {
     component StatusBlock: Item {
         id: root
         default property list<Item> children
-        implicitWidth: row.width + 24
+        implicitWidth: row.width + 14
         implicitHeight: row.height
 
         Rectangle {
             anchors.fill: parent
-            color: Style.darkbg2
+            color: "#ebdbb2"
             border.width: 1
-            border.color: Style.darkfg
+            border.color: Style.lightfg
+        }
+
+        ColorImage {
+            anchors.fill: parent
+            anchors.margins: 1
+            source: "patterns/firmstripes.png"
+            color: "#928374"
+            fillMode: Image.Tile
         }
 
         RowLayout {
