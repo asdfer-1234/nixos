@@ -12,10 +12,13 @@ FitWrapper {
 
         currentIndex: Niri.focusedWindow ? 1 : 0
 
-        StyledText {
-            Layout.fillHeight: false
-            text: "Niri"
-            font.bold: true
+        Item {
+            StyledText {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                text: "niri wayland compositor <3"
+                font.italic: true
+            }
         }
 
         RowLayout {
@@ -30,31 +33,33 @@ FitWrapper {
                 text: Niri.title(Niri.focusedWindow)
                 font.italic: true
             }
-            RowLayout {
-                spacing: -1
-                WrapperMouseArea {
-                    IconSquare {
-                        icon: "window_close"
-                    }
-                    onClicked: mouse => {
-                        if (mouse.button == Qt.LeftButton) {
-                            Niri.closeFocusedWindow.running = true;
+            StripeRow {
+                RowLayout {
+                    spacing: -1
+                    WrapperMouseArea {
+                        IconSquare {
+                            icon: "window_close"
+                        }
+                        onClicked: mouse => {
+                            if (mouse.button == Qt.LeftButton) {
+                                Niri.closeFocusedWindow.running = true;
+                            }
                         }
                     }
-                }
 
-                WrapperMouseArea {
-                    IconSquare {
-                        icon: Niri.focusedWindow?.is_floating ? "floating" : "tiling"
-                    }
-                    onClicked: mouse => {
-                        if (mouse.button == Qt.LeftButton) {
-                            Niri.closeCurrentWindow.running = true;
+                    WrapperMouseArea {
+                        IconSquare {
+                            icon: Niri.focusedWindow?.is_floating ? "floating" : "tiling"
+                        }
+                        onClicked: mouse => {
+                            if (mouse.button == Qt.LeftButton) {
+                                Niri.toggleWindowFloating.running = true;
+                            }
                         }
                     }
+                    IconSquare {} // fullscreen
+                    IconSquare {} // add to outliner
                 }
-                IconSquare {}
-                IconSquare {}
             }
         }
     }

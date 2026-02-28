@@ -10,7 +10,6 @@ Singleton {
     property list<var> workspaces
     property list<var> windows
     property list<var> keyboardLayouts
-    property list<var> outputs
     readonly property var focusedWindow: {
         Niri.windows.find(x => x.is_focused);
     }
@@ -144,6 +143,7 @@ Singleton {
             // console.log("WORKSPACES:", JSON.stringify(root.workspaces));
             // console.log("KEYBOARDS:", JSON.stringify(root.keyboardLayouts));
             // console.log("CASTS", JSON.stringify(root.casts));
+
             }
         }
         onError: err => {
@@ -160,5 +160,9 @@ Singleton {
 
     readonly property Process closeFocusedWindow: Process {
         command: ["niri", "msg", "action", "close-window"]
+    }
+
+    readonly property Process toggleWindowFloating: Process {
+        command: ["niri", "msg", "action", "toggle-window-floating"]
     }
 }

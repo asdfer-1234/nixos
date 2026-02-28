@@ -9,9 +9,7 @@ ShellRoot {
             id: screenRoot
             required property ShellScreen modelData
             property var panel: null
-            Bar {
-                modelData: screenRoot.modelData
-            }
+
             SideStrut {
                 modelData: screenRoot.modelData
                 isRight: false
@@ -21,6 +19,9 @@ ShellRoot {
                 isRight: true
             }
             Outliner {
+                modelData: screenRoot.modelData
+            }
+            Bar {
                 modelData: screenRoot.modelData
             }
             PowerPanel {

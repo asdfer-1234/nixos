@@ -4,23 +4,20 @@ import Quickshell
 import Quickshell.Widgets
 import "system"
 
-StyledWrapper {
+FitWrapper {
     leftMargin: 12
     rightMargin: 50
-    margin: -border.width
     ColumnLayout {
         spacing: -1
         RowLayout {
             spacing: 15
-            StatusBlock {
-                Status {
-                    label: "Mouse"
-                    text: "mouse"
+            StripeRow {
+                RowLayout {
+                    spacing: -1
+                    IconSquare {}
+                    IconSquare {}
                 }
-                Status {
-                    label: "Keyboard"
-                    text: "keyboard"
-                }
+
                 Arrow {}
                 Status {
                     icon: "system.svg"
@@ -81,7 +78,7 @@ StyledWrapper {
                 }
             }
 
-            StatusBlock {
+            StripeRow {
                 Status {
                     label: "Bluetooth"
                     text: "bluetooth"
@@ -110,32 +107,5 @@ StyledWrapper {
     component Arrow: ColorImage {
         source: "icons/right_arrow.svg"
         color: "yellow"
-    }
-    component StatusBlock: Item {
-        id: root
-        default property list<Item> children
-        implicitWidth: row.width + 14
-        implicitHeight: row.height
-
-        Rectangle {
-            anchors.fill: parent
-            color: "#ebdbb2"
-            border.width: 1
-            border.color: Style.lightfg
-            ColorImage {
-                anchors.fill: parent
-                anchors.margins: 1
-                source: "patterns/firmstripes.png"
-                color: "#928374"
-                fillMode: Image.Tile
-            }
-        }
-
-        RowLayout {
-            id: row
-            anchors.centerIn: parent
-            spacing: 10
-            children: root.children
-        }
     }
 }
