@@ -37,7 +37,7 @@ with lib;
     dragon-drop
     drawio
     kakoune
-    kate
+    qtPackages.kate
     light
     mate.atril
     qjackctl
