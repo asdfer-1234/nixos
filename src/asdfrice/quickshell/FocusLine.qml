@@ -32,6 +32,7 @@ FitWrapper {
                 Layout.fillWidth: true
                 text: Niri.title(Niri.focusedWindow)
                 font.italic: true
+                elide: Text.ElideRight
             }
             StripeRow {
                 RowLayout {

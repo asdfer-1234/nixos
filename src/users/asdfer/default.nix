@@ -29,6 +29,7 @@ with lib;
   };
   home.packages = with pkgs; [
     # Stuff
+    prismlauncher
     thunderbird
     alacritty
     fuzzel
@@ -59,6 +60,7 @@ with lib;
     keymapp
     wally-cli
     git-credential-manager
+
   ];
 
   services.polkit-gnome.enable = true;
