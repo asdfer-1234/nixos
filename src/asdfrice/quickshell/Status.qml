@@ -20,6 +20,7 @@ Item {
     RowLayout {
         id: layout
         spacing: 0
+
         IconSquare {
             icon: root.icon
             bg: Style.blue
@@ -27,6 +28,7 @@ Item {
         }
 
         StyledText {
+            id: text
             Layout.leftMargin: Style.textMargin
             Layout.rightMargin: Style.textMargin
             text: root.text

@@ -32,10 +32,24 @@ with lib;
     thunderbird
     alacritty
     fuzzel
-    xfce.thunar
-    kdePackages.dolphin
+    baobab
+    code
+    dragon-drop
+    drawio
+    kakoune
+    kate
+    light
     mate.atril
+    qjackctl
+    rhythmbox
     # deadbeef # BUILD FAILS
+    # Image viewers
+    imv
+    swayimg
+    # File managers
+    xfce.thunar
+    nautilus
+    kdePackages.dolphin
     # from nix-env
     cava
     font-manager

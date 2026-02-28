@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     inkscape
+    adwaita-icon-theme
     aseprite
     gimp
   ];

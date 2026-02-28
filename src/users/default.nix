@@ -19,6 +19,7 @@
   programs.steam = {
     enable = true;
     protontricks.enable = true;
+    extraPackages = with pkgs; [ protonup-qt ];
   };
 
   environment.systemPackages = [
