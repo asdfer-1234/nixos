@@ -33,4 +33,5 @@
     packages = [
     ];
   };
+  services.logmein-hamachi.enable = true;
 }
