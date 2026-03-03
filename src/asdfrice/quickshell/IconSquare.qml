@@ -3,7 +3,7 @@ import QtQuick
 
 Item {
     id: root
-    property color bg: Style.blue
+    property color bg: Style.lightbg1
     property color fg: Style.lightfg
     property url icon: "placeholder24"
     implicitWidth: icon.width + 2

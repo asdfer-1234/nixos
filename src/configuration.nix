@@ -42,6 +42,7 @@
 
   networking.hostName = "nauvis"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.networkmanager.dhcp = "dhcpcd";
 
   services.upower.enable = true;
   hardware.uinput.enable = true;

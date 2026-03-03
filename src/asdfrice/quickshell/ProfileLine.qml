@@ -23,6 +23,7 @@ StyledWrapper {
                 Status {
                     label: "Power"
                     icon: "power.svg"
+                    squareBg: Style.yellow
                     text: `${Util.formatKj(Power.energy)} / ${Util.formatKj(Power.energyCapacity)} kJ`
                 }
             }

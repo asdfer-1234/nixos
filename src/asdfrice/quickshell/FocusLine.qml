@@ -40,6 +40,7 @@ FitWrapper {
                     WrapperMouseArea {
                         IconSquare {
                             icon: "window_close"
+                            bg: Style.aqua
                         }
                         onClicked: mouse => {
                             if (mouse.button == Qt.LeftButton) {
@@ -51,6 +52,7 @@ FitWrapper {
                     WrapperMouseArea {
                         IconSquare {
                             icon: Niri.focusedWindow?.is_floating ? "floating" : "tiling"
+                            bg: Style.aqua
                         }
                         onClicked: mouse => {
                             if (mouse.button == Qt.LeftButton) {
@@ -58,8 +60,12 @@ FitWrapper {
                             }
                         }
                     }
-                    IconSquare {} // fullscreen
-                    IconSquare {} // add to outliner
+                    IconSquare {
+                        bg: Style.aqua
+                    } // fullscreen
+                    IconSquare {
+                        bg: Style.aqua
+                    } // add to outliner
                 }
             }
         }

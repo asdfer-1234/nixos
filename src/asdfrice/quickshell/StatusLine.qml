@@ -14,14 +14,19 @@ FitWrapper {
             StripeRow {
                 RowLayout {
                     spacing: -1
-                    IconSquare {}
-                    IconSquare {}
+                    IconSquare {
+                        bg: Style.red
+                    }
+                    IconSquare {
+                        bg: Style.red
+                    }
                 }
 
                 Arrow {}
                 Status {
                     icon: "system.svg"
                     label: "CPU"
+                    squareBg: Style.green
                     text: {
                         let length = Qsrs.cpu.length;
                         let low = 0;
@@ -40,22 +45,26 @@ FitWrapper {
                     }
                 }
                 Status {
+                    squareBg: Style.green
                     icon: "system.svg"
                     label: "GPU"
                     text: Qsrs.nvidia_gpu ? `${Util.formatGib(Qsrs.nvidia_gpu[0].memory.used)} / ${Util.formatGib(Qsrs.nvidia_gpu[0].memory.reserved)} / ${Util.formatGib(Qsrs.nvidia_gpu[0].memory.total)} GiB` : "none"
                 }
                 Status {
+                    squareBg: Style.green
                     icon: "system.svg"
                     label: "RAM"
                     text: Qsrs.ram ? `${Util.formatGib(Qsrs.ram.used)} / ${Util.formatGib(Qsrs.ram.total)} GiB` : null
                 }
                 Status {
+                    squareBg: Style.green
                     icon: "system.svg"
                     label: "Swap"
                     text: Qsrs.swap ? `${Util.formatGib(Qsrs.swap.used)} / ${Util.formatGib(Qsrs.swap.total)} GiB` : null
                 }
                 Arrow {}
                 Status {
+                    squareBg: Style.blue
                     icon: "brightness.svg"
                     label: "Brightness"
                     text: Util.formatPercentage(Backlight.brightnessPercentage)
@@ -70,6 +79,7 @@ FitWrapper {
                     }
 
                     Status {
+                        squareBg: Style.blue
                         label: "Volume"
                         icon: Volume.muted ? "volume_mute.svg" : "volume.svg"
                         text: Util.formatPercentage(Volume.volume)
@@ -80,14 +90,17 @@ FitWrapper {
 
             StripeRow {
                 Status {
+                    squareBg: Style.purple
                     label: "Bluetooth"
                     text: "bluetooth"
                 }
                 Status {
+                    squareBg: Style.purple
                     label: "Wifi"
                     text: "wifi"
                 }
                 Status {
+                    squareBg: Style.purple
                     label: "Airplane mode"
                     text: "airplane"
                 }
@@ -104,8 +117,19 @@ FitWrapper {
             }
         }
     }
-    component Arrow: ColorImage {
-        source: "icons/right_arrow.svg"
-        color: "yellow"
+    component Arrow: Item {
+        implicitWidth: 18
+        implicitHeight: 18
+        Rectangle {
+            anchors.fill: parent
+            border.color: Style.lightfg
+            color: Style.lightbg1
+        }
+        ColorImage {
+            id: image
+            anchors.centerIn: parent
+            source: "icons/right_arrow_16.svg"
+            color: Style.lightfg
+        }
     }
 }

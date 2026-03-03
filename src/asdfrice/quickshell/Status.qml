@@ -9,6 +9,7 @@ Item {
     property string text: "text"
     property string icon: "placeholder24.svg"
     property bool strikeout: false
+    property color squareBg: Style.orange
     Rectangle {
         anchors.fill: parent
         color: Style.lightbg1
@@ -23,7 +24,7 @@ Item {
 
         IconSquare {
             icon: root.icon
-            bg: Style.blue
+            bg: root.squareBg
             fg: Style.lightfg
         }
 
