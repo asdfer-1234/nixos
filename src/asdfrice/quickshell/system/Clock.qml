@@ -8,7 +8,8 @@ Singleton {
     readonly property string time: {
         Qt.formatDateTime(clock.date, "M/d ddd HH:mm:ss");
     }
-    readonly property string weekday: Qt.SystemClock {
+
+    SystemClock {
         id: clock
         precision: SystemClock.Seconds
     }
