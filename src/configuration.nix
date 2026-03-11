@@ -42,20 +42,6 @@
 
   networking.hostName = "nauvis"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.networkmanager.dhcp = "dhcpcd";
-  networking.wireless.iwd.enable = true;
-  # real insecurity moment
-  systemd.services.wpa_supplicant.environment.OPENSSL_CONF = pkgs.writeText "openssl.cnf" ''
-    openssl_conf = openssl_init
-    [openssl_init]
-    ssl_conf = ssl_sect
-    [ssl_sect]
-    system_default = system_default_sect
-    [system_default_sect]
-    Options = UnsafeLegacyRenegotiation
-    [system_default_sect]
-    CipherString = Default:@SECLEVEL=0
-  '';
 
   services.upower.enable = true;
   hardware.uinput.enable = true;
