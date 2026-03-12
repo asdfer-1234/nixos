@@ -13,7 +13,7 @@ in
       enable = true;
       settings = {
         discordBranch = "stable";
-        minimize
+        minimizeToTray = false;
       };
     };
     xdg.configFile = {
