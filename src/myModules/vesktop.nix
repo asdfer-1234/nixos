@@ -13,15 +13,14 @@ in
       enable = true;
       settings = {
         discordBranch = "stable";
+        minimize
       };
     };
     xdg.configFile = {
       "vesktop/state.json" = {
-        text = ''
-          {
-            firstLaunch: false
-          }
-        '';
+        text = toJson {
+          firstLaunch = false;
+        };
       };
     };
   };
