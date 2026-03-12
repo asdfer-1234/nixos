@@ -13,6 +13,7 @@ with lib;
     ./firefox
     ./graphicalEditing
     ./uni
+    ../../myModules/vesktop
   ];
 
   rice.asdfrice.enable = true;
