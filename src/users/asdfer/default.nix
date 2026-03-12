@@ -11,7 +11,6 @@ with lib;
     ../../asdfrice
     ./zed
     ./firefox
-    ./vesktop
     ./graphicalEditing
     ./uni
   ];
@@ -80,6 +79,8 @@ with lib;
   nixpkgs.config = {
     allowUnfree = true;
   };
+
+  myModules.vesktop.enable = true;
 
   home.stateVersion = "25.11";
 }
