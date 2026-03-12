@@ -167,6 +167,18 @@
     ];
   };
 
+  "naver-map" = {
+    name = "네이버 지도";
+    urls = [
+      {
+        template = "https://map.naver.com/p/search/{searchTerms}";
+      }
+    ];
+    definedAliases = [
+      "@nmap"
+    ];
+  };
+
   "wikipedia" = {
     name = "Wikipedia";
     urls = [
