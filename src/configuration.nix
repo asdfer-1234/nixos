@@ -104,6 +104,9 @@
     ranger
     ripgrep
     yt-dlp
+    acpi
+    evhz # touchpad polling rate
+    tree
   ];
 
   programs.git.enable = true;

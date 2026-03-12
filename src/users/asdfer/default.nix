@@ -43,6 +43,7 @@ with lib;
     mate.atril
     qjackctl
     rhythmbox
+    libreoffice
     # deadbeef # BUILD FAILS
     # Image viewers
     imv
