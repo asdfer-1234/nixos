@@ -1,6 +1,6 @@
 { pkgs }:
 {
-  "나무위키" = {
+  "namuwiki" = {
     urls = [
       {
         template = "https://namu.wiki/go/{searchTerms}";
@@ -11,7 +11,7 @@
       "@namuw"
     ];
   };
-  "Minecraft Wiki" = {
+  "minecraft-wiki" = {
     urls = [
       {
         template = "https://minecraft.wiki?search={searchTerms}";
@@ -19,7 +19,7 @@
     ];
     definedAliases = [ "@mcw" ];
   };
-  "Terraria Wiki" = {
+  "terraria-wiki" = {
     urls = [
       {
         template = "https://terraria.wiki.gg/wiki/Special:Search";
@@ -38,7 +38,7 @@
     definedAliases = [ "@trw" ];
   };
 
-  "Nix Packages" = {
+  "nix-packages" = {
     urls = [
       {
         template = "https://search.nixos.org/packages";
@@ -58,7 +58,7 @@
     definedAliases = [ "@np" ];
   };
 
-  "Nix Options" = {
+  "nix-options" = {
     urls = [
       {
         template = "https://search.nixos.org/options";
