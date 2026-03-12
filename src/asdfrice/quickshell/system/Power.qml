@@ -14,8 +14,8 @@ Singleton {
     readonly property Process poweroff: Process {
         command: ["systemctl", "poweroff"]
     }
-    readonly property Process restart: Process {
-        command: ["systemctl", "restart"]
+    readonly property Process reboot: Process {
+        command: ["systemctl", "reboot"]
     }
     readonly property Process suspend: Process {
         command: ["systemctl", "suspend"]

@@ -26,7 +26,7 @@ PanelWindow {
                     }
                     SquareButton {
                         action: () => {
-                            Power.restart.running = true;
+                            Power.reboot.running = true;
                         }
                     }
                     SquareButton {
