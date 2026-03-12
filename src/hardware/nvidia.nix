@@ -39,6 +39,12 @@
           environment.variables = {
             NIXOS_SPECIALISATION = "nvidia";
           };
+          boot.extraModprobeConfig = ''
+            # Force GPU modules to be loaded after vfio
+            softdep amdgpu pre: vfio vfio_pci
+            softdep i915 pre: vfio vfio_pci
+            softdep nvidia pre: vfio vfio_pci
+          '';
         };
       };
     }
