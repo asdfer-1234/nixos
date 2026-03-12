@@ -11,6 +11,7 @@ with lib;
     ../../asdfrice
     ./zed
     ./firefox
+    ./vesktop
     ./graphicalEditing
     ./uni
   ];
@@ -75,7 +76,6 @@ with lib;
       credential.gitHubAccountFiltering = false;
     };
   };
-  programs.vesktop.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
