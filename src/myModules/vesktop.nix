@@ -1,5 +1,5 @@
 { lib, config, ... }:
-with lib;
+with lib builtins;
 let
   cfg = config.myModules.vesktop;
 in
