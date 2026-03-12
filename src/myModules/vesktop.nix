@@ -19,7 +19,7 @@ in
     };
     xdg.configFile = {
       "vesktop/state.json" = {
-        text = toJson {
+        text = toJSON {
           firstLaunch = false;
         };
       };
