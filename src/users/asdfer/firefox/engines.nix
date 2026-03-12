@@ -1,6 +1,7 @@
 { pkgs }:
 {
   "namuwiki" = {
+    name = "나무위키";
     urls = [
       {
         template = "https://namu.wiki/go/{searchTerms}";
@@ -12,6 +13,7 @@
     ];
   };
   "minecraft-wiki" = {
+    name = "Minecraft Wiki";
     urls = [
       {
         template = "https://minecraft.wiki?search={searchTerms}";
@@ -20,6 +22,7 @@
     definedAliases = [ "@mcw" ];
   };
   "terraria-wiki" = {
+    name = "Terraria Wiki";
     urls = [
       {
         template = "https://terraria.wiki.gg/wiki/Special:Search";
@@ -39,6 +42,7 @@
   };
 
   "nix-packages" = {
+    name = "Nix Packages";
     urls = [
       {
         template = "https://search.nixos.org/packages";
@@ -59,6 +63,7 @@
   };
 
   "nix-options" = {
+    name = "Nix Options";
     urls = [
       {
         template = "https://search.nixos.org/options";
@@ -78,7 +83,8 @@
     definedAliases = [ "@no" ];
   };
 
-  "NixOS Wiki" = {
+  "nixos-wiki" = {
+    name = "NixOS Wiki";
     urls = [
       {
         template = "https://wiki.nixos.org/w/index.php";
@@ -95,6 +101,7 @@
   };
 
   "noogle" = {
+    name = "Noogλe";
     urls = [
       {
         template = "https://noogle.dev/q";
@@ -109,7 +116,8 @@
     definedAliases = [ "@ng" ];
   };
 
-  "MyNixOS" = {
+  "mynixos" = {
+    name = "MyNixOS";
     urls = [
       {
         template = "https://mynixos.com/search";
@@ -124,7 +132,8 @@
     definedAliases = [ "@myn" ];
   };
 
-  "Arch Linux Wiki" = {
+  "archlinux-wiki" = {
+    name = "Arch Linux Wiki";
     urls = [
       {
         template = "https://wiki.archlinux.org/index.php";
@@ -139,7 +148,8 @@
     definedAliases = [ "@aw" ];
   };
 
-  "네이버" = {
+  "naver" = {
+    name = "네이버";
     urls = [
       {
         template = "https://search.naver.com/search.naver";
@@ -158,7 +168,8 @@
     ];
   };
 
-  "Wikipedia" = {
+  "wikipedia" = {
+    name = "Wikipedia";
     urls = [
       {
         template = "https://en.wikipedia.org/wiki/";
@@ -173,10 +184,12 @@
     definedAliases = [
       "@w"
       "@wiki"
+      "@wikipedia"
     ];
   };
 
-  "GitHub Code" = {
+  "github-code" = {
+    name = "GitHub Code";
     urls = [
       {
         template = "https://github.com/search";
@@ -195,7 +208,8 @@
     definedAliases = [ "@ghcode" ];
   };
 
-  "GitHub Repositories" = {
+  "github-repos" = {
+    name = "GitHub Repositories";
     urls = [
       {
         template = "https://github.com/search";
@@ -208,10 +222,15 @@
         ];
       }
     ];
-    definedAliases = [ "@gh" ];
+    definedAliases = [
+      "@gh"
+      "@ghr"
+      "@github"
+    ];
   };
 
-  "GitHub Issues" = {
+  "github-issues" = {
+    name = "GitHub Issues";
     urls = [
       {
         template = "https://github.com/search";
@@ -230,7 +249,8 @@
     definedAliases = [ "@ghi" ];
   };
 
-  "GitHub Pull Requests" = {
+  "github-prs" = {
+    name = "GitHub Pull Requests";
     urls = [
       {
         template = "https://github.com/search";
@@ -249,7 +269,8 @@
     definedAliases = [ "@ghpr" ];
   };
 
-  "GitHub Discussions" = {
+  "github-discussions" = {
+    name = "GitHub Discussions";
     urls = [
       {
         template = "https://github.com/search";
@@ -268,7 +289,8 @@
     definedAliases = [ "@ghd" ];
   };
 
-  "GitHub Users" = {
+  "github-users" = {
+    name = "GitHub Users";
     urls = [
       {
         template = "https://github.com/search";
@@ -287,7 +309,8 @@
     definedAliases = [ "@ghu" ];
   };
 
-  "GitHub Commits" = {
+  "github-commits" = {
+    name = "GitHub Commits";
     urls = [
       {
         template = "https://github.com/search";
@@ -306,7 +329,8 @@
     definedAliases = [ "@ghc" ];
   };
 
-  "GitHub Packages" = {
+  "github-packages" = {
+    name = "GitHub Packages";
     urls = [
       {
         template = "https://github.com/search";
@@ -325,7 +349,8 @@
     definedAliases = [ "@ghp" ];
   };
 
-  "GitHub Wikis" = {
+  "github-wikis" = {
+    name = "GitHub Wikis";
     urls = [
       {
         template = "https://github.com/search";
@@ -344,7 +369,8 @@
     definedAliases = [ "@ghw" ];
   };
 
-  "GitHub Topics" = {
+  "github-topics" = {
+    name = "GitHub Topics";
     urls = [
       {
         template = "https://github.com/search";
@@ -363,7 +389,8 @@
     definedAliases = [ "@ght" ];
   };
 
-  "GitHub Marketplace" = {
+  "github-marketplace" = {
+    name = "GitHub Marketplace";
     urls = [
       {
         template = "https://github.com/search";
@@ -383,4 +410,39 @@
     definedAliases = [ "@ghm" ];
   };
 
+  "rust-std" = {
+    name = "Rust Standrard Library";
+    urls = [
+      {
+        template = "https://doc.rust-lang.org/std/";
+        params = [
+          {
+            name = "search";
+            value = "{searchTerms}";
+          }
+        ];
+      }
+    ];
+    definedAliases = [ "@rust" ];
+  };
+
+  "google" = {
+    name = "Google";
+    urls = [
+      {
+        template = "https://www.google.com/search";
+        params = [
+          {
+            name = "q";
+            value = "{searchTerms}";
+          }
+        ];
+      }
+    ];
+    definedAliases = [
+      "@g"
+      "@google"
+    ];
+    icon = "https://wiki.nixos.org/favicon.ico";
+  };
 }
