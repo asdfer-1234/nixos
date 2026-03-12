@@ -13,6 +13,7 @@ with lib;
     ./firefox
     ./graphicalEditing
     ./uni
+    ./tex
     ../../myModules/vesktop
   ];
 
