@@ -23,7 +23,7 @@
   };
 
   environment.systemPackages = [
-    kakaotalk.packages.${pkgs.system}.kakaotalk
+    kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk
   ];
 
   users.users.zxcver = {
