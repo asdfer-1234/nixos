@@ -57,7 +57,6 @@ with lib;
     cava
     font-manager
     ungoogled-chromium
-    discord
     # zsa keyboards
     keymapp
     wally-cli
@@ -76,6 +75,7 @@ with lib;
       credential.gitHubAccountFiltering = false;
     };
   };
+  programs.vesktop.enable = true;
 
   nixpkgs.config = {
     allowUnfree = true;
