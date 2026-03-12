@@ -12,6 +12,7 @@ with lib;
     ./zed
     ./firefox
     ./graphicalEditing
+    ./uni
   ];
 
   rice.asdfrice.enable = true;
@@ -61,7 +62,8 @@ with lib;
     keymapp
     wally-cli
     git-credential-manager
-
+    # games
+    tetrio-desktop
   ];
 
   services.polkit-gnome.enable = true;
