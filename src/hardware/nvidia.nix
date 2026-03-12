@@ -2,6 +2,9 @@
 {
 
   config = lib.mkMerge [
+    {
+      boot.extraModprobeConfig = "softdep i915 pre: vfio vfio_pci";
+    }
     (lib.mkIf (config.specialisation != { }) {
 
       system.nixos.tags = [ "igpu" ];
@@ -39,12 +42,7 @@
           environment.variables = {
             NIXOS_SPECIALISATION = "nvidia";
           };
-          boot.extraModprobeConfig = ''
-            # Force GPU modules to be loaded after vfio
-            softdep amdgpu pre: vfio vfio_pci
-            softdep i915 pre: vfio vfio_pci
-            softdep nvidia pre: vfio vfio_pci
-          '';
+          boot.extraModprobeConfig = "softdep nvidia pre: vfio vfio_pci";
         };
       };
     }
