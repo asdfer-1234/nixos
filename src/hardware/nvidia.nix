@@ -44,7 +44,6 @@
             softdep amdgpu pre: vfio vfio_pci
             softdep i915 pre: vfio vfio_pci
             softdep nvidia pre: vfio vfio_pci
-            softdep nvidia pre: i915
           '';
         };
       };
