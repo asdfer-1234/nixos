@@ -11,6 +11,7 @@
     ./hardware
     ./users
     ./theStrugglesOfKoreanLinux
+    ./git
   ];
 
   nix = {
@@ -108,13 +109,22 @@
     evhz # touchpad polling rate
     tree
   ];
-
-  programs.git.enable = true;
   programs.vim.enable = true;
   programs.neovim.enable = true;
   programs.htop.enable = true;
   programs.nix-index.enable = true;
   system.stateVersion = "25.11";
+
+  services.openssh = {
+    enable = true;
+    ports = [ 5432 ];
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "zxcver" ];
+    };
+  };
 
   home-manager = {
     useUserPackages = true;
