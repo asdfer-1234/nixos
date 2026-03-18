@@ -14,6 +14,7 @@ with lib;
   my.tex.enable = true;
   my.zed.enable = true;
   my.firefox.enable = true;
+  my.graphicalEditing.enable = true;
 
   my.rice.asdfrice.enable = true;
 
