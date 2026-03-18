@@ -27,7 +27,6 @@ with myLib;
     enable = true;
     package = pkgs.vscode.fhs;
   };
-  programs.thunderbird.enable = true;
   home.packages = with pkgs; [
     # Stuff
     alacritty
