@@ -7,7 +7,7 @@
   ...
 }:
 let
-  cfg = config.rice.asdfrice;
+  cfg = config.my.rice.asdfrice;
 in
 {
 
