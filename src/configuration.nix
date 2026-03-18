@@ -3,8 +3,9 @@
   myLib,
   ...
 }:
+with myLib;
 {
-  imports = myLib.importGen [
+  imports = importGen [
     ./users
     ./git
     ./my

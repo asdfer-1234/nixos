@@ -1,4 +1,5 @@
-{ ... }:
+{ myLib, ... }:
+with myLib;
 {
   users.users.zxcver = {
     isNormalUser = true;
@@ -7,5 +8,5 @@
     packages = [
     ];
   };
-  home-manager.users.zxcver = ./home.nix;
+  home-manager.users.zxcver = nixPath ./home.nix;
 }

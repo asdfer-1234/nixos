@@ -6,8 +6,9 @@
   ...
 }:
 with lib;
+with myLib;
 {
-  imports = myLib.importGen [
+  imports = importGen [
     ../../../myHome
   ];
 

@@ -1,6 +1,7 @@
 { myLib, ... }:
+with myLib;
 {
-  imports = myLib.importGen [
+  imports = importGen [
     ./laptop
   ];
 }

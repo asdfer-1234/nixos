@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+{ myLib, pkgs, ... }:
+with myLib;
 {
   users.users.asdfer = {
     isNormalUser = true;
@@ -11,10 +12,10 @@
       "input"
     ];
   };
-  home-manager.users.asdfer = ./home;
+  home-manager.users.asdfer = nixPath ./home;
 
   # TODO: move below config into home-manager somehow
-  programs.niri.enable = true;
+  programs.niri.enable = true; # is this really needed?
   programs.steam = {
     enable = true;
     protontricks.enable = true;

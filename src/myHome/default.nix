@@ -1,7 +1,8 @@
 # Home manager modules
 { myLib, ... }:
+with myLib;
 {
-  imports = myLib.importGen [
+  imports = importGen [
     ./kanata
     ./niri
     ./quickshell

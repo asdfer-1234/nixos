@@ -5,9 +5,10 @@
   kakaotalk,
   ...
 }:
+with myLib;
 {
   services.displayManager.cosmic-greeter.enable = true;
-  imports = [
+  imports = importGen [
     ./asdfer
     ./zxcver
   ];
