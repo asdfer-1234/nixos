@@ -8,5 +8,5 @@ with myLib;
     packages = [
     ];
   };
-  home-manager.users.zxcver = nixPath ./home.nix;
+  home-manager.users.zxcver = nixPath ./home;
 }
