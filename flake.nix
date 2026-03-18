@@ -26,8 +26,8 @@
     let
       system = "x86_64-linux";
       myLib = {
-        importGen = imports: forEach imports nixPath;
         nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
+        importGen = imports: forEach imports nixPath;
       };
     in
     {
