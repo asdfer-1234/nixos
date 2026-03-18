@@ -11,8 +11,6 @@ with myLib;
     ./hardware
   ];
   my.nix.setup = true;
-
-  my.hardware.laptop.enable = true;
   boot.kernelPackages = pkgs.linuxPackages;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
