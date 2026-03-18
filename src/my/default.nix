@@ -4,5 +4,6 @@
     ./fonts
     ./ime
     ./bash
+    ./fetches
   ];
 }

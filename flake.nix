@@ -25,9 +25,9 @@
     with nixpkgs.lib;
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
+      myLib = {
+        importGen = imports: forEach imports nixPath;
+        nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
       };
     in
     {
@@ -38,10 +38,8 @@
             inputs
             qsrs
             kakaotalk
+            myLib
             ;
-          myLib = {
-            importGen = imports: forEach imports (p: (if (pathIsDirectory p) then p else (p + ".nix")));
-          };
         };
         modules = [
           ./src/configuration.nix

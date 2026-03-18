@@ -61,17 +61,15 @@
 
   my.fonts.enable = true;
 
+  my.fetches.enable = true;
+
   environment.systemPackages = with pkgs; [
     vulkan-tools
     pciutils
     tldr
     cbonsai
-    cpufetch
     cowsay
-    fastfetch
-    neofetch
     killall
-    ramfetch
     sl
     nvtopPackages.full
     trashy
