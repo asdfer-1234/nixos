@@ -7,5 +7,6 @@
     ./quickshell
     ./vesktop
     ./tex
+    ./firefox
   ];
 }

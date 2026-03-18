@@ -10,13 +10,14 @@ with lib;
   imports = myLib.importGen [
     ../../asdfrice
     ./zed
-    ./firefox
     ./graphicalEditing
     ./uni
     ../../myHome
   ];
   my.uni.enable = true;
   my.tex.enable = true;
+
+  my.firefox.enable = true;
 
   rice.asdfrice.enable = true;
 
