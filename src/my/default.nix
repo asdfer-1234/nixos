@@ -9,5 +9,6 @@
     ./core
     ./bluetooth
     ./nix
+    ./hardware
   ];
 }

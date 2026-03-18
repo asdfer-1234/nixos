@@ -5,7 +5,6 @@
 }:
 {
   imports = myLib.importGen [
-    ./hardware
     ./users
     ./git
     ./my
@@ -16,18 +15,18 @@
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
+  my.hardware.laptop.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   my.bluetooth.enable = true;
 
   time.timeZone = "Asia/Seoul";
   # dont use latest kernel
   boot.kernelPackages = pkgs.linuxPackages;
-  boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
 
   networking.hostName = "nauvis"; # Define your hostname.
   networking.networkmanager.enable = true;
+  boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
 
   services.upower.enable = true;
   hardware.uinput.enable = true;
