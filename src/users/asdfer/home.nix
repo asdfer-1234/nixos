@@ -9,7 +9,7 @@ with lib;
 with myLib;
 {
   imports = importGen [
-    ../../../myHome
+    ../../myHome
   ];
 
   my.rice.asdfrice.enable = true;

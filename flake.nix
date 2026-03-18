@@ -17,8 +17,6 @@
       self,
       nixpkgs,
       home-manager,
-      qsrs,
-      kakaotalk,
       dolphin-overlay,
       ...
     }@inputs:
@@ -35,10 +33,9 @@
         specialArgs = {
           inherit
             inputs
-            qsrs
-            kakaotalk
             myLib
             ;
+          hmInputs = { inherit (inputs) qsrs kakaotalk; };
         };
         modules = [
           ./src/configuration.nix
