@@ -9,7 +9,7 @@ with lib;
   config = mkIf config.my.bash.enable {
     programs.bash =
       let
-        init = fileContents init.bash;
+        init = fileContents ./init.bash;
       in
       {
         enable = true;
