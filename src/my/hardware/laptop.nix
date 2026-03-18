@@ -7,7 +7,7 @@ with lib;
 {
   options.my.hardware.laptop.enable = mkEnableOption "";
 
-  config = lib.mkIf config.my.hardware.laptop.enable lib.mkMerge [
+  config = mkIf config.my.hardware.laptop.enable lib.mkMerge [
     {
       boot.extraModprobeConfig = "softdep i915 pre: vfio vfio_pci";
       boot.initrd.availableKernelModules = [
