@@ -2,10 +2,12 @@
 with lib;
 {
   options = {
-    enable = mkEnableOption "";
+    myModule.uni.webPython.enable = mkEnableOption "";
   };
-  home.packages = with pkgs; [
-    python3
-    conda
-  ];
+  config = mkIf myModule.uni.webPython.enable {
+    home.packages = with pkgs; [
+      python3
+      conda
+    ];
+  };
 }
