@@ -13,13 +13,12 @@ with myLib;
 
   system.stateVersion = "25.11";
   my.nix.setup = true;
-  nixpkgs.config.allowUnfree = true;
 
-  # Bootloader.
   my.hardware.laptop.enable = true;
+  # Bootloader.
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  my.bluetooth.enable = true;
 
   time.timeZone = "Asia/Seoul";
   # dont use latest kernel
@@ -28,6 +27,7 @@ with myLib;
   networking.hostName = "nauvis"; # Define your hostname.
   networking.networkmanager.enable = true;
   boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
+  my.bluetooth.enable = true;
 
   services.upower.enable = true;
   hardware.uinput.enable = true;
@@ -50,9 +50,7 @@ with myLib;
   environment.systemPackages = with pkgs; [
     vulkan-tools
     pciutils
-
     nvtopPackages.full
-
     acpi
     evhz # touchpad polling rate
   ];
@@ -60,17 +58,5 @@ with myLib;
   programs.vim.enable = true;
   programs.neovim.enable = true;
   programs.htop.enable = true;
-  programs.nix-index.enable = true;
-
-  services.openssh = {
-    enable = true;
-    ports = [ 1234 ];
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-      AllowUsers = [ "zxcver" ];
-    };
-  };
 
 }

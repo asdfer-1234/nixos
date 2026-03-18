@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 {
   options.my.nix.setup = mkEnableOption "";
@@ -14,5 +19,10 @@ with lib;
         keep-derivations = true;
       };
     };
+    nixpkgs.config.allowUnfree = true;
+    programs.nix-index.enable = true;
+    environment.systemPackages = with pkgs; [
+      nvfetcher
+    ];
   };
 }
