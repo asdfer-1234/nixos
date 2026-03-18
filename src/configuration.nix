@@ -55,8 +55,4 @@ with myLib;
     evhz # touchpad polling rate
   ];
 
-  programs.vim.enable = true;
-  programs.neovim.enable = true;
-  programs.htop.enable = true;
-
 }

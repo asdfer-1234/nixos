@@ -21,5 +21,8 @@ with lib;
     my.bash.enable = true;
     my.fetches.enable = true;
     my.funzies.enable = true;
+    programs.vim.enable = true;
+    programs.neovim.enable = true;
+    programs.htop.enable = true;
   };
 }
