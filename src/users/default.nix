@@ -1,37 +1,24 @@
-{ pkgs, kakaotalk, ... }:
+{
+  inputs,
+  qsrs,
+  myLib,
+  pkgs,
+  kakaotalk,
+  ...
+}:
 {
   services.displayManager.cosmic-greeter.enable = true;
 
-  users.users.asdfer = {
-    isNormalUser = true;
-    description = "the main user with sudo privileges";
-
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "uinput"
-      "input"
-    ];
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = {
+      inherit
+        inputs
+        qsrs
+        myLib
+        kakaotalk
+        ;
+    };
   };
-
-  # TODO: move below config into home-manager somehow
-  programs.niri.enable = true;
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-    extraPackages = with pkgs; [ protonup-qt ];
-  };
-
-  environment.systemPackages = [
-    kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk
-  ];
-
-  users.users.zxcver = {
-    isNormalUser = true;
-    description = "other user without sudo";
-    extraGroups = [ "networkmanager" ];
-    packages = [
-    ];
-  };
-  services.logmein-hamachi.enable = true;
 }

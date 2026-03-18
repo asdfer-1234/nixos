@@ -1,83 +1,24 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  lib,
-  myLib,
-  ...
-}:
-with lib;
-{
+  users.users.asdfer = {
+    isNormalUser = true;
+    description = "the main user with sudo privileges";
 
-  imports = myLib.importGen [
-    ../../myHome
-  ];
-  my.uni.enable = true;
-  my.tex.enable = true;
-  my.zed.enable = true;
-  my.firefox.enable = true;
-  my.graphicalEditing.enable = true;
-
-  my.rice.asdfrice.enable = true;
-
-  programs.bash = {
-    enable = true;
-    bashrcExtra = fileContents ./bashrcExtra.bash;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "uinput"
+      "input"
+    ];
   };
-  programs.lutris.enable = true;
-  programs.obs-studio.enable = true;
-  programs.neovim.enable = true;
-  programs.vscode = {
+  home-manager.users.asdfer = ./home;
+
+  # TODO: move below config into home-manager somehow
+  programs.niri.enable = true;
+  programs.steam = {
     enable = true;
-    package = pkgs.vscode.fhs;
+    protontricks.enable = true;
+    extraPackages = with pkgs; [ protonup-qt ];
   };
-  home.packages = with pkgs; [
-    # Stuff
-    prismlauncher
-    thunderbird
-    alacritty
-    fuzzel
-    baobab
-    code
-    dragon-drop
-    drawio
-    kakoune
-    kdePackages.kate
-    light
-    mate.atril
-    qjackctl
-    rhythmbox
-    libreoffice
-    # deadbeef # BUILD FAILS
-    # Image viewers
-    imv
-    swayimg
-    # File managers
-    xfce.thunar
-    nautilus
-    kdePackages.dolphin
-    # from nix-env
-    cava
-    font-manager
-    ungoogled-chromium
-    # zsa keyboards
-    keymapp
-    wally-cli
-    git-credential-manager
-    # games
-    tetrio-desktop
-  ];
-
-  services.polkit-gnome.enable = true;
-  programs.git = {
-    enable = true;
-    settings.user = {
-      user.email = "<>";
-      user.name = "asdfer";
-      push.autosetupremote = true;
-      credential.gitHubAccountFiltering = false;
-    };
-  };
-
-  my.vesktop.enable = true;
-
-  home.stateVersion = "25.11";
+  services.logmein-hamachi.enable = true;
 }

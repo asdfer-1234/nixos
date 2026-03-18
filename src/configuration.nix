@@ -62,29 +62,6 @@
     jack.enable = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    maple-mono.truetype
-    fira
-    cascadia-code
-    source-code-pro
-    input-fonts
-    nanum
-    nanum-gothic-coding
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-    terminus_font
-  ];
-  nixpkgs.config.input-fonts.acceptLicense = true;
-
   environment.systemPackages = with pkgs; [
     vulkan-tools
     pciutils
@@ -123,14 +100,6 @@
       PermitRootLogin = "no";
       AllowUsers = [ "zxcver" ];
     };
-  };
-
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    users.asdfer = ./users/asdfer;
-    users.zxcver = ./users/zxcver;
-    extraSpecialArgs = { inherit inputs qsrs myLib; };
   };
 
 }
