@@ -25,5 +25,6 @@ with lib;
     programs.vim.enable = true;
     programs.neovim.enable = true;
     programs.htop.enable = true;
+    programs.git.enable = true;
   };
 }

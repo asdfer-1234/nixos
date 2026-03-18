@@ -37,7 +37,7 @@
           hmInputs = { inherit (inputs) qsrs kakaotalk; };
         };
         modules = [
-          ./src/configuration.nix
+          ./src/hosts/asdfer-laptop.nix
           home-manager.nixosModules.home-manager
           { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
         ];

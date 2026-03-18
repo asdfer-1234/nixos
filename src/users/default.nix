@@ -8,8 +8,5 @@ with myLib;
     ./asdfer
     ./zxcver
   ];
-  my.users = {
-    asdfer.enable = true;
-    zxcver.enable = true;
-  };
+
 }

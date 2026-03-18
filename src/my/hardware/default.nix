@@ -6,5 +6,7 @@ with myLib;
     ./networking
     ./bluetooth
     ./audio
+    ./power
+    ./input
   ];
 }
