@@ -10,5 +10,6 @@
     ./firefox
     ./uni
     ./zed
+    ./asdfrice
   ];
 }

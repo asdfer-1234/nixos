@@ -13,7 +13,7 @@ in
 
   imports = myLib.importGen [
   ];
-  options.rice.asdfrice = {
+  options.my.rice.asdfrice = {
     enable = lib.mkEnableOption "yay!";
   };
 

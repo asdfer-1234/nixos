@@ -15,10 +15,9 @@ with lib;
   my.uni.enable = true;
   my.tex.enable = true;
   my.zed.enable = true;
-
   my.firefox.enable = true;
 
-  rice.asdfrice.enable = true;
+  my.rice.asdfrice.enable = true;
 
   programs.bash = {
     enable = true;
