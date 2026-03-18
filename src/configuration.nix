@@ -7,7 +7,6 @@
   imports = myLib.importGen [
     ./hardware
     ./users
-    ./ime
     ./git
     ./my
   ];
@@ -56,6 +55,9 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  my.ime.enable = true;
+  my.bash.enable = true;
 
   my.fonts.enable = true;
 
