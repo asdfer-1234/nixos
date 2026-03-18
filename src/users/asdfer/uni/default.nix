@@ -6,5 +6,5 @@
 
   config = {
     myModules.uni.webPython.enable = true;
-  }
+  };
 }
