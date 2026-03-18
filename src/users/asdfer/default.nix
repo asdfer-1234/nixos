@@ -14,7 +14,7 @@ with lib;
     ./graphicalEditing
     ./uni
     ./tex
-    ../../myModules/vesktop
+    ../../myHome
   ];
   myModules.uni.enable = true;
 
