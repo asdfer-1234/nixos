@@ -18,8 +18,8 @@ with lib;
       tree
       yt-dlp
     ];
+    my.bash.enable = true;
+    my.fetches.enable = true;
+    my.funzies.enable = true;
   };
-  my.bash.enable = true;
-  my.fetches.enable = true;
-  my.funzies.enable = true;
 }
