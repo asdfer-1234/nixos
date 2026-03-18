@@ -24,7 +24,6 @@
     }@inputs:
     with nixpkgs.lib;
     let
-      system = "x86_64-linux";
       myLib = rec {
         nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
         importGen = imports: forEach imports nixPath;
@@ -32,7 +31,7 @@
     in
     {
       nixosConfigurations.nauvis = nixosSystem {
-        inherit system;
+        system = "x86_64-linux";
         specialArgs = {
           inherit
             inputs

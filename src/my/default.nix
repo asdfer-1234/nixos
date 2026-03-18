@@ -5,5 +5,9 @@
     ./ime
     ./bash
     ./fetches
+    ./funzies
+    ./core
+    ./bluetooth
+    ./nix
   ];
 }

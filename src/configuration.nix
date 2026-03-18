@@ -11,28 +11,15 @@
     ./my
   ];
 
-  nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-
-    settings = {
-      keep-outputs = true;
-      keep-derivations = true;
-    };
-  };
-
+  system.stateVersion = "25.11";
+  my.nix.setup = true;
   nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  security.polkit.enable = true;
+  my.bluetooth.enable = true;
 
   time.timeZone = "Asia/Seoul";
   # dont use latest kernel
@@ -57,36 +44,23 @@
   };
 
   my.ime.enable = true;
-  my.bash.enable = true;
-
   my.fonts.enable = true;
-
-  my.fetches.enable = true;
+  my.core.enable = true;
 
   environment.systemPackages = with pkgs; [
     vulkan-tools
     pciutils
-    tldr
-    cbonsai
-    cowsay
-    killall
-    sl
+
     nvtopPackages.full
-    trashy
-    nvfetcher
-    p7zip
-    ranger
-    ripgrep
-    yt-dlp
+
     acpi
     evhz # touchpad polling rate
-    tree
   ];
+
   programs.vim.enable = true;
   programs.neovim.enable = true;
   programs.htop.enable = true;
   programs.nix-index.enable = true;
-  system.stateVersion = "25.11";
 
   services.openssh = {
     enable = true;

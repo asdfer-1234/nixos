@@ -3,7 +3,6 @@
   lib,
   qsrs,
   pkgs,
-  myLib,
   ...
 }:
 let

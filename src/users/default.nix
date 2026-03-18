@@ -2,7 +2,6 @@
   inputs,
   qsrs,
   myLib,
-  pkgs,
   kakaotalk,
   ...
 }:
