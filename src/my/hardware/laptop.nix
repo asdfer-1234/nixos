@@ -10,6 +10,7 @@ with lib;
   config = mkIf config.my.hardware.laptop.enable (
     lib.mkMerge [
       {
+        hardware.enableRedistributableFirmware = true;
         boot.extraModprobeConfig = "softdep i915 pre: vfio vfio_pci";
         boot.initrd.availableKernelModules = [
           "xhci_pci"

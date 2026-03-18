@@ -1,8 +1,8 @@
 { config, lib, ... }:
 with lib;
 {
-  options.my.bluetooth.enable = mkEnableOption "";
-  config = mkIf config.my.bluetooth.enable {
+  options.my.hardware.bluetooth.enable = mkEnableOption "";
+  config = mkIf config.my.hardware.bluetooth.enable {
     hardware.bluetooth.enable = true;
     services.blueman.enable = true;
   };

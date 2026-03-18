@@ -8,7 +8,6 @@ with myLib;
     ./fetches
     ./funzies
     ./core
-    ./bluetooth
     ./nix
     ./hardware
     ./home-manager
