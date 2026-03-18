@@ -37,7 +37,7 @@
             qsrs
             kakaotalk
             ;
-          lib = builtins.import ./src/lib.nix;
+          lib = builtins.import ./src/lib.nix {inherit lib};
         };
         modules = [
           ./src/configuration.nix

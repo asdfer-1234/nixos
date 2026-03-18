@@ -1,3 +1,5 @@
+{ lib }:
+with lib;
 {
-  lib.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
+  importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
 }
