@@ -12,9 +12,6 @@ in
 {
 
   imports = myLib.importGen [
-    ../myModules/kanata
-    ../myModules/niri
-    ../myModules/quickshell
   ];
   options.rice.asdfrice = {
     enable = lib.mkEnableOption "yay!";

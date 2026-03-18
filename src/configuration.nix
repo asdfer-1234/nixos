@@ -11,6 +11,7 @@
     ./users
     ./ime
     ./git
+    ./myModules
   ];
 
   nix = {
