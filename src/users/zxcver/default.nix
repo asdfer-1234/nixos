@@ -1,10 +1,19 @@
-{ myLib, ... }:
+{
+  config,
+  lib,
+  myLib,
+  ...
+}:
+with lib;
 with myLib;
 {
-  users.users.zxcver = {
-    isNormalUser = true;
-    description = "other user without sudo";
-    extraGroups = [ "networkmanager" ];
+  options.my.users.zxcver.enable = mkEnableOption "";
+  config = mkIf config.my.users.zxcver.enable {
+    users.users.zxcver = {
+      isNormalUser = true;
+      description = "other user without sudo";
+      extraGroups = [ "networkmanager" ];
+    };
+    home-manager.users.zxcver = nixPath ./home;
   };
-  home-manager.users.zxcver = nixPath ./home;
 }
