@@ -7,5 +7,5 @@
     packages = [
     ];
   };
-  home-manager.users.zxcver = ./users/zxcver;
+  home-manager.users.zxcver = ./home;
 }

@@ -8,6 +8,10 @@
 }:
 {
   services.displayManager.cosmic-greeter.enable = true;
+  imports = [
+    ./asdfer
+    ./zxcver
+  ];
 
   home-manager = {
     useUserPackages = true;
