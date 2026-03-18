@@ -3,7 +3,7 @@
   lib,
   qsrs,
   pkgs,
-  ml,
+  myLib,
   ...
 }:
 let
@@ -11,7 +11,7 @@ let
 in
 {
 
-  imports = lib.importGen [
+  imports = myLib.importGen [
     ../myModules/kanata
     ../myModules/niri
     ../myModules/quickshell

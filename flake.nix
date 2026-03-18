@@ -37,7 +37,9 @@
             qsrs
             kakaotalk
             ;
-          lib = nixpkgs.lib // import ./src/lib.nix { inherit (nixpkgs) lib; };
+          myLib = {
+            importGen = imports: forEach imports (p: (if (pathIsDirectory p) then p else (p + ".nix")));
+          };
         };
         modules = [
           ./src/configuration.nix

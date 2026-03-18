@@ -1,13 +1,12 @@
 {
   pkgs,
-  lib,
   inputs,
   qsrs,
-  ml,
+  myLib,
   ...
 }:
 {
-  imports = lib.importGen [
+  imports = myLib.importGen [
     ./hardware
     ./users
     ./ime
@@ -130,7 +129,7 @@
     useUserPackages = true;
     users.asdfer = ./users/asdfer;
     users.zxcver = ./users/zxcver;
-    extraSpecialArgs = { inherit inputs qsrs ml; };
+    extraSpecialArgs = { inherit inputs qsrs myLib; };
   };
 
 }
