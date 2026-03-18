@@ -13,10 +13,10 @@ with lib;
     ./firefox
     ./graphicalEditing
     ./uni
-    ./tex
     ../../myHome
   ];
   myModules.uni.enable = true;
+  myModules.tex.enable = true;
 
   rice.asdfrice.enable = true;
 
