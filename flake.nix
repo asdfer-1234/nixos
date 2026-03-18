@@ -32,7 +32,6 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit
-            inputs
             myLib
             ;
           hmInputs = { inherit (inputs) qsrs kakaotalk; };

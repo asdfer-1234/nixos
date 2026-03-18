@@ -1,8 +1,8 @@
 {
-  inputs,
   myLib,
   lib,
   config,
+  hmInputs,
   ...
 }:
 with lib;
@@ -18,7 +18,7 @@ with lib;
 
           myLib
           ;
-        inherit (inputs.hmInputs)
+        inherit (hmInputs)
           qsrs
           kakaotalk
           ;

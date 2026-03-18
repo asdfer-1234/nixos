@@ -1,8 +1,5 @@
 {
-  inputs,
-  qsrs,
   myLib,
-  kakaotalk,
   ...
 }:
 with myLib;
