@@ -11,6 +11,7 @@
     ./users
     ./ime
     ./git
+    ./my
   ];
 
   nix = {
@@ -61,6 +62,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  my.fonts.enable = true;
 
   environment.systemPackages = with pkgs; [
     vulkan-tools
