@@ -23,6 +23,7 @@ with lib;
         "image/svg" = inkscape;
         "image/svg+xml" = inkscape;
         "image/png" = gimp;
+        "image/jpeg" = gimp;
       };
   };
 }
