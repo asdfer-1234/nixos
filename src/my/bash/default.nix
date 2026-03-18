@@ -6,7 +6,7 @@
 with lib;
 {
   options.my.bash.enable = mkEnableOption "";
-  config = mkIf config.options.my.bash.enable {
+  config = mkIf config.my.bash.enable {
     programs.bash =
       let
         init = fileContents init.bash;
