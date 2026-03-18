@@ -37,7 +37,7 @@
             qsrs
             kakaotalk
             ;
-          ml.importGen = imports: forEach imports (p: (if ((pathIsDirectory p)) then p else (p + ".nix")));
+          lib = buildins.import ./src/lib;
         };
         modules = [
           ./src/configuration.nix
