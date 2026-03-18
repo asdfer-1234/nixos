@@ -16,6 +16,7 @@ with lib;
     ./tex
     ../../myModules/vesktop
   ];
+  myModules.uni.enable = true;
 
   rice.asdfrice.enable = true;
 
