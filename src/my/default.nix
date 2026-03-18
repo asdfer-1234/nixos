@@ -11,6 +11,6 @@ with myLib;
     ./bluetooth
     ./nix
     ./hardware
-    ./home-manager.nix
+    ./home-manager
   ];
 }
