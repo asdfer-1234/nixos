@@ -27,6 +27,7 @@
         importGen = imports: forEach imports nixPath;
       };
     in
+    with myLib;
     {
       nixosConfigurations.asdfer-laptop = nixosSystem {
         system = "x86_64-linux";
@@ -37,7 +38,8 @@
           hmInputs = { inherit (inputs) qsrs kakaotalk; };
         };
         modules = [
-          ./src/hosts/asdfer-laptop.nix
+          nixPath
+          ./src/hosts/asdfer-laptop
           home-manager.nixosModules.home-manager
           { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
         ];
