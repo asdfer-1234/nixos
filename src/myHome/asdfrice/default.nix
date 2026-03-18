@@ -10,9 +10,6 @@ let
   cfg = config.my.rice.asdfrice;
 in
 {
-
-  imports = myLib.importGen [
-  ];
   options.my.rice.asdfrice = {
     enable = lib.mkEnableOption "yay!";
   };

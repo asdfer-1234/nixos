@@ -10,6 +10,7 @@
       url = "github:asdfer-1234/kakaotalk.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
   };
   outputs =
     {
@@ -44,6 +45,7 @@
         modules = [
           ./src/configuration.nix
           home-manager.nixosModules.home-manager
+          { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
         ];
       };
     };

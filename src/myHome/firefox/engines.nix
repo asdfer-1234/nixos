@@ -454,6 +454,5 @@
       "@g"
       "@google"
     ];
-    icon = "https://wiki.nixos.org/favicon.ico";
   };
 }

@@ -11,5 +11,6 @@
     ./uni
     ./zed
     ./asdfrice
+    ./graphicalEditing
   ];
 }

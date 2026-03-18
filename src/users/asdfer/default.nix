@@ -8,7 +8,6 @@ with lib;
 {
 
   imports = myLib.importGen [
-    ./graphicalEditing
     ../../myHome
   ];
   my.uni.enable = true;
