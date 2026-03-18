@@ -55,4 +55,6 @@ with myLib;
     evhz # touchpad polling rate
   ];
 
+  hardware.enableRedistributableFirmware = true;
+
 }
