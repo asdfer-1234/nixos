@@ -19,6 +19,7 @@
       home-manager,
       qsrs,
       kakaotalk,
+      dolphin-overlay,
       ...
     }@inputs:
     with nixpkgs.lib;
