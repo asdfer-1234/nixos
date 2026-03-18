@@ -21,6 +21,7 @@ with myLib;
       ];
     };
     home-manager.users.asdfer = nixPath ./home;
+    my.home-manager.enable = true;
 
     programs.niri.enable = true; # is this really needed?
     programs.steam = {

@@ -15,5 +15,6 @@ with myLib;
       extraGroups = [ "networkmanager" ];
     };
     home-manager.users.zxcver = nixPath ./home;
+    my.home-manager.enable = true;
   };
 }

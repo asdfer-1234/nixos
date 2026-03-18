@@ -12,17 +12,8 @@ with myLib;
     ./asdfer
     ./zxcver
   ];
-
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    extraSpecialArgs = {
-      inherit
-        inputs
-        qsrs
-        myLib
-        kakaotalk
-        ;
-    };
+  my.users = {
+    asdfer.enable = true;
+    zxcver.enable = true;
   };
 }
