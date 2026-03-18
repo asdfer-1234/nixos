@@ -1,3 +1,4 @@
+# Home manager modules
 { myLib, ... }:
 {
   imports = myLib.importGen [

@@ -127,6 +127,7 @@
 
   home-manager = {
     useUserPackages = true;
+    useGlobalPkgs = true;
     users.asdfer = ./users/asdfer;
     users.zxcver = ./users/zxcver;
     extraSpecialArgs = { inherit inputs qsrs myLib; };
