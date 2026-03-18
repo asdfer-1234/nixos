@@ -1,4 +1,4 @@
-{ lib, config }:
+{ lib, config, ... }:
 with lib;
 {
   options.my.hardware.networking = mkEnableOption "";
