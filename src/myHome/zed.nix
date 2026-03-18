@@ -1,0 +1,41 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib;
+{
+  options = {
+    my.zed.enable = mkEnableOption "";
+  };
+  config = mkIf config.my.zed.enable {
+    programs.zed-editor = {
+      enable = true;
+      extensions = [
+        "toml"
+        "nix"
+        "kdl"
+        "qml"
+      ];
+      # mutableUserSettings = false;
+      userSettings = {
+        theme = "Ayu Light";
+        title_bar = {
+          show_sign_in = false;
+        };
+        lsp.rust-analyzer.binary.path_lookup = true;
+      };
+      extraPackages = [
+        pkgs.nixd
+        pkgs.nil
+        pkgs.clang
+        pkgs.kdePackages.qtdeclarative
+      ];
+    };
+
+    home.sessionVariables = {
+      EDITOR = "zeditor";
+    };
+  };
+}

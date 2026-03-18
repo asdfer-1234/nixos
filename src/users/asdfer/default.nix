@@ -9,13 +9,12 @@ with lib;
 
   imports = myLib.importGen [
     ../../asdfrice
-    ./zed
     ./graphicalEditing
-    ./uni
     ../../myHome
   ];
   my.uni.enable = true;
   my.tex.enable = true;
+  my.zed.enable = true;
 
   my.firefox.enable = true;
 
