@@ -11,7 +11,7 @@ let
 in
 {
 
-  imports = ml.importGen [
+  imports = lib.importGen [
     ../myModules/kanata
     ../myModules/niri
     ../myModules/quickshell

@@ -7,7 +7,7 @@
 with lib;
 {
 
-  imports = ml.importGen [
+  imports = lib.importGen [
     ../../asdfrice
     ./zed
     ./firefox

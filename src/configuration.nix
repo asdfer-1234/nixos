@@ -7,7 +7,7 @@
   ...
 }:
 {
-  imports = ml.importGen [
+  imports = lib.importGen [
     ./hardware
     ./users
     ./ime

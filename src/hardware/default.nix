@@ -6,7 +6,7 @@
   ...
 }:
 {
-  imports = ml.importGen [
+  imports = lib.importGen [
     (modulesPath + "/installer/scan/not-detected")
     ./nvidia
     # ./b550-suspend-fix # DOESN'T WORK

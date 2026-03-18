@@ -1,6 +1,6 @@
 { ml, ... }:
 {
-  imports = ml.importGen [
+  imports = lib.importGen [
     ./webPython
   ];
 }
