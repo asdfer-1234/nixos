@@ -8,5 +8,7 @@
     ./vesktop
     ./tex
     ./firefox
+    ./uni
+    ./zed
   ];
 }
