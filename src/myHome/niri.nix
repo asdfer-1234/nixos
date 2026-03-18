@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.myModules.niri;
+  cfg = config.my.niri;
 in
 {
-  options.myModules.niri = {
+  options.my.niri = {
     enable = lib.mkEnableOption "niri!";
     config = lib.mkOption { type = lib.types.str; };
   };

@@ -2,10 +2,10 @@
 with lib;
 with builtins;
 let
-  cfg = config.myModules.vesktop;
+  cfg = config.my.vesktop;
 in
 {
-  options.myModules.vesktop = {
+  options.my.vesktop = {
     enable = mkEnableOption "vesktop";
   };
 

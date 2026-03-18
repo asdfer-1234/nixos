@@ -7,9 +7,9 @@
 with lib;
 {
   options = {
-    myModules.tex.enable = mkEnableOption "";
+    my.tex.enable = mkEnableOption "";
   };
-  config = mkIf config.myModules.tex.enable {
+  config = mkIf config.my.tex.enable {
     home.packages = with pkgs; [
       texliveFull
       texworks

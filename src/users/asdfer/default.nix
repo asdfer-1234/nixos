@@ -15,8 +15,8 @@ with lib;
     ./uni
     ../../myHome
   ];
-  myModules.uni.enable = true;
-  myModules.tex.enable = true;
+  my.uni.enable = true;
+  my.tex.enable = true;
 
   rice.asdfrice.enable = true;
 
@@ -79,7 +79,7 @@ with lib;
     };
   };
 
-  myModules.vesktop.enable = true;
+  my.vesktop.enable = true;
 
   home.stateVersion = "25.11";
 }

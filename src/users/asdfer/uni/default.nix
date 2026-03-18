@@ -11,10 +11,10 @@ with lib;
   ];
 
   options = {
-    myModules.uni.enable = mkEnableOption "";
+    my.uni.enable = mkEnableOption "";
   };
 
-  config = mkIf config.myModules.uni.enable {
-    myModules.uni.webPython.enable = true;
+  config = mkIf config.my.uni.enable {
+    my.uni.webPython.enable = true;
   };
 }

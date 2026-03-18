@@ -18,16 +18,16 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    myModules.kanata = {
+    my.kanata = {
       enable = true;
       cmd = true;
       config = lib.readFile ./kanata.kbd;
     };
-    myModules.niri = {
+    my.niri = {
       enable = true;
       config = lib.readFile ./niri.kdl;
     };
-    myModules.quickshell = {
+    my.quickshell = {
       enable = true;
       configDirectory = ./quickshell;
       extraPackages = [

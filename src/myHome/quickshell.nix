@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.myModules.quickshell;
+  cfg = config.my.quickshell;
 in
 
 {
-  options.myModules.quickshell = {
+  options.my.quickshell = {
     enable = lib.mkEnableOption "kanata";
     configDirectory = lib.mkOption {
       type = lib.types.pathInStore;

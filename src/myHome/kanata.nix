@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.myModules.kanata;
+  cfg = config.my.kanata;
 in
 {
-  options.myModules.kanata = {
+  options.my.kanata = {
     enable = lib.mkEnableOption "kanata";
     cmd = lib.mkOption {
       type = lib.types.bool;
