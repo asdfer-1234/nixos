@@ -8,7 +8,6 @@ with lib;
 {
 
   imports = myLib.importGen [
-    ../../asdfrice
     ./graphicalEditing
     ../../myHome
   ];
