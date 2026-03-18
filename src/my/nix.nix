@@ -8,6 +8,7 @@ with lib;
 {
   options.my.nix.setup = mkEnableOption "";
   config = mkIf config.my.nix.setup {
+    system.stateVersion = "25.11";
     nix = {
       settings.experimental-features = [
         "nix-command"
