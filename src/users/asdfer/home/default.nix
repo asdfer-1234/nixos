@@ -27,10 +27,9 @@ with myLib;
     enable = true;
     package = pkgs.vscode.fhs;
   };
+  programs.thunderbird.enable = true;
   home.packages = with pkgs; [
     # Stuff
-    prismlauncher
-    thunderbird
     alacritty
     fuzzel
     baobab
@@ -62,6 +61,7 @@ with myLib;
     git-credential-manager
     # games
     tetrio-desktop
+    prismlauncher
     kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk
   ];
 
