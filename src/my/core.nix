@@ -17,6 +17,7 @@ with lib;
       trashy
       tree
       yt-dlp
+      pciutils # lspci
     ];
     my.bash.enable = true;
     my.fetches.enable = true;

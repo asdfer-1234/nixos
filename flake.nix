@@ -28,7 +28,7 @@
       };
     in
     {
-      nixosConfigurations.nauvis = nixosSystem {
+      nixosConfigurations.asdfer-laptop = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit
