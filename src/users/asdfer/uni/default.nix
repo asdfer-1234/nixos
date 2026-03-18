@@ -1,4 +1,9 @@
-{ lib, myLib, ... }:
+{
+  config,
+  lib,
+  myLib,
+  ...
+}:
 with lib;
 {
   imports = myLib.importGen [
