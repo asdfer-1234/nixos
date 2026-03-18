@@ -6,7 +6,7 @@
 }:
 with lib;
 {
-  option.my.fonts.enable = mkEnableOption "";
+  options.my.fonts.enable = mkEnableOption "";
   config = mkIf config.my.fonts.enable {
     fonts.packages = with pkgs; [
       noto-fonts
