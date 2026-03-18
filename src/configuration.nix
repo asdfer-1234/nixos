@@ -7,15 +7,15 @@
   ...
 }:
 {
-  imports = ml.importGen [
+  imports = [
     ./hardware
     ./users
-    ./theStrugglesOfKoreanLinux
+    ./ime
     ./git
   ];
 
   nix = {
-    settings.experimental-features = [
+    # settings.experimental-features = [
       "nix-command"
       "flakes"
     ];
