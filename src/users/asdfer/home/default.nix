@@ -19,10 +19,6 @@ with lib;
   my.firefox.enable = true;
   my.graphicalEditing.enable = true;
 
-  programs.bash = {
-    enable = true;
-    bashrcExtra = fileContents ./bashrcExtra.bash;
-  };
   programs.lutris.enable = true;
   programs.obs-studio.enable = true;
   programs.neovim.enable = true;
