@@ -1,7 +1,5 @@
 {
   pkgs,
-  inputs,
-  qsrs,
   myLib,
   ...
 }:
@@ -37,6 +35,7 @@
 
   security.polkit.enable = true;
 
+  time.timeZone = "Asia/Seoul";
   # dont use latest kernel
   boot.kernelPackages = pkgs.linuxPackages;
   boot.extraModprobeConfig = "options iwlwifi 11n_disable=8\n";
@@ -46,14 +45,9 @@
 
   services.upower.enable = true;
   hardware.uinput.enable = true;
-  # services.udev.extraRules = ''
-  #   SUBSYSTEM=="misc", KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-  # '';
-
   hardware.keyboard.zsa.enable = true;
 
   services.printing.enable = true;
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
