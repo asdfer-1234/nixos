@@ -1,12 +1,11 @@
 {
   config,
-  lib,
+  myLib,
   pkgs,
   ...
 }:
-with lib;
 with myLib;
-mkEnableModuele config [ "my" "graphicalEditing" ] {
+mkEnableModule config [ "my" "graphicalEditing" ] {
   home.packages = with pkgs; [
     inkscape
     adwaita-icon-theme
