@@ -28,7 +28,7 @@
         mkEnableModule =
           config: attrPath: value:
           let
-            attrPathStringList = (path.subpath.components (path.splitRoot attrPath)).subpath;
+            attrPathStringList = path.subpath.components (path.splitRoot attrPath).subpath;
           in
           {
             options = setAttrByPath attrPathStringList {
