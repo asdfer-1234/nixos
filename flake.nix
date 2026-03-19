@@ -25,12 +25,17 @@
       myLib = rec {
         nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
         importGen = imports: forEach imports nixPath;
-        mkEnableModule = config: attrPath: value: {
-          options = setAttrByPath attrPath {
-            enable = mkEnableOption "an enable option blah";
+        mkEnableModule =
+          config: attrPath: value:
+          let
+            attrPathStringList = path.subpath.components attrPath;
+          in
+          {
+            options = setAttrByPath attrPathStringList {
+              enable = mkEnableOption "an enable option blah";
+            };
+            config = mkIf (attrByPath (attrPathStringList ++ [ "enable" ]) false config) value;
           };
-          config = mkIf (attrByPath (attrPath ++ [ "enable" ]) false config) value;
-        };
       };
     in
     with myLib;

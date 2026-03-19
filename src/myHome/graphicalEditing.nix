@@ -5,7 +5,7 @@
   ...
 }:
 with myLib;
-mkEnableModule config [ "my" "graphicalEditing" ] {
+mkEnableModule config /my/graphicalEditing {
   home.packages = with pkgs; [
     inkscape
     adwaita-icon-theme
