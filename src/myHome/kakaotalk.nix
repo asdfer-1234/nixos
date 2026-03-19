@@ -1,4 +1,5 @@
 {
+  config,
   myLib,
   kakaotalk,
   pkgs,
