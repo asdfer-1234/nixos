@@ -29,7 +29,7 @@
           options = setAttrByPath attrPath {
             enable = mkEnableOption "an enable option blah";
           };
-          config = war (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]));
+          config = warn (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]));
         };
       };
     in
