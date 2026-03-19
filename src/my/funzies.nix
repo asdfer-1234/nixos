@@ -1,17 +1,14 @@
 {
-  lib,
   config,
   pkgs,
+  myLib,
   ...
 }:
-with lib;
-{
-  options.my.funzies.enable = mkEnableOption "";
-  config = mkIf config.my.funzies.enable {
-    environment.systemPackages = with pkgs; [
-      cbonsai
-      cowsay
-      sl
-    ];
-  };
+with myLib;
+mkEnableModule config /my/funzies {
+  environment.systemPackages = with pkgs; [
+    cbonsai
+    cowsay
+    sl
+  ];
 }

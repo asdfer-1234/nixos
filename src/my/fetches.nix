@@ -1,18 +1,17 @@
 {
   lib,
+  myLib,
   pkgs,
   config,
   ...
 }:
 with lib;
-{
-  options.my.fetches.enable = mkEnableOption "";
-  config = mkIf config.my.fetches.enable {
-    environment.systemPackages = with pkgs; [
-      cpufetch
-      fastfetch
-      neofetch
-      ramfetch
-    ];
-  };
+with myLib;
+mkEnableModule config /my/fetches {
+  environment.systemPackages = with pkgs; [
+    cpufetch
+    fastfetch
+    neofetch
+    ramfetch
+  ];
 }

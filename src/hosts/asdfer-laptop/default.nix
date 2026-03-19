@@ -24,6 +24,7 @@ with myLib;
   my.hardware.input.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
+  my.graphicalUtils.enable = true;
 
   my.core.enable = true;
   my.ime.enable = true;

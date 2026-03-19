@@ -1,16 +1,13 @@
 {
   config,
-  lib,
+  myLib,
   pkgs,
   ...
 }:
-with lib;
-{
-  options.my.grahicalUtils.enable = mkEnableOption "";
-  config = mkIf config.my.graphicalUtils.enable {
-    environment.systemPackages = with pkgs; [
-      nvtopPackages.full
-      vulkan-tools
-    ];
-  };
+with myLib;
+mkEnableModule config /my/graphicalUtils {
+  environment.systemPackages = with pkgs; [
+    nvtopPackages.full
+    vulkan-tools
+  ];
 }
