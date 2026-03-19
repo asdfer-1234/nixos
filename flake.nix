@@ -25,7 +25,7 @@
       myLib = rec {
         nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
         importGen = imports: forEach imports nixPath;
-        splitPath = path: path.subpath.components (path.splitRoot path).subpath;
+        splitPath = p: path.subpath.components (path.splitRoot p).subpath;
         mkEnableModule =
           config: attrPath: value:
           let
