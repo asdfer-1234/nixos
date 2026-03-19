@@ -7,7 +7,7 @@
 }:
 with lib;
 with myLib;
-mkOptionModule config /my/uni/webPython {
+mkEnableModule config /my/uni/webPython {
   home.packages = with pkgs; [
     python3
     conda
