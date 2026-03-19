@@ -13,5 +13,6 @@ with myLib;
     ./home-manager
     ./graphicalUtils
     ./steam
+    ./homelab
   ];
 }
