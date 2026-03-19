@@ -2,9 +2,11 @@
   config,
   pkgs,
   lib,
+  myLib,
   ...
 }:
 with lib;
+with myLib;
 mkEnableModule config /my/firefox {
   programs.firefox = {
     enable = true;
