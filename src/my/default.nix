@@ -11,5 +11,6 @@ with myLib;
     ./nix
     ./hardware
     ./home-manager
+    ./graphicalUtils
   ];
 }
