@@ -6,26 +6,30 @@
 }:
 with myLib;
 mkEnableModule config /my/homelab {
-# The service
-    services.vaultwarden = {
-      dbBackend = "sqlite";
-      config = {
-        ROCKET_ADDRESS = "127.0.0.1";
-        ROCKET_PORT = 8222;
-        DOMAIN = "https://localhost";
-        SIGNUPS_ALLOWED = true;
-        ADMIN_TOKEN = "$argon2id$v=19$m=65540,t=3,p=4$...";
-        LOG_FILE = "/var/lib/bitwarden_rs/access.log";
-      };
+  # The service
+  services.vaultwarden = {
+    dbBackend = "sqlite";
+    config = {
+      ROCKET_ADDRESS = "127.0.0.1";
+      ROCKET_PORT = 8222;
+      DOMAIN = "https://localhost";
+      SIGNUPS_ALLOWED = true;
+      ADMIN_TOKEN = "$argon2id$v=19$m=65540,t=3,p=4$...";
+      LOG_FILE = "/var/lib/bitwarden_rs/access.log";
     };
+  };
 
-    # The CLI tool
-    environment.systemPackages = [
-      pkgs.vaultwarden
-    ];
+  # The CLI tool
+  environment.systemPackages = [
+    pkgs.vaultwarden
+  ];
 
-    # The nginx reverse proxy
-    services.nginx = let vault-host = "localhost"; in {
+  # The nginx reverse proxy
+  services.nginx =
+    let
+      vault-host = "localhost";
+    in
+    {
       enable = true;
       recommendedGzipSettings = true;
       recommendedOptimisation = true;
@@ -50,5 +54,5 @@ mkEnableModule config /my/homelab {
           '';
         };
       };
-
+    };
 }
