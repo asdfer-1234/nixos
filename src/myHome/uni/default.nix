@@ -6,16 +6,10 @@
 }:
 with lib;
 with myLib;
-{
+mkEnableModule config /my/uni {
   imports = importGen [
     ./webPython
   ];
 
-  options = {
-    my.uni.enable = mkEnableOption "";
-  };
-
-  config = mkIf config.my.uni.enable {
-    my.uni.webPython.enable = true;
-  };
+  my.uni.webPython.enable = true;
 }
