@@ -61,8 +61,8 @@ with myLib;
     # games
     tetrio-desktop
     prismlauncher
-
   ];
+  my.kakaotalk.enable = true;
 
   services.polkit-gnome.enable = true;
   programs.git = {
