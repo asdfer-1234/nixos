@@ -28,6 +28,7 @@
         mkToggleModule = attrPath: value: {
           options = setAttrByPath attrPath {
             enable = mkEnableOption "an enable option blah";
+            asdfasdf = mkOption { };
           };
           config = {
             asdfasdf = (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]));
