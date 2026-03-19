@@ -6,5 +6,5 @@
 }:
 with myLib;
 mkToggleModule [ "my" "kakaotalk" ] {
-  environment.systemPackages = [ kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk ];
+  home.packages = [ kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk ];
 }
