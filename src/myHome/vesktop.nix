@@ -1,9 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  myLib,
+  config,
+  ...
+}:
 with lib;
+with myLib;
 with builtins;
-let
-  cfg = config.my.vesktop;
-in
 mkEnableModule config /my/vesktop {
   programs.vesktop = {
     enable = true;
