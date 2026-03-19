@@ -6,7 +6,7 @@
 }:
 with lib;
 with myLib;
-mkEnableModule /my/users/zxcver {
+mkEnableModule config /my/users/zxcver {
   users.users.zxcver = {
     isNormalUser = true;
     description = "other user without sudo";
