@@ -30,13 +30,15 @@
           config: attrPath: value:
           let
             attrPathStringList = splitPath attrPath;
+            imports = if (value ? imports) then value.imports else [ ];
+            body = (removeAttrs value [ "imports" ]);
           in
           {
-            imports = if (value ? imports) then value.imports else [ ];
+            inherit imports;
             options = setAttrByPath attrPathStringList {
               enable = mkEnableOption "an enable option blah";
             };
-            config = mkIf (attrByPath attrPathStringList false config).enable (removeAttrs value [ "imports" ]);
+            config = mkIf (attrByPath attrPathStringList false config).enable body;
           };
       };
     in
