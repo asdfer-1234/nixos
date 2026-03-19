@@ -25,7 +25,7 @@
       myLib = rec {
         nixPath = p: (if (pathIsDirectory p) then p else (p + ".nix"));
         importGen = imports: forEach imports nixPath;
-        mkToggleModule = config: attrPath: value: {
+        mkEnableModule = config: attrPath: value: {
           options = setAttrByPath attrPath {
             enable = mkEnableOption "an enable option blah";
           };

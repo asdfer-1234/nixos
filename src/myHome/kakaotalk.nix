@@ -6,6 +6,6 @@
   ...
 }:
 with myLib;
-mkToggleModule config [ "my" "kakaotalk" ] {
+mkEnableModule config [ "my" "kakaotalk" ] {
   home.packages = [ kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk ];
 }
