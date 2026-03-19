@@ -29,7 +29,7 @@
           options = setAttrByPath attrPath {
             enable = mkEnableOption "an enable option blah";
           };
-          config = mkIf (debug attrByPath ([ "config" ] ++ attrPath ++ [ enable ])) value;
+          config = mkIf (builtins.warn (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]))) value;
         };
       };
     in
