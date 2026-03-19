@@ -4,7 +4,7 @@ with builtins;
 let
   cfg = config.my.vesktop;
 in
-mkEnableOption config /my/vesktop {
+mkEnableModule config /my/vesktop {
   programs.vesktop = {
     enable = true;
     settings = {
