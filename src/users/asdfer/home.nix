@@ -2,7 +2,6 @@
   pkgs,
   lib,
   myLib,
-  kakaotalk,
   ...
 }:
 with lib;
@@ -17,6 +16,7 @@ with myLib;
   my.uni.enable = true;
   my.tex.enable = true;
   my.zed.enable = true;
+  my.zed.default = true;
   my.firefox.enable = true;
   my.graphicalEditing.enable = true;
 

@@ -1,18 +1,15 @@
 {
   config,
   lib,
+  myLib,
   pkgs,
   ...
 }:
 with lib;
-{
-  options = {
-    my.uni.webPython.enable = mkEnableOption "";
-  };
-  config = mkIf config.my.uni.webPython.enable {
-    home.packages = with pkgs; [
-      python3
-      conda
-    ];
-  };
+with myLib;
+mkOptionModule config /my/uni/webPython {
+  home.packages = with pkgs; [
+    python3
+    conda
+  ];
 }

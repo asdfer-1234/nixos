@@ -10,7 +10,7 @@ in
 
 {
   options.my.quickshell = {
-    enable = lib.mkEnableOption "kanata";
+    enable = lib.mkEnableOption "quickshell";
     configDirectory = lib.mkOption {
       type = lib.types.pathInStore;
     };

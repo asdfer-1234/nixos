@@ -4,24 +4,18 @@ with builtins;
 let
   cfg = config.my.vesktop;
 in
-{
-  options.my.vesktop = {
-    enable = mkEnableOption "vesktop";
-  };
-
-  config = mkIf cfg.enable {
-    programs.vesktop = {
-      enable = true;
-      settings = {
-        discordBranch = "stable";
-        minimizeToTray = false;
-      };
+mkEnableOption config /my/vesktop {
+  programs.vesktop = {
+    enable = true;
+    settings = {
+      discordBranch = "stable";
+      minimizeToTray = false;
     };
-    xdg.configFile = {
-      "vesktop/state.json" = {
-        text = toJSON {
-          firstLaunch = false;
-        };
+  };
+  xdg.configFile = {
+    "vesktop/state.json" = {
+      text = toJSON {
+        firstLaunch = false;
       };
     };
   };

@@ -1,18 +1,15 @@
 {
   config,
   lib,
+  myLib,
   pkgs,
   ...
 }:
 with lib;
-{
-  options = {
-    my.tex.enable = mkEnableOption "";
-  };
-  config = mkIf config.my.tex.enable {
-    home.packages = with pkgs; [
-      texliveFull
-      texworks
-    ];
-  };
+with myLib;
+mkEnableOption config /my/tex {
+  home.packages = with pkgs; [
+    texliveFull
+    texworks
+  ];
 }

@@ -7,7 +7,11 @@
 with lib;
 {
   options = {
-    my.zed.enable = mkEnableOption "";
+    my.zed.enable = mkEnableOption "zed";
+    my.zed.default = mkOption {
+      type = types.bool;
+      default = false;
+    };
   };
   config = mkIf config.my.zed.enable {
     programs.zed-editor = {
@@ -34,7 +38,7 @@ with lib;
       ];
     };
 
-    home.sessionVariables = {
+    home.sessionVariables = mkIf config.my.zed.default {
       EDITOR = "zeditor";
     };
   };
