@@ -36,7 +36,7 @@
             options = setAttrByPath attrPathStringList {
               enable = mkEnableOption "an enable option blah";
             };
-            config = mkIf (attrByPath (attrPathStringList ++ [ "enable" ]) false config) (
+            config = mkIf (attrByPath (attrPathStringList).enable false config) (
               removeAttrs value [ "imports" ]
             );
           };
