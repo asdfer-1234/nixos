@@ -9,6 +9,8 @@ mkEnableModule config /my/homelab {
   services.vaultwarden = {
     enable = true;
 
+    domain = "https://localhost";
+
     config = {
       DOMAIN = "https://localhost";
       # Vaultwarden recommends running behind a reverse proxy, the configureNginx option can be used for that.
