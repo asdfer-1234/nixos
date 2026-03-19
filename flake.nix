@@ -31,7 +31,7 @@
             attrPathStringList = path.subpath.components (path.splitRoot attrPath).subpath;
           in
           {
-            imports = mkIf (value ? imports) value.imports;
+            imports = if (value ? imports) then value.imports else none;
             options = setAttrByPath attrPathStringList {
               enable = mkEnableOption "an enable option blah";
             };
