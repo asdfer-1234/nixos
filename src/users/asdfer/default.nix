@@ -7,7 +7,7 @@
 }:
 with lib;
 with myLib;
-mkEnableOption config /my/users/asdfer {
+mkEnableModule config /my/users/asdfer {
   users.users.asdfer = {
     isNormalUser = true;
     description = "the main user with sudo privileges";
