@@ -61,7 +61,7 @@ with myLib;
     # games
     tetrio-desktop
     prismlauncher
-    kakaotalk.packages.${pkgs.stdenv.hostPlatform.system}.kakaotalk
+
   ];
 
   services.polkit-gnome.enable = true;

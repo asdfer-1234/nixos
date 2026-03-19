@@ -13,5 +13,6 @@ with myLib;
     ./zed
     ./asdfrice
     ./graphicalEditing
+    ./kakaotalk
   ];
 }
