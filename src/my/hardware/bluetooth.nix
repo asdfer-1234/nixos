@@ -1,15 +1,6 @@
-{
-  config,
-  lib,
-  myLib,
-  ...
-}:
-with lib;
+{ config, myLib, ... }:
 with myLib;
-mkEnableModule {
-  options.my.hardware.bluetooth.enable = mkEnableOption "";
-  config = mkIf config.my.hardware.bluetooth.enable {
-    hardware.bluetooth.enable = true;
-    services.blueman.enable = true;
-  };
+mkEnableModule config /my/hardware/blueotooth {
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 }
