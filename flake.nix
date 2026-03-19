@@ -29,7 +29,9 @@
           options = setAttrByPath attrPath {
             enable = mkEnableOption "an enable option blah";
           };
-          config = warn (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]));
+          config = {
+            asdfasdf = (attrByPath ([ "config" ] ++ attrPath ++ [ enable ]));
+          };
         };
       };
     in
