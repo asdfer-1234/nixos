@@ -22,10 +22,6 @@ mkEnableModule config /my/users/asdfer {
   my.home-manager.enable = true;
 
   programs.niri.enable = true; # is this really needed?
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-    extraPackages = with pkgs; [ protonup-qt ];
-  };
+  my.steam.enable = true;
   services.logmein-hamachi.enable = true;
 }

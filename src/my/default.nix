@@ -12,5 +12,6 @@ with myLib;
     ./hardware
     ./home-manager
     ./graphicalUtils
+    ./steam
   ];
 }
