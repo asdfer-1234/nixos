@@ -18,4 +18,6 @@ mkEnableModule config /my/homelab {
   environment.systemPackages = [
     pkgs.vaultwarden
   ];
+
+  virtualisation.docker.enable = true;
 }
