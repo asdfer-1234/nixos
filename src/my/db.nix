@@ -10,5 +10,8 @@ mkEnableModule config /my/db {
     enable = true;
     package = pkgs.mariadb_114;
   };
-  environment.systemPackages = [ pkgs.mycli ];
+  environment.systemPackages = with pkgs; [
+    mycli
+    sqlite
+  ];
 }
