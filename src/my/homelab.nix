@@ -12,6 +12,7 @@ mkEnableModule config /my/homelab {
     config = {
       DOMAIN = "https://localhost";
       SIGNUPS_ALLOWED = true;
+      ROCKET_TLS = ''{certs="/home/asdfer/.ssh/another-machine.pub",key="/home/asdfer/.ssh/another-machine"}'';
     };
   };
 
