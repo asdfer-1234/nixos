@@ -8,6 +8,7 @@ with myLib;
 mkEnableModule config /my/homelab {
   # The service
   services.vaultwarden = {
+    enable = true;
     config = {
       DOMAIN = "https://localhost";
       SIGNUPS_ALLOWED = true;
