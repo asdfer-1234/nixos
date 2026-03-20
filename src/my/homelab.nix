@@ -26,4 +26,6 @@ mkEnableModule config /my/homelab {
       setSocketVariable = true;
     };
   };
+
+  my.db.enable = true;
 }

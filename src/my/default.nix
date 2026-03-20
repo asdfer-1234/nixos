@@ -14,5 +14,6 @@ with myLib;
     ./graphicalUtils
     ./steam
     ./homelab
+    ./db
   ];
 }
