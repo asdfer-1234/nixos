@@ -19,5 +19,11 @@ mkEnableModule config /my/homelab {
     pkgs.vaultwarden
   ];
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 }
