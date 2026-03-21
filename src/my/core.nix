@@ -17,6 +17,7 @@ mkEnableModule config /my/core {
     trashy
     tree
     yt-dlp
+    tokei
     pciutils # lspci
   ];
   my.bash.enable = true;
