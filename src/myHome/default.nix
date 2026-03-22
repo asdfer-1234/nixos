@@ -14,5 +14,6 @@ with myLib;
     ./asdfrice
     ./graphicalEditing
     ./kakaotalk
+    ./tetrio
   ];
 }

@@ -59,9 +59,9 @@ with myLib;
     wally-cli
     git-credential-manager
     # games
-    tetrio-desktop
     prismlauncher
   ];
+  my.tetrio.enable = true;
   my.kakaotalk.enable = true;
 
   services.polkit-gnome.enable = true;

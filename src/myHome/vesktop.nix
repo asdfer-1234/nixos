@@ -24,6 +24,7 @@ mkEnableModule config /my/vesktop {
           enabled = true;
           sidebar = true;
           sidebarAnim = true;
+          closeAllHomeButton = true;
           closeAllFolders = true;
           closeOthers = true;
           forceOpen = true;
