@@ -21,12 +21,16 @@ mkEnableModule config /my/vesktop {
       disableMinSize = true;
       plugins = {
         BetterFolders = {
-          enable = true;
+          enabled = true;
           sidebar = true;
           sidebarAnim = true;
           closeAllFolders = true;
           closeOthers = true;
           forceOpen = true;
+        };
+        MessageLogger = {
+          enabled = true;
+          ignoreSelf = true;
         };
       };
     };
