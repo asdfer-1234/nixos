@@ -24,4 +24,7 @@ mkEnableModule config /my/users/asdfer {
   programs.niri.enable = true; # is this really needed?
   my.steam.enable = true;
   services.logmein-hamachi.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "asdfer" ];
 }
