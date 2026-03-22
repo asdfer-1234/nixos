@@ -41,6 +41,7 @@ mkEnableModule config /my/vesktop {
         WhoReacted.enabled = true;
         GreetStickerPicker.enabled = true;
         ShowMeYourName.enabled = true;
+        Settings.enabled = true;
       };
     };
   };
