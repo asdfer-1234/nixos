@@ -33,6 +33,14 @@ mkEnableModule config /my/vesktop {
           enabled = true;
           ignoreSelf = true;
         };
+        TypingTweaks.enabled = true;
+        DontRoundMyTimestamps.enabled = true;
+        FriendsSince.enabled = true;
+        iLoveSpam.enabled = true;
+        NoF1.enabledenabled = true;
+        WhoReacted.enabled = true;
+        GreetStickerPicker.enabled = true;
+        ShowMeYourName.enabled = true;
       };
     };
   };
