@@ -15,6 +15,10 @@ mkEnableModule config /my/vesktop {
       minimizeToTray = false;
     };
     vencord.settings = {
+      autoUpdate = false;
+      autoUpdateNotification = false;
+      notifyAboutUpdates = false;
+      disableMinSize = true;
       plugins = {
         BetterFolders = {
           enable = true;
