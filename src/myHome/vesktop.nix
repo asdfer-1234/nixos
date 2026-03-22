@@ -27,6 +27,7 @@ mkEnableModule config /my/vesktop {
           closeAllFolders = true;
           closeOthers = true;
           forceOpen = true;
+          showFolderIcon = 0;
         };
         MessageLogger = {
           enabled = true;
