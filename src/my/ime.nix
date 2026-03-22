@@ -18,7 +18,7 @@ mkEnableModule config /my/ime {
       ];
     };
     extraLocaleSettings = {
-      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MEASUREMENT = "ko_KR.UTF-8";
     };
   };
 }
