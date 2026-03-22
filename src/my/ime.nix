@@ -17,5 +17,8 @@ mkEnableModule config /my/ime {
         fcitx5
       ];
     };
+    extraLocaleSettings = {
+      LC_MEASUREMENT = "en_US.UTF-8";
+    };
   };
 }
