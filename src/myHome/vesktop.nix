@@ -14,6 +14,18 @@ mkEnableModule config /my/vesktop {
       discordBranch = "stable";
       minimizeToTray = false;
     };
+    vencord.settings = {
+      plugins = {
+        BetterFolders = {
+          enable = true;
+          sidebar = true;
+          sidebarAnim = true;
+          closeAllFolders = true;
+          closeOthers = true;
+          forceOpen = true;
+        };
+      };
+    };
   };
   xdg.configFile = {
     "vesktop/state.json" = {
