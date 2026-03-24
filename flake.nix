@@ -58,5 +58,19 @@
           { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
         ];
       };
+      nixosConfigurations.asdfer-homelab = nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit
+            myLib
+            ;
+          hmInputs = { inherit (inputs) qsrs kakaotalk; };
+        };
+        modules = [
+          (nixPath ./src/hosts/asdfer-homelab)
+          home-manager.nixosModules.home-manager
+          { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
+        ];
+      };
     };
 }
