@@ -10,19 +10,11 @@ with lib;
   config = mkIf config.my.hardware.laptop.enable (
     lib.mkMerge [
       {
+
         hardware.enableRedistributableFirmware = true;
-        boot.extraModprobeConfig = "softdep i915 pre: vfio vfio_pci";
-        boot.initrd.availableKernelModules = [
-          "xhci_pci"
-          "thunderbolt"
-          "nvme"
-          "usbhid"
-          "usb_storage"
-          "sd_mod"
-        ];
-        boot.initrd.kernelModules = [ ];
+        boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ata_piix" "usb_storage" "sd_mod" ];
         boot.kernelModules = [ "kvm-intel" ];
-        boot.extraModulePackages = [ ];
+        boot.extraModprobeConfig = "softdep i915 pre: vfio vfio_pci";
 
         fileSystems."/" = {
           device = "/dev/disk/by-label/NIXOS";
