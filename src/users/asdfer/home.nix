@@ -38,7 +38,7 @@ with myLib;
     kakoune
     kdePackages.kate
     brightnessctl
-    mate.atril
+    atril
     qjackctl
     rhythmbox
     libreoffice
@@ -47,7 +47,7 @@ with myLib;
     imv
     swayimg
     # File managers
-    xfce.thunar
+    thunar
     nautilus
     kdePackages.dolphin
     # from nix-env
