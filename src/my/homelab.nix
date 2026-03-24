@@ -40,4 +40,8 @@ mkEnableModule config /my/homelab {
       AllowUsers = [ "root" ];
     };
   };
+  boot.initrd.network.ssh.authorizedKeys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer@asdfer-laptop"
+  ];
+
 }
