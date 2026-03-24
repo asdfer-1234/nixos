@@ -85,6 +85,7 @@ mkEnableModule config /my/firefox {
             "ublock-filters"
             "ublock-privacy"
             "ublock-quick-fixes"
+            "ublock-cookies-easylist"
             "ublock-unbreak"
             "urlhaus-1"
           ];
