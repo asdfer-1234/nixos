@@ -24,4 +24,6 @@ with myLib;
   security.rtkit.enable = true;
 
   my.core.enable = true;
+
+  my.homelab.enable = true;
 }
