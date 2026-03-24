@@ -6,12 +6,11 @@
 with myLib;
 {
   imports = importGen [
-    ../../users
+    ./hardware
     ../../my
   ];
   my.nix.setup = true;
 
-  my.hardware.homelab.enable = true;
   boot.kernelPackages = pkgs.linuxPackages;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
