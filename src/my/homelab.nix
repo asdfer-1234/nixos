@@ -48,7 +48,7 @@ mkEnableModule config /my/homelab {
       "networkmanager"
       "wheel"
     ];
-    ssh.authorizedKeys = [
+    openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer@asdfer-laptop"
     ];
   };
