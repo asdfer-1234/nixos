@@ -37,7 +37,7 @@ mkEnableModule config /my/homelab {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       PermitRootLogin = "no";
-      AllowUsers = [ "asdfer" ];
+      AllowUsers = [ "access" ];
     };
   };
 
