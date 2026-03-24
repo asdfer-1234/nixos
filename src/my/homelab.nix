@@ -49,7 +49,7 @@ mkEnableModule config /my/homelab {
       "wheel"
     ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer@asdfer-laptop"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer"
     ];
   };
 }
