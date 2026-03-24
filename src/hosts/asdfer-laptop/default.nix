@@ -34,6 +34,4 @@ with myLib;
     asdfer.enable = true;
     zxcver.enable = true;
   };
-
-  my.homelab.enable = true;
 }
