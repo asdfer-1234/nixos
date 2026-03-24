@@ -39,6 +39,7 @@ with lib;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   boot.kernelParams = [
     "libata.force=1:norst"
+    "libata.force=1:disable"
   ];
 
   # Disable nvidia including nouveau
