@@ -29,4 +29,15 @@ mkEnableModule config /my/homelab {
   };
 
   my.db.enable = true;
+
+  services.openssh = {
+    enable = true;
+    ports = [ 1234 ];
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "yes";
+      AllowUsers = [ "root" ];
+    };
+  };
 }
