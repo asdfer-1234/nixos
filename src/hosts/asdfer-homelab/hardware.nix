@@ -37,7 +37,7 @@ with lib;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  boot.kernelParams = [ "libata.force=1.00:disable" ];
+  boot.kernelParams = [ "libata.force=1:disable" ];
 
   # Disable nvidia including nouveau
   boot.blacklistedKernelModules = [
