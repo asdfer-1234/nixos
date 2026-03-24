@@ -37,7 +37,7 @@ with myLib;
     drawio
     kakoune
     kdePackages.kate
-    light
+    brightnessctl
     mate.atril
     qjackctl
     rhythmbox
