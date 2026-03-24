@@ -11,7 +11,6 @@ mkEnableModule config /my/fetches {
   environment.systemPackages = with pkgs; [
     cpufetch
     fastfetch
-    neofetch
     ramfetch
   ];
 }
