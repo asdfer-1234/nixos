@@ -36,12 +36,20 @@ mkEnableModule config /my/homelab {
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
-      PermitRootLogin = "yes";
-      AllowUsers = [ "root" ];
+      PermitRootLogin = "false";
+      AllowUsers = [ "asdfer" ];
     };
   };
-  boot.initrd.network.ssh.authorizedKeys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer@asdfer-laptop"
-  ];
 
+  users.users.access = {
+    isNormalUser = true;
+    description = "the main user with sudo privileges";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    ssh.authorizedKeys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM88TBQcNoOEGSnx7CoGnrt/BGFVXdiJjLaMRZxuqFXB asdfer@asdfer-laptop"
+    ];
+  };
 }
