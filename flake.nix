@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-unstable";
+      url = "github:nix-community/home-manager/unstable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     qsrs.url = "git+file:/home/asdfer/personal/proj/qsrs";
