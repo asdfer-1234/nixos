@@ -1,6 +1,7 @@
 {
   myLib,
   config,
+  pkgs-stable,
   hmInputs,
   ...
 }:
