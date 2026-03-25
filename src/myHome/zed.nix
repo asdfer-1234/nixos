@@ -22,6 +22,7 @@ with lib;
         "kdl"
         "qml"
         "wat"
+        "make"
       ];
       # mutableUserSettings = false;
       userSettings = {
