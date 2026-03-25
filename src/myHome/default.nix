@@ -15,5 +15,6 @@ with myLib;
     ./graphicalEditing
     ./kakaotalk
     ./tetrio
+    ./atril
   ];
 }

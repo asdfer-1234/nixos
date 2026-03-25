@@ -5,7 +5,7 @@
   ...
 }:
 with myLib;
-mkEnableModule {
+mkEnableModule config /my/atril {
   home.packages = with pkgs; [
     atril
   ];

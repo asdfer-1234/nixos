@@ -18,6 +18,7 @@ with myLib;
   my.zed.enable = true;
   my.zed.default = true;
   my.firefox.enable = true;
+  my.atril.enable = true;
   my.graphicalEditing.enable = true;
 
   programs.lutris.enable = true;
@@ -38,7 +39,6 @@ with myLib;
     kakoune
     kdePackages.kate
     brightnessctl
-    atril
     qjackctl
     rhythmbox
     libreoffice
