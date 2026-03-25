@@ -47,49 +47,57 @@
     in
     with myLib;
     {
-      nixosConfigurations.asdfer-laptop = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            pkgs-stable = import nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
+      nixosConfigurations.asdfer-laptop =
+        let
+          system = "x86_64-linux";
+        in
+        nixosSystem {
+          inherit system;
+          specialArgs =
+            let
+              pkgs-stable = import nixpkgs-stable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            in
+            {
+              inherit
+                myLib
+                pkgs-stable
+                ;
+              hmInputs = { inherit (inputs) qsrs kakaotalk; };
             };
-          in
-          {
-            inherit
-              myLib
-              pkgs-stable
-              ;
-            hmInputs = { inherit (inputs) qsrs kakaotalk; };
-          };
-        modules = [
-          (nixPath ./src/hosts/asdfer-laptop)
-          home-manager.nixosModules.home-manager
-          { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
-        ];
-      };
-      nixosConfigurations.asdfer-homelab = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs =
-          let
-            pkgs-stable = import nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
+          modules = [
+            (nixPath ./src/hosts/asdfer-laptop)
+            home-manager.nixosModules.home-manager
+            { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
+          ];
+        };
+      nixosConfigurations.asdfer-homelab =
+        let
+          system = "x86_64-linux";
+        in
+        nixosSystem {
+          inherit system;
+          specialArgs =
+            let
+              pkgs-stable = import nixpkgs-stable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            in
+            {
+              inherit
+                myLib
+                pkgs-stable
+                ;
+              hmInputs = { inherit (inputs) qsrs kakaotalk; };
             };
-          in
-          {
-            inherit
-              myLib
-              pkgs-stable
-              ;
-            hmInputs = { inherit (inputs) qsrs kakaotalk; };
-          };
-        modules = [
-          (nixPath ./src/hosts/asdfer-homelab)
-          home-manager.nixosModules.home-manager
-          { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
-        ];
-      };
+          modules = [
+            (nixPath ./src/hosts/asdfer-homelab)
+            home-manager.nixosModules.home-manager
+            { nixpkgs.overlays = [ dolphin-overlay.overlays.default ]; }
+          ];
+        };
     };
 }
