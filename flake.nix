@@ -43,19 +43,26 @@
             config = mkIf (attrByPath attrPathStringList false config).enable body;
           };
       };
-      pkgs-stable = import nixpkgs-stable;
+
     in
     with myLib;
     {
       nixosConfigurations.asdfer-laptop = nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit
-            myLib
-            pkgs-stable
-            ;
-          hmInputs = { inherit (inputs) qsrs kakaotalk; };
-        };
+        specialArgs =
+          let
+            nixpkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          in
+          {
+            inherit
+              myLib
+              nixpkgs-stable
+              ;
+            hmInputs = { inherit (inputs) qsrs kakaotalk; };
+          };
         modules = [
           (nixPath ./src/hosts/asdfer-laptop)
           home-manager.nixosModules.home-manager
@@ -64,13 +71,20 @@
       };
       nixosConfigurations.asdfer-homelab = nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit
-            myLib
-            pkgs-stable
-            ;
-          hmInputs = { inherit (inputs) qsrs kakaotalk; };
-        };
+        specialArgs =
+          let
+            nixpkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          in
+          {
+            inherit
+              myLib
+              nixpkgs-stable
+              ;
+            hmInputs = { inherit (inputs) qsrs kakaotalk; };
+          };
         modules = [
           (nixPath ./src/hosts/asdfer-homelab)
           home-manager.nixosModules.home-manager
