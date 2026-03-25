@@ -2,7 +2,6 @@
   config,
   lib,
   myLib,
-  pkgs,
   ...
 }:
 with lib;

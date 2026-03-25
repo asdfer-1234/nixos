@@ -15,8 +15,10 @@ with myLib;
 
   my.uni.enable = true;
   my.tex.enable = true;
-  my.zed.enable = true;
-  my.zed.default = true;
+  my.zed = {
+    enable = true;
+    default = true;
+  };
   my.firefox.enable = true;
   my.atril.enable = true;
   my.graphicalEditing.enable = true;

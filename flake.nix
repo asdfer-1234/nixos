@@ -61,10 +61,7 @@
                   };
                 in
                 {
-                  inherit
-                    myLib
-                    pkgs-stable
-                    ;
+                  inherit myLib pkgs-stable;
                   hmInputs = { inherit (inputs) qsrs kakaotalk; };
                 };
               modules = [
