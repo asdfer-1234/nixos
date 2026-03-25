@@ -12,7 +12,7 @@ mkEnableModule config /my/home-manager {
     extraSpecialArgs = {
       inherit
         inputs
-
+        pkgs-stable
         myLib
         ;
       inherit (hmInputs)
