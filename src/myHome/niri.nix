@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-stable,
   ...
 }:
 let
@@ -15,7 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      niri
+      pkgs-stable.niri
       xwayland-satellite
       kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-gnome

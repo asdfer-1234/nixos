@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +17,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       dolphin-overlay,
       ...
@@ -41,6 +43,7 @@
             config = mkIf (attrByPath attrPathStringList false config).enable body;
           };
       };
+      pkgs-stable = nixpkgs-stable;
     in
     with myLib;
     {
@@ -49,6 +52,7 @@
         specialArgs = {
           inherit
             myLib
+            pkgs-stable
             ;
           hmInputs = { inherit (inputs) qsrs kakaotalk; };
         };
@@ -63,6 +67,7 @@
         specialArgs = {
           inherit
             myLib
+            pkgs-stable
             ;
           hmInputs = { inherit (inputs) qsrs kakaotalk; };
         };
