@@ -43,7 +43,7 @@
             config = mkIf (attrByPath attrPathStringList false config).enable body;
           };
       };
-      pkgs-stable = nixpkgs-stable;
+      pkgs-stable = import nixpkgs-stable;
     in
     with myLib;
     {
