@@ -9,7 +9,7 @@ mkEnableModule config /my/atril {
   home.packages = with pkgs; [
     atril
   ];
-  xdg.mime.defaultApplications = {
+  xdg.mimeApps.defaultApplications = {
     "application/pdf" = "atril.desktop";
   };
 }
