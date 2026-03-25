@@ -18,7 +18,7 @@ mkEnableModule config /my/core {
     tree
     yt-dlp
     tokei
-    make
+    gnumake
     pciutils # lspci
   ];
   my.bash.enable = true;
