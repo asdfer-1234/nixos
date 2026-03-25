@@ -30,9 +30,9 @@ with myLib;
     enable = true;
     package = pkgs.vscode.fhs;
   };
+  my.alacritty.enable = true;
   home.packages = with pkgs; [
     # Stuff
-    alacritty
     fuzzel
     baobab
     code

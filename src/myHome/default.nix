@@ -16,5 +16,6 @@ with myLib;
     ./kakaotalk
     ./tetrio
     ./atril
+    ./alacritty
   ];
 }
