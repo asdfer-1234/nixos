@@ -21,6 +21,7 @@ with lib;
         "nix"
         "kdl"
         "qml"
+        "wat"
       ];
       # mutableUserSettings = false;
       userSettings = {
@@ -29,12 +30,14 @@ with lib;
           show_sign_in = false;
         };
         lsp.rust-analyzer.binary.path_lookup = true;
+        lsp.wasm-language-tools.path_lookup = true;
       };
-      extraPackages = [
-        pkgs.nixd
-        pkgs.nil
-        pkgs.clang
-        pkgs.kdePackages.qtdeclarative
+      extraPackages = with pkgs; [
+        nixd
+        nil
+        clang
+        kdePackages.qtdeclarative
+        wasm-language-tools
       ];
     };
 
