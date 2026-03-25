@@ -51,7 +51,7 @@
         system = "x86_64-linux";
         specialArgs =
           let
-            nixpkgs-stable = import nixpkgs-stable {
+            pkgs-stable = import nixpkgs-stable {
               inherit system;
               config.allowUnfree = true;
             };
@@ -59,7 +59,7 @@
           {
             inherit
               myLib
-              nixpkgs-stable
+              pkgs-stable
               ;
             hmInputs = { inherit (inputs) qsrs kakaotalk; };
           };
@@ -73,7 +73,7 @@
         system = "x86_64-linux";
         specialArgs =
           let
-            nixpkgs-stable = import nixpkgs-stable {
+            pkgs-stable = import nixpkgs-stable {
               inherit system;
               config.allowUnfree = true;
             };
@@ -81,7 +81,7 @@
           {
             inherit
               myLib
-              nixpkgs-stable
+              pkgs-stable
               ;
             hmInputs = { inherit (inputs) qsrs kakaotalk; };
           };
