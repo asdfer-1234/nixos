@@ -20,6 +20,7 @@ mkEnableModule config /my/core {
     tokei
     gnumake
     pciutils # lspci
+    python3
   ];
   my.bash.enable = true;
   my.fetches.enable = true;
