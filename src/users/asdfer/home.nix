@@ -31,6 +31,9 @@ with myLib;
     package = pkgs.vscode.fhs;
   };
   my.alacritty.enable = true;
+  my.libreoffice.enable = true;
+  my.tetrio.enable = true;
+  my.kakaotalk.enable = true;
   home.packages = with pkgs; [
     # Stuff
     fuzzel
@@ -43,7 +46,6 @@ with myLib;
     brightnessctl
     qjackctl
     rhythmbox
-    libreoffice
     # deadbeef # BUILD FAILS
     # Image viewers
     imv
@@ -63,8 +65,6 @@ with myLib;
     # games
     prismlauncher
   ];
-  my.tetrio.enable = true;
-  my.kakaotalk.enable = true;
 
   services.polkit-gnome.enable = true;
   programs.git = {

@@ -17,5 +17,6 @@ with myLib;
     ./tetrio
     ./atril
     ./alacritty
+    ./libreoffice
   ];
 }
