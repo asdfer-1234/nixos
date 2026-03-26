@@ -4,7 +4,7 @@
 }:
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ./asdfer
     ./zxcver
   ];

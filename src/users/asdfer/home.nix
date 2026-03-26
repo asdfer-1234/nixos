@@ -7,7 +7,7 @@
 with lib;
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ../../myHome
   ];
 

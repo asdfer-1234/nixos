@@ -5,9 +5,10 @@
 }:
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ./hardware
     ../../my
+    ../../secret
   ];
   my.nix.setup = true;
 

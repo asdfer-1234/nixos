@@ -2,7 +2,7 @@
 { myLib, ... }:
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ./kanata
     ./niri
     ./quickshell

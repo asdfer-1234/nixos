@@ -5,10 +5,11 @@
 }:
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ../../users
     ../../my
     ./hardware
+    ../../secret
   ];
   my.nix.setup = true;
   boot.kernelPackages = pkgs.linuxPackages;

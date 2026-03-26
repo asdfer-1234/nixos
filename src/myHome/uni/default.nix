@@ -7,7 +7,7 @@
 with lib;
 with myLib;
 mkEnableModule config /my/uni {
-  imports = importGen [
+  imports = mkImports [
     ./webPython
   ];
 

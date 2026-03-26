@@ -1,7 +1,7 @@
 { myLib, ... }:
 with myLib;
 {
-  imports = importGen [
+  imports = mkImports [
     ./fonts
     ./ime
     ./bash
